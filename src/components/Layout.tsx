@@ -6,9 +6,6 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
-  const phone = import.meta.env.VITE_PHONE;
-  const email = import.meta.env.VITE_EMAIL;
-
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -111,7 +108,7 @@ export default function Layout({ children }: LayoutProps) {
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 px-4 py-3">
         <div className="flex gap-3">
           <a
-            href={`tel:${phone}`}
+            href="tel:3212829795"
             className="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg flex items-center justify-center transition"
           >
             <Phone className="w-5 h-5 mr-2" />
