@@ -29,7 +29,7 @@ export default function GalleryCard({ image, onClick }: GalleryCardProps) {
           <img
             src={image.url}
             alt={image.alt}
-            className={`w-full h-full object-cover group-hover:scale-105 transition duration-300 ${
+            className={`w-full h-full object-contain group-hover:scale-105 transition duration-300 ${
               imageLoaded ? 'opacity-100' : 'opacity-0'
             }`}
             loading="lazy"
