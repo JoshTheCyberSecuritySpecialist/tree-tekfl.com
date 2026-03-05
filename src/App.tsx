@@ -6,6 +6,7 @@ import PastWork from './pages/PastWork';
 import Quote from './pages/Quote';
 import Social from './pages/Social';
 import Contact from './pages/Contact';
+import Certifications from './pages/Certifications';
 import Admin from './pages/Admin';
 
 function App() {
@@ -66,6 +67,8 @@ function App() {
         return <Quote />;
       case '/social':
         return <Social />;
+      case '/certifications':
+        return <Certifications />;
       case '/contact':
         return <Contact />;
       default:

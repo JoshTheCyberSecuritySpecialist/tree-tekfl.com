@@ -23,13 +23,14 @@ export default function Layout({ children }: LayoutProps) {
               <a href="/" className="text-emerald-900 hover:text-emerald-600 font-medium transition">Home</a>
               <a href="/services" className="text-emerald-900 hover:text-emerald-600 font-medium transition">Services</a>
               <a href="/past-work" className="text-emerald-900 hover:text-emerald-600 font-medium transition">Past Work</a>
+              <a href="/certifications" className="text-emerald-900 hover:text-emerald-600 font-medium transition">Certifications</a>
               <a href="/quote" className="text-emerald-900 hover:text-emerald-600 font-medium transition">Get a Quote</a>
               <a href="/social" className="text-emerald-900 hover:text-emerald-600 font-medium transition">Social</a>
               <a href="/contact" className="text-emerald-900 hover:text-emerald-600 font-medium transition">Contact</a>
             </nav>
 
             <div className="hidden lg:flex items-center space-x-4">
-              <a href="tel:3212829795" className="flex items-center text-emerald-900 hover:text-emerald-600 transition">
+              <a href="tel:+13212829795" className="flex items-center text-emerald-900 hover:text-emerald-600 transition">
                 <Phone className="w-4 h-4 mr-2" />
                 <span className="font-semibold">(321) 282-9795</span>
               </a>
@@ -49,6 +50,7 @@ export default function Layout({ children }: LayoutProps) {
             <a href="/" className="block py-2 text-emerald-900 hover:text-emerald-600 font-medium transition">Home</a>
             <a href="/services" className="block py-2 text-emerald-900 hover:text-emerald-600 font-medium transition">Services</a>
             <a href="/past-work" className="block py-2 text-emerald-900 hover:text-emerald-600 font-medium transition">Past Work</a>
+            <a href="/certifications" className="block py-2 text-emerald-900 hover:text-emerald-600 font-medium transition">Certifications</a>
             <a href="/quote" className="block py-2 text-emerald-900 hover:text-emerald-600 font-medium transition">Get a Quote</a>
             <a href="/social" className="block py-2 text-emerald-900 hover:text-emerald-600 font-medium transition">Social</a>
             <a href="/contact" className="block py-2 text-emerald-900 hover:text-emerald-600 font-medium transition">Contact</a>
@@ -87,7 +89,7 @@ export default function Layout({ children }: LayoutProps) {
             <div>
               <h3 className="font-semibold mb-4 text-white">Contact Info</h3>
               <div className="space-y-2">
-                <a href="tel:3212829795" className="flex items-center gap-2 text-gray-100 hover:text-emerald-300 transition-colors">
+                <a href="tel:+13212829795" className="flex items-center gap-2 text-gray-100 hover:text-emerald-300 transition-colors">
                   <Phone className="w-5 h-5 text-emerald-400" />
                   <span>(321) 282-9795</span>
                 </a>
@@ -108,7 +110,7 @@ export default function Layout({ children }: LayoutProps) {
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 px-4 py-3">
         <div className="flex gap-3">
           <a
-            href="tel:3212829795"
+            href="tel:+13212829795"
             className="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg flex items-center justify-center transition"
           >
             <Phone className="w-5 h-5 mr-2" />
