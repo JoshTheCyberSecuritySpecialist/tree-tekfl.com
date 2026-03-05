@@ -129,7 +129,7 @@ export default function PastWork() {
               <p className="mt-4 text-emerald-100">Loading gallery...</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 md:px-10 py-10">
+            <div className="gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 md:px-10 py-10">
               {images.map((image) => (
                 <GalleryCard
                   key={image.id}

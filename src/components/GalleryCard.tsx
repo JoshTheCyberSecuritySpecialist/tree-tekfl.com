@@ -13,7 +13,7 @@ export default function GalleryCard({ image, onClick }: GalleryCardProps) {
   return (
     <button
       onClick={onClick}
-      className="group relative h-64 md:h-80 w-full rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer"
+      className="gallery-card group relative h-64 md:h-80 w-full rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer"
     >
       {!imageLoaded && !imageError && (
         <div className="absolute inset-0 animate-shimmer rounded-lg"></div>
@@ -29,10 +29,12 @@ export default function GalleryCard({ image, onClick }: GalleryCardProps) {
           <img
             src={image.url}
             alt={image.alt}
-            className={`w-full h-full object-contain group-hover:scale-105 transition duration-300 ${
+            className={`w-full h-full object-cover group-hover:scale-105 transition duration-300 ${
               imageLoaded ? 'opacity-100' : 'opacity-0'
             }`}
             loading="lazy"
+            width="400"
+            height="320"
             onLoad={() => setImageLoaded(true)}
             onError={() => setImageError(true)}
           />

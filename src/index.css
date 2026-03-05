@@ -159,3 +159,58 @@
     animation: none;
   }
 }
+
+/* Service Image Optimization */
+.service-card {
+  background: #0f6a50;
+  overflow: hidden;
+}
+
+.service-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.service-card img:hover {
+  transform: scale(1.02);
+}
+
+/* Services Grid Layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* Global Image Constraints */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Gallery Grid Optimization */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.gallery-card {
+  background: #0f6a50;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
