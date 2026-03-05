@@ -65,6 +65,19 @@ export default function PastWork() {
 
   async function fetchGalleryImages() {
     try {
+      if (!supabase) {
+        setImages(fallbackImages.map((img, i) => ({
+          id: `fallback-${i}`,
+          title: img.title,
+          category: img.category,
+          url: img.url,
+          alt: img.alt,
+          created_at: new Date().toISOString(),
+        })));
+        setLoading(false);
+        return;
+      }
+
       const { data, error } = await supabase
         .from('gallery_images')
         .select('*')
