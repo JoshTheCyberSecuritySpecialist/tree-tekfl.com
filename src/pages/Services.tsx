@@ -132,12 +132,12 @@ export default function Services() {
                 </div>
 
                 <div className="flex-1 w-full">
-                  <div className="rounded-lg overflow-hidden shadow-lg h-[400px]">
+                  <div className="rounded-lg overflow-hidden shadow-lg aspect-[4/3] bg-gray-200">
                     <img
                       src={service.image}
                       alt={service.imageAlt}
                       className="w-full h-full object-cover"
-                      loading="lazy"
+                      loading="eager"
                       onError={(e) => {
                         const img = e.currentTarget;
                         img.src = '/images/image.png';
