@@ -117,8 +117,8 @@ This request was submitted through the Tree Tek website.
         "Authorization": `Bearer ${resendApiKey}`,
       },
       body: JSON.stringify({
-        from: "Tree Tek Quote Requests <quotes@treetek.org>",
-        to: ["Landtekbiz@gmail.com"],
+        from: "onboarding@resend.dev",
+        to: ["josh.bruner15@yahoo.com"],
         reply_to: quoteData.email,
         subject: `New Quote Request: ${quoteData.service_type} - ${quoteData.name}`,
         text: emailBody,
