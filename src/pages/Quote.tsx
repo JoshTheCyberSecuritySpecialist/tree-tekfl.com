@@ -66,29 +66,22 @@ export default function Quote() {
     setErrorMessage('');
 
     try {
-      const formDataToSend = new FormData();
-
-      Object.entries(formData).forEach(([key, value]) => {
-        formDataToSend.append(key, value);
-      });
-
-      photos.forEach((photo) => {
-        formDataToSend.append('photos', photo);
-      });
-
       const response = await fetch(
-        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/request-quote`,
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-quote-email`,
         {
           method: 'POST',
           headers: {
+            'Content-Type': 'application/json',
             Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
           },
-          body: formDataToSend,
+          body: JSON.stringify(formData),
         }
       );
 
-      if (!response.ok) {
-        throw new Error('Failed to submit request');
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'Failed to submit request');
       }
 
       setStatus('success');
