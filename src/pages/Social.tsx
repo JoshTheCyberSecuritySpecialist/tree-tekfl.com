@@ -15,6 +15,12 @@ export default function Social() {
 
   async function fetchSocialPosts() {
     try {
+      if (!supabase) {
+        setPosts([]);
+        setLoading(false);
+        return;
+      }
+
       const { data, error } = await supabase
         .from('social_posts')
         .select('*')

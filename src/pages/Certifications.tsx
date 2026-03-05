@@ -47,7 +47,7 @@ export default function Certifications() {
           <div className="bg-white rounded-lg shadow-lg p-8">
             <div className="text-center mb-6">
               <img
-                src="/images/ISA_Certs.jpeg"
+                src="/ISA_Certs.jpeg"
                 alt="ISA Certified Arborist certificate for Andrew Cleaver (FL-299436A)"
                 className="mx-auto rounded-lg shadow-md max-w-full w-full sm:max-w-[900px]"
               />

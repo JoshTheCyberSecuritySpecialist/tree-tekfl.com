@@ -123,6 +123,12 @@ function RequestsTab() {
 
   async function fetchRequests() {
     try {
+      if (!supabase) {
+        setRequests([]);
+        setLoading(false);
+        return;
+      }
+
       const { data, error } = await supabase
         .from('service_requests')
         .select('*')
@@ -251,6 +257,12 @@ function GalleryTab() {
 
   async function fetchImages() {
     try {
+      if (!supabase) {
+        setImages([]);
+        setLoading(false);
+        return;
+      }
+
       const { data, error } = await supabase
         .from('gallery_images')
         .select('*')
@@ -267,7 +279,7 @@ function GalleryTab() {
 
   async function handleUpload(e: React.FormEvent) {
     e.preventDefault();
-    if (!selectedFile) return;
+    if (!selectedFile || !supabase) return;
 
     setUploading(true);
     try {
@@ -311,7 +323,7 @@ function GalleryTab() {
   }
 
   async function handleDelete(id: string, url: string) {
-    if (!confirm('Are you sure you want to delete this image?')) return;
+    if (!confirm('Are you sure you want to delete this image?') || !supabase) return;
 
     try {
       const path = url.split('/').pop();
@@ -429,6 +441,12 @@ function SocialTab() {
 
   async function fetchPosts() {
     try {
+      if (!supabase) {
+        setPosts([]);
+        setLoading(false);
+        return;
+      }
+
       const { data, error } = await supabase
         .from('social_posts')
         .select('*')
@@ -445,6 +463,7 @@ function SocialTab() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!supabase) return;
 
     try {
       const { error } = await supabase.from('social_posts').insert([formData]);
@@ -466,7 +485,7 @@ function SocialTab() {
   }
 
   async function handleDelete(id: string) {
-    if (!confirm('Are you sure you want to delete this post?')) return;
+    if (!confirm('Are you sure you want to delete this post?') || !supabase) return;
 
     try {
       const { error } = await supabase.from('social_posts').delete().eq('id', id);
@@ -480,6 +499,8 @@ function SocialTab() {
   }
 
   async function togglePublish(id: string, currentStatus: boolean) {
+    if (!supabase) return;
+
     try {
       const { error } = await supabase
         .from('social_posts')
