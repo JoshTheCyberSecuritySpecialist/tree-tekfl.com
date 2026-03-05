@@ -13,7 +13,7 @@ export default function Layout({ children }: LayoutProps) {
           <div className="flex justify-between items-center py-4">
             <a href="/" className="flex items-center">
               <img
-                src="/treetek-logo copy copy copy.png"
+                src="/treetek-logo.png"
                 alt="TREE TEK - Complete Tree Services & Stump Grinding"
                 className="h-12 sm:h-16 w-auto"
               />
@@ -67,7 +67,7 @@ export default function Layout({ children }: LayoutProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <img
-                src="/treetek-logo copy copy copy.png"
+                src="/treetek-logo.png"
                 alt="TREE TEK"
                 className="h-32 w-auto mb-4"
               />
