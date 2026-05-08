@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Instagram, Facebook } from 'lucide-react';
 import { supabase, SocialPost } from '../lib/supabase';
 import PageHeader from '../components/PageHeader';
+import SEO from '../components/SEO';
 import Section from '../components/Section';
 import Card from '../components/Card';
 
@@ -38,6 +39,11 @@ export default function Social() {
 
   return (
     <div>
+      <SEO
+        title="Social Media — TREE TEK Instagram & Facebook"
+        description="Follow TREE TEK on Instagram and Facebook for job sites, tree tips, and storm updates across Volusia County."
+        path="/social"
+      />
       <PageHeader
         title="Social"
         subtitle="See recent work and updates from the field"

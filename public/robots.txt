@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.treetek.com/sitemap.xml
+Disallow: /admin
+Disallow: /admin/
+
+Sitemap: https://treetekfl.com/sitemap.xml

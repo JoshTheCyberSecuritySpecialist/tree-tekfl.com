@@ -1,11 +1,23 @@
 import { Award, ExternalLink, Shield } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
+import SEO from '../components/SEO';
 import Section from '../components/Section';
 import Card from '../components/Card';
+import { phoneToTel, usePublicWorkspaceSettings } from '../lib/workspaceSettings';
 
 export default function Certifications() {
+  const { settings } = usePublicWorkspaceSettings();
+  const phone = settings.business.phone;
+  const telHref = `tel:${phoneToTel(phone)}`;
+
   return (
     <div>
+      <SEO
+        title="Certifications — ISA Arborist & Professional Credentials | TREE TEK"
+        description="TREE TEK certifications including ISA Certified Arborist credentials. Licensed and insured tree services in Volusia County, Florida."
+        keywords="ISA arborist Volusia County, certified tree service Florida, TREE TEK certifications"
+        path="/certifications"
+      />
       <PageHeader
         title="Certifications & Accreditations"
         subtitle="Licensed, Certified, and Committed to Excellence"
@@ -95,10 +107,10 @@ export default function Certifications() {
               who prioritize safety, quality, and customer satisfaction in every job.
             </p>
             <a
-              href="tel:+13212829795"
+              href={telHref}
               className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-4 px-8 rounded-md shadow-lg transition-all inline-block"
             >
-              Call Now: (321) 282-9795
+              Call Now: {phone}
             </a>
           </div>
         </div>

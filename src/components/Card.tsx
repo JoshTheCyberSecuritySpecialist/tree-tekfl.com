@@ -10,8 +10,8 @@ export default function Card({ children, className = '', variant = 'white' }: Ca
   const baseClass = variant === 'glass'
     ? 'glass p-5 md:p-6'
     : variant === 'gray'
-    ? 'bg-gray-50 rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow'
-    : 'bg-white rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow';
+    ? 'bg-emerald-50/60 rounded-2xl border border-[#DDE8E3] p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow'
+    : 'bg-white rounded-2xl border border-[#DDE8E3] p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow';
 
   return (
     <div className={`${baseClass} ${className}`}>

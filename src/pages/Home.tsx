@@ -1,14 +1,35 @@
 import { Shield, Clock, Phone, CheckCircle, AlertTriangle } from 'lucide-react';
 import { motion } from 'framer-motion';
-import Section from '../components/Section';
+import { Link } from 'react-router-dom';
 import Card from '../components/Card';
+import SEO from '../components/SEO';
+import Section from '../components/Section';
+import TestimonialsSection from '../components/TestimonialsSection';
+import { phoneToTel, usePublicWorkspaceSettings } from '../lib/workspaceSettings';
+
+const HOME_SERVICE_PAGES: Record<string, string> = {
+  'Tree Removal': '/tree-removal',
+  'Trimming & Pruning': '/tree-trimming',
+  'Crane Work': '/crane-tree-work',
+  'Storm Cleanup': '/storm-cleanup',
+  'Stump Grinding': '/stump-grinding',
+};
 
 export default function Home() {
   const serviceArea = import.meta.env.VITE_SERVICE_AREA;
-  const phone = '(321) 282-9795';
+  const { settings } = usePublicWorkspaceSettings();
+  const phone = settings.business.phone;
+  const ctaText = settings.site.cta_text || 'Request a Free Quote';
+  const telHref = `tel:${phoneToTel(phone)}`;
 
   return (
     <div>
+      <SEO
+        title="TREE TEK — Tree Removal, Stump Grinding & Emergency Service | Volusia County"
+        description="Licensed & insured tree removal, trimming, crane work, storm cleanup, and stump grinding in Port Orange, Daytona Beach, South Daytona, and Volusia County, FL. Free quotes. 24/7 emergency line: (321) 282-9795."
+        keywords="tree removal Volusia County, stump grinding Port Orange, tree service Daytona Beach, emergency tree service Florida, TREE TEK"
+        path="/"
+      />
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-center bg-contain bg-no-repeat opacity-[0.38]"
@@ -57,14 +78,14 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5 }}
             >
-              <a
-                href="/quote"
+              <Link
+                to="/quote"
                 className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-4 px-10 rounded-md shadow-lg transition-all duration-300 transform hover:scale-105"
               >
-                Request a Free Quote
-              </a>
+                {ctaText}
+              </Link>
               <a
-                href="tel:3212829795"
+                href={telHref}
                 className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-4 px-10 rounded-md shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
               >
                 <Phone className="w-5 h-5 mr-3" />
@@ -92,25 +113,50 @@ export default function Home() {
               <CheckCircle className="w-12 h-12 text-emerald-600 mb-4" />
               <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
               <p className="text-gray-600 mb-4">{service.desc}</p>
-              <a
-                href={`/quote?service=${encodeURIComponent(service.title)}`}
+              <Link
+                to={HOME_SERVICE_PAGES[service.title] || '/services'}
                 className="text-emerald-600 hover:text-emerald-700 font-semibold inline-flex items-center"
               >
-                Get a Quote →
-              </a>
+                View service page →
+              </Link>
             </Card>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <a
-            href="/services"
+          <Link
+            to="/services"
             className="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-md shadow-lg transition-all"
           >
             View All Services
-          </a>
+          </Link>
+        </div>
+
+        <div className="max-w-3xl mx-auto mt-14 text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Popular local services</h2>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            Need{' '}
+            <Link to="/stump-grinding-port-orange" className="text-emerald-700 font-semibold hover:underline">
+              stump grinding in Port Orange
+            </Link>
+            ,{' '}
+            <Link to="/tree-removal-daytona-beach" className="text-emerald-700 font-semibold hover:underline">
+              tree removal in Daytona Beach
+            </Link>
+            , or{' '}
+            <Link to="/emergency-tree-service-volusia-county" className="text-emerald-700 font-semibold hover:underline">
+              24/7 emergency tree service in Volusia County
+            </Link>
+            ? Explore city-focused pages or{' '}
+            <Link to="/quote" className="text-emerald-700 font-semibold hover:underline">
+              request a free quote
+            </Link>
+            .
+          </p>
         </div>
       </Section>
+
+      <TestimonialsSection />
 
       <Section variant="gray">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
@@ -153,11 +199,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 shrink-0">
               <a
-                href="tel:3212829795"
+                href={telHref}
                 className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md shadow-lg transition-all flex items-center justify-center whitespace-nowrap animate-pulse-ring"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                (321) 282-9795
+                {phone}
               </a>
             </div>
           </div>

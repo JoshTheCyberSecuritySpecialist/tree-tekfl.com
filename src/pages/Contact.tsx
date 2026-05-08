@@ -1,15 +1,27 @@
 import { Phone, Mail, MapPin, Clock, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
+import SEO from '../components/SEO';
 import Section from '../components/Section';
 import Card from '../components/Card';
+import { phoneToTel, usePublicWorkspaceSettings } from '../lib/workspaceSettings';
 
 export default function Contact() {
-  const phone = import.meta.env.VITE_PHONE;
-  const email = import.meta.env.VITE_EMAIL;
-  const serviceArea = import.meta.env.VITE_SERVICE_AREA;
+  const { settings } = usePublicWorkspaceSettings();
+  const phone = settings.business.phone || import.meta.env.VITE_PHONE;
+  const email = settings.business.email || import.meta.env.VITE_EMAIL;
+  const serviceArea = settings.business.service_area || import.meta.env.VITE_SERVICE_AREA;
+  const ctaText = settings.site.cta_text || 'Request a Free Quote';
+  const telHref = `tel:${phoneToTel(phone)}`;
 
   return (
     <div>
+      <SEO
+        title="Contact TREE TEK — Phone, Email & Service Area"
+        description="Contact TREE TEK for tree removal and stump grinding in Port Orange, Daytona Beach, South Daytona, and Volusia County. Call (321) 282-9795 or email us."
+        keywords="contact TREE TEK, tree service phone Volusia County, Port Orange tree company"
+        path="/contact"
+      />
       <PageHeader
         title="Contact TREE TEK"
         subtitle="Serving Central Florida • Port Orange • Daytona • Ormond • New Smyrna"
@@ -30,7 +42,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
                     <a
-                      href={`tel:${phone}`}
+                      href={telHref}
                       className="text-lg text-emerald-600 hover:text-emerald-700 font-semibold"
                     >
                       {phone}
@@ -93,7 +105,7 @@ export default function Contact() {
                   Storm damage? Fallen tree? We're available around the clock for emergency tree services.
                 </p>
                 <a
-                  href={`tel:${phone}`}
+                  href={telHref}
                   className="inline-block bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-emerald-900/20"
                 >
                   Call for Emergency Service
@@ -110,12 +122,12 @@ export default function Contact() {
                 <p className="text-gray-600 mb-6">
                   We proudly serve Port Orange, Daytona Beach, Ormond Beach, New Smyrna Beach, and surrounding areas.
                 </p>
-                <a
-                  href="/quote"
+                <Link
+                  to="/quote"
                   className="inline-block bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-8 rounded-xl transition-all shadow-lg shadow-emerald-900/20"
                 >
-                  Request a Quote
-                </a>
+                  {ctaText}
+                </Link>
               </div>
             </Card>
           </div>
@@ -131,15 +143,15 @@ export default function Contact() {
             Contact us for a free, no-obligation quote
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="/quote"
+            <Link
+              to="/quote"
               className="inline-flex items-center justify-center gap-2 bg-white hover:bg-emerald-100 text-emerald-700 font-bold py-4 px-8 rounded-md shadow-xl transition-all hover:scale-105 animate-subtle-pulse"
             >
-              Get a Free Quote
+              {ctaText}
               <ArrowRight className="w-5 h-5" />
-            </a>
+            </Link>
             <a
-              href={`tel:${phone}`}
+              href={telHref}
               className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border-2 border-white/30 font-bold py-4 px-8 rounded-md shadow-lg transition-all"
             >
               <Phone className="w-5 h-5" />

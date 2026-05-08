@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { GalleryImage } from '../lib/supabase';
 
 interface GalleryCardProps {
@@ -6,7 +6,7 @@ interface GalleryCardProps {
   onClick: () => void;
 }
 
-export default function GalleryCard({ image, onClick }: GalleryCardProps) {
+function GalleryCard({ image, onClick }: GalleryCardProps) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
 
@@ -33,6 +33,7 @@ export default function GalleryCard({ image, onClick }: GalleryCardProps) {
               imageLoaded ? 'opacity-100' : 'opacity-0'
             }`}
             loading="lazy"
+            decoding="async"
             width="400"
             height="320"
             onLoad={() => setImageLoaded(true)}
@@ -58,3 +59,5 @@ export default function GalleryCard({ image, onClick }: GalleryCardProps) {
     </button>
   );
 }
+
+export default memo(GalleryCard);

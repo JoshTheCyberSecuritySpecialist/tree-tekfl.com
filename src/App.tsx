@@ -1,86 +1,69 @@
-import { useEffect, useState } from 'react';
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import Services from './pages/Services';
-import PastWork from './pages/PastWork';
-import Quote from './pages/Quote';
-import Social from './pages/Social';
-import Contact from './pages/Contact';
-import Certifications from './pages/Certifications';
-import Admin from './pages/Admin';
+import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { SEO_PAGE_SLUGS } from './data/seoPages';
+import ScrollToTop from './components/ScrollToTop';
+import SeoLandingPage from './pages/SeoLandingPage';
+import { sitePagesApi } from './services/api';
+
+const Layout = lazy(() => import('./components/Layout'));
+const Home = lazy(() => import('./pages/Home'));
+const Services = lazy(() => import('./pages/Services'));
+const PastWork = lazy(() => import('./pages/PastWork'));
+const Quote = lazy(() => import('./pages/Quote'));
+const Social = lazy(() => import('./pages/Social'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Faq = lazy(() => import('./pages/Faq'));
+const Certifications = lazy(() => import('./pages/Certifications'));
+const AdminLogin = lazy(() => import('./pages/AdminLogin'));
+const Admin = lazy(() => import('./pages/Admin'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+const BlogList = lazy(() => import('./pages/blog/BlogList'));
+const BlogPost = lazy(() => import('./pages/blog/BlogPost'));
+const ProtectedRoute = lazy(() => import('./components/ProtectedRoute'));
 
 function App() {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const [cmsSlugs, setCmsSlugs] = useState<string[]>([]);
 
   useEffect(() => {
-    const handlePopState = () => {
-      setCurrentPath(window.location.pathname);
-    };
-
-    window.addEventListener('popstate', handlePopState);
-
-    const originalPushState = window.history.pushState;
-    window.history.pushState = function (...args) {
-      originalPushState.apply(window.history, args);
-      setCurrentPath(window.location.pathname);
-    };
-
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-      window.history.pushState = originalPushState;
-    };
+    sitePagesApi.getPublishedSlugs().then(setCmsSlugs).catch(() => setCmsSlugs([]));
   }, []);
 
-  useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      const anchor = target.closest('a');
+  const seoSlugs = useMemo(
+    () => Array.from(new Set([...SEO_PAGE_SLUGS, ...cmsSlugs])),
+    [cmsSlugs],
+  );
 
-      if (anchor && anchor.href) {
-        const url = new URL(anchor.href);
-        if (url.origin === window.location.origin && !anchor.target) {
-          e.preventDefault();
-          window.history.pushState({}, '', url.pathname + url.search);
-          setCurrentPath(url.pathname);
-          window.scrollTo(0, 0);
-        }
-      }
-    };
-
-    document.addEventListener('click', handleClick);
-    return () => document.removeEventListener('click', handleClick);
-  }, []);
-
-  const renderPage = () => {
-    if (currentPath.startsWith('/admin')) {
-      return <Admin />;
-    }
-
-    switch (currentPath) {
-      case '/':
-        return <Home />;
-      case '/services':
-        return <Services />;
-      case '/past-work':
-        return <PastWork />;
-      case '/quote':
-        return <Quote />;
-      case '/social':
-        return <Social />;
-      case '/certifications':
-        return <Certifications />;
-      case '/contact':
-        return <Contact />;
-      default:
-        return <Home />;
-    }
-  };
-
-  if (currentPath.startsWith('/admin')) {
-    return renderPage();
-  }
-
-  return <Layout>{renderPage()}</Layout>;
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-gray-700">Loading...</div>}>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
+        <Route path="/" element={<Layout><Home /></Layout>} />
+        <Route path="/services" element={<Layout><Services /></Layout>} />
+        <Route path="/past-work" element={<Layout><PastWork /></Layout>} />
+        <Route path="/quote" element={<Layout><Quote /></Layout>} />
+        <Route path="/social" element={<Layout><Social /></Layout>} />
+        <Route path="/certifications" element={<Layout><Certifications /></Layout>} />
+        <Route path="/contact" element={<Layout><Contact /></Layout>} />
+        <Route path="/faq" element={<Layout><Faq /></Layout>} />
+        <Route path="/blog" element={<Layout><BlogList /></Layout>} />
+        <Route path="/blog/:slug" element={<Layout><BlogPost /></Layout>} />
+        {seoSlugs.map((slug) => (
+          <Route
+            key={slug}
+            path={`/${slug}`}
+            element={
+              <Layout>
+                <SeoLandingPage slug={slug} />
+              </Layout>
+            }
+          />
+        ))}
+        <Route path="*" element={<Layout><NotFound /></Layout>} />
+      </Routes>
+    </Suspense>
+  );
 }
 
 export default App;

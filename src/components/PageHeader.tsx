@@ -7,9 +7,9 @@ interface PageHeaderProps {
 
 export default function PageHeader({ title, subtitle }: PageHeaderProps) {
   return (
-    <section className="relative overflow-hidden py-14 md:py-18 bg-hero animate-gradient">
+    <section className="relative overflow-hidden py-16 md:py-20 bg-hero animate-gradient">
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/10"></div>
-      <div className="relative max-w-4xl mx-auto px-6 text-center">
+      <div className="relative max-w-5xl mx-auto px-6 text-center">
         <motion.h1
           className="text-4xl md:text-5xl lg:text-6xl font-bold text-white/95 mb-4 tracking-tight drop-shadow-[0_1px_0_rgba(0,0,0,0.25)]"
           initial={{ opacity: 0, y: 20 }}

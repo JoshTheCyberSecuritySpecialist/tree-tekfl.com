@@ -1,8 +1,12 @@
 import { useState, useEffect, FormEvent } from 'react';
 import { Upload, CheckCircle, AlertCircle } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
+import SEO from '../components/SEO';
 import Section from '../components/Section';
 import Card from '../components/Card';
+import { quoteApi, ApiError } from '../services/api';
+import { phoneToTel, usePublicWorkspaceSettings } from '../lib/workspaceSettings';
 
 const serviceTypes = [
   'Tree Removal',
@@ -13,6 +17,12 @@ const serviceTypes = [
 ];
 
 export default function Quote() {
+  const { settings } = usePublicWorkspaceSettings();
+  const phone = settings.business.phone;
+  const ctaText = settings.site.cta_text || 'Request a Free Quote';
+  const telHref = `tel:${phoneToTel(phone)}`;
+
+  const location = useLocation();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -30,12 +40,12 @@ export default function Quote() {
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
+    const params = new URLSearchParams(location.search);
     const service = params.get('service');
     if (service && serviceTypes.includes(service)) {
       setFormData((prev) => ({ ...prev, service_type: service }));
     }
-  }, []);
+  }, [location.search]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -66,22 +76,10 @@ export default function Quote() {
     setErrorMessage('');
 
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-quote-email`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const result = await quoteApi.submitQuoteRequest(formData, photos);
 
-      const result = await response.json();
-
-      if (!response.ok || !result.success) {
-        throw new Error(result.error || 'Failed to submit request');
+      if (!result?.success) {
+        throw new Error('Failed to submit request');
       }
 
       setStatus('success');
@@ -101,33 +99,93 @@ export default function Quote() {
     } catch (error) {
       console.error('Error submitting quote:', error);
       setStatus('error');
-      setErrorMessage('Failed to submit request. Please try again or call us directly.');
+      const detail =
+        error instanceof ApiError
+          ? error.message
+          : error instanceof Error
+            ? error.message
+            : 'Failed to submit request. Please try again or call us directly.';
+      setErrorMessage(detail);
     }
   };
 
   if (status === 'success') {
     return (
-      <div className="min-h-screen bg-hero animate-gradient flex items-center justify-center p-4">
-        <Card variant="glass" className="p-8 max-w-md w-full text-center">
-          <CheckCircle className="w-16 h-16 text-emerald-400 mx-auto mb-4" />
-          <h2 className="text-2xl font-bold text-white mb-4">
-            Thank You!
-          </h2>
-          <p className="text-emerald-100 mb-6">
-            TREE TEK has received your service request. We'll contact you soon at the phone number you provided.
-          </p>
-          <p className="text-emerald-100 mb-8">
-            If this is an emergency, please call us directly at{' '}
-            <a href={`tel:${import.meta.env.VITE_PHONE}`} className="text-white font-semibold underline">
-              {import.meta.env.VITE_PHONE}
-            </a>
-          </p>
-          <a
-            href="/"
-            className="inline-block bg-white hover:bg-gray-50 text-emerald-700 font-bold py-3 px-8 rounded-xl transition-all"
-          >
-            Back to Home
-          </a>
+      <div className="min-h-screen bg-hero animate-gradient flex items-center justify-center p-4 sm:p-6">
+        <SEO
+          title="Request Received — TREE TEK"
+          description="Your TREE TEK service request was received. We will contact you at the number you provided."
+          path="/quote"
+        />
+        <Card variant="glass" className="p-8 sm:p-10 max-w-lg w-full text-center shadow-xl border border-white/10">
+          <CheckCircle
+            className="w-16 h-16 text-emerald-400 mx-auto mb-5 drop-shadow-sm"
+            aria-hidden
+            strokeWidth={1.5}
+          />
+          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-5 tracking-tight">
+            Request Received Successfully
+          </h1>
+          <div className="text-left text-emerald-50/95 space-y-4 text-sm sm:text-base leading-relaxed">
+            <p>Thank you for contacting TREE TEK.</p>
+            <p>
+              Your service request has been successfully submitted and is now under review by our team. A
+              representative will contact you shortly at the phone number you provided to discuss your request
+              and next steps.
+            </p>
+            <p>
+              If your request is urgent or requires immediate attention, please call us directly at{' '}
+              <a
+                href={telHref}
+                className="text-white font-semibold underline decoration-emerald-300/80 underline-offset-2 hover:text-emerald-100"
+              >
+                {phone}
+              </a>
+              .
+            </p>
+            <p className="text-emerald-100/90">We appreciate the opportunity to serve you.</p>
+          </div>
+
+          <div
+            className="my-8 h-px w-full max-w-sm mx-auto bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent"
+            aria-hidden
+          />
+
+          <div className="text-left mb-8">
+            <h2 className="text-sm font-bold text-white uppercase tracking-wider text-center mb-4">
+              What Happens Next
+            </h2>
+            <ul className="space-y-2.5 text-emerald-50/95 text-sm sm:text-base list-none">
+              <li className="flex gap-2">
+                <span className="text-emerald-400 font-bold mt-0.5">•</span>
+                <span>We review your request</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-emerald-400 font-bold mt-0.5">•</span>
+                <span>We may contact you for additional details</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-emerald-400 font-bold mt-0.5">•</span>
+                <span>You’ll receive a quote or scheduling options</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center">
+            <Link
+              to="/"
+              className="inline-flex justify-center bg-white hover:bg-emerald-50 text-emerald-800 font-bold py-3.5 px-6 rounded-xl transition-all shadow-md"
+            >
+              Return to Homepage
+            </Link>
+            <Link
+              to="/quote"
+              onClick={() => setStatus('idle')}
+              className="inline-flex justify-center border-2 border-emerald-300/60 text-emerald-50 hover:bg-white/10 font-semibold py-3.5 px-6 rounded-xl transition-all"
+            >
+              Submit Another Request
+            </Link>
+          </div>
         </Card>
       </div>
     );
@@ -135,8 +193,14 @@ export default function Quote() {
 
   return (
     <div>
+      <SEO
+        title="Free Tree Service Quote — Volusia County"
+        description="Request a free quote for tree removal, trimming, stump grinding, crane work, or storm cleanup in Volusia County & Central Florida. Fast responses."
+        keywords="tree quote Volusia County, free estimate tree removal, TREE TEK quote"
+        path="/quote"
+      />
       <PageHeader
-        title="Request a Free Quote"
+        title={ctaText}
         subtitle="Tell us about your project and we'll respond quickly"
       />
 
