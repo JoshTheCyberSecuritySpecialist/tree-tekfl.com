@@ -93,7 +93,7 @@ export default function Layout({ children }: LayoutProps) {
             <div>
               <img
                 src="/treetek-logo.png"
-                alt="TREE TEK tree removal and stump grinding — Volusia County Florida"
+                alt="TREE TEK tree removal and stump grinding — Seminole County Florida"
                 className="h-28 w-auto mb-4"
                 loading="lazy"
                 decoding="async"
@@ -170,7 +170,7 @@ export default function Layout({ children }: LayoutProps) {
               </div>
             </div>
             <p className="text-gray-500 text-sm max-w-md md:text-right">
-              Licensed &amp; insured tree service serving Volusia County and surrounding areas.
+              Licensed &amp; insured tree service serving Seminole County and surrounding areas.
             </p>
           </div>
 

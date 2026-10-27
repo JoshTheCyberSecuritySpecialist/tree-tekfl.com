@@ -74,7 +74,7 @@ export default function Faq() {
       <div className="max-w-4xl mx-auto px-6 py-12">
         <SEO
           title="FAQ — Tree Services, Quotes & Scheduling | TREE TEK"
-          description="Answers about TREE TEK tree removal, stump grinding, quotes, and service areas in Volusia County."
+          description="Answers about TREE TEK tree removal, stump grinding, quotes, and service areas in Seminole County."
           path="/faq"
         />
         <h1 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h1>
@@ -89,7 +89,7 @@ export default function Faq() {
       <div className="max-w-4xl mx-auto px-6 py-12">
         <SEO
           title="FAQ — TREE TEK"
-          description="TREE TEK frequently asked questions about tree services in Volusia County."
+          description="TREE TEK frequently asked questions about tree services in Seminole County."
           path="/faq"
         />
         <h1 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h1>
@@ -106,7 +106,7 @@ export default function Faq() {
     <div className="max-w-4xl mx-auto px-6 py-12">
       <SEO
         title="FAQ — Tree Services, Quotes & Scheduling | TREE TEK"
-        description="Answers about TREE TEK tree removal, stump grinding, emergency response, and quotes in Port Orange, Daytona Beach, and Volusia County."
+        description="Answers about TREE TEK tree removal, stump grinding, emergency response, and quotes in Sanford, Lake Mary, and Seminole County."
         path="/faq"
       />
       {faqSchema ? <JsonLd data={faqSchema} /> : null}

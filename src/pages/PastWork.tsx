@@ -39,32 +39,32 @@ const localFallbackItems: GalleryItem[] = [
     id: 'local-1',
     title: 'Coastal Home Tree Removal',
     category: 'Tree Removal',
-    location: 'Daytona Beach',
+    location: 'Lake Mary',
     caption: 'Crane-assisted removal near waterfront property with tight access.',
-    url: '/images/daytona-beach-tree-removal-coastal-home-crane-service-volusia-county-florida.png',
-    alt: 'Crane-assisted tree removal at a coastal home in Daytona Beach, Florida.',
+    url: '/images/lake-mary-tree-removal-coastal-home-crane-service-seminole-county-florida.png',
+    alt: 'Crane-assisted tree removal at a coastal home in Lake Mary, Florida.',
     type: 'image',
     is_published: true,
     is_featured: true,
     display_order: 1,
-    before_url: '/images/daytona-beach-tree-removal-coastal-home-crane-service-volusia-county-florida.png',
-    after_url: '/images/crane-tree-removal-poolside-backyard-tree-tek-volusia-county-florida.png',
+    before_url: '/images/lake-mary-tree-removal-coastal-home-crane-service-seminole-county-florida.png',
+    after_url: '/images/crane-tree-removal-poolside-backyard-tree-tek-seminole-county-florida.png',
     created_at: new Date().toISOString(),
   },
   {
     id: 'local-2',
     title: 'Poolside Crane Lift',
     category: 'Crane Work',
-    location: 'Volusia County',
+    location: 'Seminole County',
     caption: 'Precision crane picks protect pavers, fencing, and pool decks.',
-    url: '/images/crane-tree-removal-poolside-backyard-tree-tek-volusia-county-florida.png',
+    url: '/images/crane-tree-removal-poolside-backyard-tree-tek-seminole-county-florida.png',
     alt: 'Crane tree removal near a pool in a residential backyard.',
     type: 'image',
     is_published: true,
     is_featured: true,
     display_order: 2,
-    before_url: '/images/daytona-beach-tree-removal-coastal-home-crane-service-volusia-county-florida.png',
-    after_url: '/images/crane-tree-removal-poolside-backyard-tree-tek-volusia-county-florida.png',
+    before_url: '/images/lake-mary-tree-removal-coastal-home-crane-service-seminole-county-florida.png',
+    after_url: '/images/crane-tree-removal-poolside-backyard-tree-tek-seminole-county-florida.png',
     created_at: new Date().toISOString(),
   },
 ];
@@ -220,7 +220,7 @@ export default function PastWork() {
           id: row.id,
           title: row.title,
           category: row.category || 'Tree Service',
-          location: row.location || 'Volusia County',
+          location: row.location || 'Seminole County',
           caption: row.caption || 'Professional tree service by TREE TEK.',
           url: row.video_url || row.url,
           alt: row.alt || row.title,
@@ -289,8 +289,8 @@ export default function PastWork() {
     <div className="bg-[#f6f7f6] min-h-screen pb-[calc(7rem+env(safe-area-inset-bottom))]">
       <SEO
         title="Past Work — Tree Removal & Stump Grinding Photos | TREE TEK"
-        description="Photos of tree removals, crane work, storm cleanup, and stump grinding projects across Volusia County and Central Florida by TREE TEK."
-        keywords="tree service photos, Port Orange tree removal, Daytona crane tree work, TREE TEK gallery"
+        description="Photos of tree removals, crane work, storm cleanup, and stump grinding projects across Seminole County and Central Florida by TREE TEK."
+        keywords="tree service photos, Sanford tree removal, Lake Mary crane tree work, TREE TEK gallery"
         path="/past-work"
       />
 
@@ -298,7 +298,7 @@ export default function PastWork() {
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-10 md:py-14">
           <h1 className="text-3xl md:text-5xl font-bold tracking-tight">Our Past Work</h1>
           <p className="mt-3 text-emerald-50/95 max-w-3xl text-sm md:text-lg">
-            Real TREE TEK jobs across Daytona Beach, Port Orange, and Volusia County.
+            Real TREE TEK jobs across Lake Mary, Sanford, and Seminole County.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3">
             <Link to="/quote" className="inline-flex items-center justify-center rounded-xl bg-white text-emerald-950 font-semibold px-6 py-3 hover:bg-emerald-50 transition">
@@ -505,12 +505,12 @@ export default function PastWork() {
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-10 border-t border-gray-200">
         <p className="text-gray-600 text-center max-w-2xl mx-auto leading-relaxed mb-6">
           Want specifics by city? See{' '}
-          <Link to="/stump-grinding-port-orange" className="text-emerald-700 font-semibold underline-offset-2 hover:underline">
-            stump grinding in Port Orange
+          <Link to="/stump-grinding-sanford" className="text-emerald-700 font-semibold underline-offset-2 hover:underline">
+            stump grinding in Sanford
           </Link>{' '}
           or{' '}
-          <Link to="/emergency-tree-service-volusia-county" className="text-emerald-700 font-semibold underline-offset-2 hover:underline">
-            emergency tree service in Volusia County
+          <Link to="/emergency-tree-service-seminole-county" className="text-emerald-700 font-semibold underline-offset-2 hover:underline">
+            emergency tree service in Seminole County
           </Link>
           , then{' '}
           <Link to="/quote" className="text-emerald-700 font-semibold underline-offset-2 hover:underline">

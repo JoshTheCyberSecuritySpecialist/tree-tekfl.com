@@ -204,7 +204,7 @@ export default function PagesTab() {
               required
               value={form.slug}
               onChange={(e) => setForm((f) => ({ ...f, slug: e.target.value }))}
-              placeholder="e.g. tree-removal-port-orange"
+              placeholder="e.g. tree-removal-sanford"
               className="w-full rounded-xl border border-gray-200 px-3 py-2 text-sm font-mono"
             />
           </div>

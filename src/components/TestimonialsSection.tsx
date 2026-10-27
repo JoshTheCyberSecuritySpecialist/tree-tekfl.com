@@ -54,7 +54,7 @@ export default function TestimonialsSection() {
     <Section variant="white">
       <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3">What customers say</h2>
       <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10 text-sm md:text-base">
-        Real feedback from homeowners and businesses we&apos;ve served across Volusia County.
+        Real feedback from homeowners and businesses we&apos;ve served across Seminole County.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {reviews.map((r) => (

@@ -1,4 +1,21 @@
 {
+  "redirects": [
+    { "source": "/tree-removal-daytona-beach", "destination": "/tree-removal-lake-mary", "permanent": true },
+    { "source": "/tree-trimming-daytona-beach", "destination": "/tree-trimming-lake-mary", "permanent": true },
+    { "source": "/stump-grinding-daytona-beach", "destination": "/stump-grinding-lake-mary", "permanent": true },
+    { "source": "/emergency-tree-service-daytona-beach", "destination": "/emergency-tree-service-lake-mary", "permanent": true },
+    { "source": "/tree-removal-port-orange", "destination": "/tree-removal-sanford", "permanent": true },
+    { "source": "/tree-trimming-port-orange", "destination": "/tree-trimming-sanford", "permanent": true },
+    { "source": "/stump-grinding-port-orange", "destination": "/stump-grinding-sanford", "permanent": true },
+    { "source": "/emergency-tree-service-port-orange", "destination": "/emergency-tree-service-sanford", "permanent": true },
+    { "source": "/tree-removal-south-daytona", "destination": "/tree-removal-longwood", "permanent": true },
+    { "source": "/tree-trimming-south-daytona", "destination": "/tree-trimming-longwood", "permanent": true },
+    { "source": "/stump-grinding-south-daytona", "destination": "/stump-grinding-longwood", "permanent": true },
+    { "source": "/tree-service-volusia-county", "destination": "/tree-service-seminole-county", "permanent": true },
+    { "source": "/tree-removal-volusia-county", "destination": "/tree-removal-seminole-county", "permanent": true },
+    { "source": "/stump-grinding-volusia-county", "destination": "/stump-grinding-seminole-county", "permanent": true },
+    { "source": "/emergency-tree-service-volusia-county", "destination": "/emergency-tree-service-seminole-county", "permanent": true }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

@@ -14,7 +14,7 @@ export function getLocalBusinessSchema(): Record<string, unknown> {
     image: logo,
     logo,
     description:
-      'Licensed and insured tree removal, trimming, crane work, storm cleanup, and stump grinding in Volusia County and Central Florida.',
+      'Licensed and insured tree removal, trimming, crane work, storm cleanup, and stump grinding in Seminole County and Central Florida.',
     telephone: '+13212829795',
     email: 'Landtekbiz@gmail.com',
     priceRange: '$$',
@@ -22,20 +22,20 @@ export function getLocalBusinessSchema(): Record<string, unknown> {
       '@type': 'PostalAddress',
       addressRegion: 'FL',
       addressCountry: 'US',
-      addressLocality: 'Volusia County',
+      addressLocality: 'Seminole County',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 29.1383,
-      longitude: -80.9956,
+      latitude: 28.8029,
+      longitude: -81.2731,
     },
     areaServed: [
-      { '@type': 'City', name: 'Port Orange', containedInPlace: { '@type': 'State', name: 'Florida' } },
-      { '@type': 'City', name: 'Daytona Beach', containedInPlace: { '@type': 'State', name: 'Florida' } },
-      { '@type': 'City', name: 'South Daytona', containedInPlace: { '@type': 'State', name: 'Florida' } },
+      { '@type': 'City', name: 'Sanford', containedInPlace: { '@type': 'State', name: 'Florida' } },
+      { '@type': 'City', name: 'Lake Mary', containedInPlace: { '@type': 'State', name: 'Florida' } },
+      { '@type': 'City', name: 'Longwood', containedInPlace: { '@type': 'State', name: 'Florida' } },
       {
         '@type': 'AdministrativeArea',
-        name: 'Volusia County',
+        name: 'Seminole County',
         containedInPlace: { '@type': 'State', name: 'Florida' },
       },
     ],
@@ -57,7 +57,7 @@ export function getLocalBusinessSchema(): Record<string, unknown> {
           itemOffered: {
             '@type': 'Service',
             name: 'Tree removal',
-            areaServed: 'Volusia County, FL',
+            areaServed: 'Seminole County, FL',
           },
         },
         {
@@ -65,7 +65,7 @@ export function getLocalBusinessSchema(): Record<string, unknown> {
           itemOffered: {
             '@type': 'Service',
             name: 'Tree trimming and pruning',
-            areaServed: 'Volusia County, FL',
+            areaServed: 'Seminole County, FL',
           },
         },
         {
@@ -73,7 +73,7 @@ export function getLocalBusinessSchema(): Record<string, unknown> {
           itemOffered: {
             '@type': 'Service',
             name: 'Crane-assisted tree removal',
-            areaServed: 'Volusia County, FL',
+            areaServed: 'Seminole County, FL',
           },
         },
         {
@@ -81,7 +81,7 @@ export function getLocalBusinessSchema(): Record<string, unknown> {
           itemOffered: {
             '@type': 'Service',
             name: 'Storm cleanup and emergency tree service',
-            areaServed: 'Volusia County, FL',
+            areaServed: 'Seminole County, FL',
           },
         },
         {
@@ -89,7 +89,7 @@ export function getLocalBusinessSchema(): Record<string, unknown> {
           itemOffered: {
             '@type': 'Service',
             name: 'Stump grinding',
-            areaServed: 'Volusia County, FL',
+            areaServed: 'Seminole County, FL',
           },
         },
       ],

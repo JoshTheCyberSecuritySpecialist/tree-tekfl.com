@@ -989,7 +989,7 @@ function BlogTab() {
             />
             <input
               type="text"
-              placeholder="Location (optional, e.g. Volusia County)"
+              placeholder="Location (optional, e.g. Seminole County)"
               value={formData.location}
               onChange={(e) => setFormData({ ...formData, location: e.target.value })}
               className="px-4 py-2 border border-gray-300 rounded-lg"

@@ -25,9 +25,9 @@ export default function Home() {
   return (
     <div>
       <SEO
-        title="TREE TEK — Tree Removal, Stump Grinding & Emergency Service | Volusia County"
-        description="Licensed & insured tree removal, trimming, crane work, storm cleanup, and stump grinding in Port Orange, Daytona Beach, South Daytona, and Volusia County, FL. Free quotes. 24/7 emergency line: (321) 282-9795."
-        keywords="tree removal Volusia County, stump grinding Port Orange, tree service Daytona Beach, emergency tree service Florida, TREE TEK"
+        title="TREE TEK — Tree Removal, Stump Grinding & Emergency Service | Seminole County"
+        description="Licensed & insured tree removal, trimming, crane work, storm cleanup, and stump grinding in Sanford, Lake Mary, Longwood, and Seminole County, FL. Free quotes. 24/7 emergency line: (321) 282-9795."
+        keywords="tree removal Seminole County, stump grinding Sanford, tree service Lake Mary, emergency tree service Florida, TREE TEK"
         path="/"
       />
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -48,7 +48,7 @@ export default function Home() {
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl text-white mb-10 font-semibold leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
-              Serving Central Florida • Port Orange • Daytona • New Smyrna
+              Serving Central Florida • Sanford • Lake Mary • Longwood
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -136,16 +136,16 @@ export default function Home() {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Popular local services</h2>
           <p className="text-gray-600 leading-relaxed mb-4">
             Need{' '}
-            <Link to="/stump-grinding-port-orange" className="text-emerald-700 font-semibold hover:underline">
-              stump grinding in Port Orange
+            <Link to="/stump-grinding-sanford" className="text-emerald-700 font-semibold hover:underline">
+              stump grinding in Sanford
             </Link>
             ,{' '}
-            <Link to="/tree-removal-daytona-beach" className="text-emerald-700 font-semibold hover:underline">
-              tree removal in Daytona Beach
+            <Link to="/tree-removal-lake-mary" className="text-emerald-700 font-semibold hover:underline">
+              tree removal in Lake Mary
             </Link>
             , or{' '}
-            <Link to="/emergency-tree-service-volusia-county" className="text-emerald-700 font-semibold hover:underline">
-              24/7 emergency tree service in Volusia County
+            <Link to="/emergency-tree-service-seminole-county" className="text-emerald-700 font-semibold hover:underline">
+              24/7 emergency tree service in Seminole County
             </Link>
             ? Explore city-focused pages or{' '}
             <Link to="/quote" className="text-emerald-700 font-semibold hover:underline">

@@ -6,7 +6,7 @@ export const supportPages: SeoPage[] = [
     title: 'Cost of Tree Removal in Florida',
     metaTitle: 'Cost of Tree Removal in Florida | What Drives Price | TREE TEK',
     metaDescription:
-      'What drives tree removal pricing in Florida—access, targets, equipment, stump options, and debris. Honest factors without bait quotes. Volusia County—TREE TEK.',
+      'What drives tree removal pricing in Florida—access, targets, equipment, stump options, and debris. Honest factors without bait quotes. Seminole County—TREE TEK.',
     primaryKeyword: 'cost of tree removal Florida',
     secondaryKeywords: ['tree removal price factors', 'Florida tree estimate', 'TREE TEK'],
     intent: 'informational',
@@ -14,7 +14,7 @@ export const supportPages: SeoPage[] = [
     location: null,
     h1: 'Cost of Tree Removal in Florida',
     intro:
-      'Sticker shock often comes from unseen complexity: tight alleys require slower rigging, cranes add mobilization, and storm backlog stretches timelines. This overview explains what reputable contractors weigh—so you can compare apples-to-apples bids across Volusia County and beyond.',
+      'Sticker shock often comes from unseen complexity: tight alleys require slower rigging, cranes add mobilization, and storm backlog stretches timelines. This overview explains what reputable contractors weigh—so you can compare apples-to-apples bids across Seminole County and beyond.',
     sections: [
       {
         heading: 'Primary cost drivers',
@@ -70,7 +70,7 @@ export const supportPages: SeoPage[] = [
     metaDescription:
       'Learn when you may need a permit to remove a tree in Florida. Tree Tek explains local rules, protected trees, storm damage, and safe removal next steps.',
     primaryKeyword: 'permit to remove tree Florida',
-    secondaryKeywords: ['Florida tree ordinance', 'Volusia tree permit', 'TREE TEK'],
+    secondaryKeywords: ['Florida tree ordinance', 'Seminole tree permit', 'TREE TEK'],
     intent: 'informational',
     service: null,
     location: null,
@@ -129,15 +129,15 @@ export const supportPages: SeoPage[] = [
   {
     slug: 'when-to-remove-a-tree',
     title: 'When to Remove a Tree',
-    metaTitle: 'When to Remove a Tree in Port Orange, FL | TREE TEK',
+    metaTitle: 'When to Remove a Tree in Sanford, FL | TREE TEK',
     metaDescription:
-      'Learn the warning signs of hazardous trees and when removal may be necessary. TREE TEK helps Port Orange homeowners protect waterfront and residential properties with professional tree evaluations and safe removals.',
+      'Learn the warning signs of hazardous trees and when removal may be necessary. TREE TEK helps Sanford homeowners protect waterfront and residential properties with professional tree evaluations and safe removals.',
     primaryKeyword: 'when to remove a tree',
     secondaryKeywords: ['hazard tree signs', 'tree failure risk', 'TREE TEK'],
     intent: 'informational',
     service: null,
     location: null,
-    h1: 'When to Remove a Tree in Port Orange, FL',
+    h1: 'When to Remove a Tree in Sanford, FL',
     intro:
       'Removal is rarely the first lever—pruning, cabling, or soil interventions sometimes extend safe lifespans. Consider removal when decay outweighs stable tissue, root plates shift after saturation, or crowns repeatedly fail despite corrective pruning.',
     sections: [
@@ -184,8 +184,8 @@ export const supportPages: SeoPage[] = [
       },
     ],
     ctaText: 'Request a Free Quote',
-    heroImage: '/images/When-To-Remove-A-Tree-In-Port-Orange-FL.png',
-    heroImageAlt: 'TREE TEK assessing when to remove a tree in Port Orange FL',
+    heroImage: '/images/When-To-Remove-A-Tree-In-Sanford-FL.png',
+    heroImageAlt: 'TREE TEK assessing when to remove a tree in Sanford FL',
   },
   {
     slug: 'tree-maintenance-guide',
@@ -194,7 +194,7 @@ export const supportPages: SeoPage[] = [
     metaDescription:
       'A science-based tree maintenance guide for Florida homeowners covering pruning, watering, mulch, root health, storm protection, tree risk signs, and long-term tree care from TREE TEK.',
     primaryKeyword: 'Florida tree maintenance guide',
-    secondaryKeywords: ['tree maintenance Volusia County', 'science-based tree care', 'tree care Florida homeowners'],
+    secondaryKeywords: ['tree maintenance Seminole County', 'science-based tree care', 'tree care Florida homeowners'],
     intent: 'informational',
     service: null,
     location: null,
@@ -254,7 +254,7 @@ export const supportPages: SeoPage[] = [
     title: 'Tree Service FAQ',
     metaTitle: 'Tree Service FAQ — Quotes, Scheduling & Safety | TREE TEK',
     metaDescription:
-      'General tree service FAQ—quotes, insurance, scheduling, and safety practices from TREE TEK in Volusia County. For account FAQs see /faq.',
+      'General tree service FAQ—quotes, insurance, scheduling, and safety practices from TREE TEK in Seminole County. For account FAQs see /faq.',
     primaryKeyword: 'tree service FAQ',
     secondaryKeywords: ['TREE TEK questions', 'tree quote FAQ', 'TREE TEK'],
     intent: 'informational',
@@ -312,6 +312,6 @@ export const supportPages: SeoPage[] = [
       },
     ],
     ctaText: 'Contact TREE TEK',
-    heroImage: '/images/past-work/bucket-truck-tree-service-new-smyrna-central-fl.jpg',
+    heroImage: '/images/past-work/bucket-truck-tree-service-longwood-central-fl.jpg',
   },
 ];

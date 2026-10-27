@@ -12,14 +12,14 @@ const services = [
     icon: TreeDeciduous,
     title: 'Tree Removal',
     description:
-      'Professional tree removal in Port Orange and Volusia County for hazardous, declining, and high-risk trees near homes, driveways, and structures.',
+      'Professional tree removal in Sanford and Seminole County for hazardous, declining, and high-risk trees near homes, driveways, and structures.',
     features: [
       'Hazard evaluation and removal planning',
       'Controlled lowering near structures',
       'Debris cleanup and site reset',
     ],
     image: '/images/tree-removal-premium-tree-tek.png',
-    imageAlt: 'TREE TEK tree removal service in Port Orange Florida',
+    imageAlt: 'TREE TEK tree removal service in Sanford Florida',
     fit: 'contain',
     href: '/tree-removal',
   },
@@ -34,8 +34,8 @@ const services = [
       'Deadwood and risk limb reduction',
       'Seasonal maintenance planning',
     ],
-    image: '/images/Tree-Trimming-And-Pruning-Port-Orange-FL.png',
-    imageAlt: 'TREE TEK tree trimming and pruning service in Port Orange Florida',
+    image: '/images/Tree-Trimming-And-Pruning-Sanford-FL.png',
+    imageAlt: 'TREE TEK tree trimming and pruning service in Sanford Florida',
     fit: 'contain',
     href: '/tree-trimming',
   },
@@ -50,8 +50,8 @@ const services = [
       'Large section removal with control',
       'Protection-first setup and staging',
     ],
-    image: '/images/crane-tree-work-port-orange-volusia-county-emergency-tree-service.png',
-    imageAlt: 'TREE TEK crane service removing large tree in Port Orange, Central Florida',
+    image: '/images/crane-tree-work-sanford-seminole-county-emergency-tree-service.png',
+    imageAlt: 'TREE TEK crane service removing large tree in Sanford, Central Florida',
     fit: 'contain',
     href: '/crane-tree-work',
   },
@@ -66,7 +66,7 @@ const services = [
       'Fallen and hanging limb removal',
       'Emergency-safe site clearing',
     ],
-    image: '/images/volusia-county-emergency-tree-service-tree-tek-florida.png',
+    image: '/images/seminole-county-emergency-tree-service-tree-tek-florida.png',
     imageAlt: 'TREE TEK emergency response to hurricane storm damage tree removal in Central Florida',
     fit: 'contain',
     href: '/emergency-tree-service',
@@ -76,14 +76,14 @@ const services = [
     icon: Wind,
     title: 'Storm Cleanup',
     description:
-      'Storm cleanup Port Orange FL homeowners trust for fallen limb removal, tree debris removal, and cleanup around driveways, roofs, pools, and waterfront access points.',
+      'Storm cleanup Sanford FL homeowners trust for fallen limb removal, tree debris removal, and cleanup around driveways, roofs, pools, and waterfront access points.',
     features: [
       'Post-storm debris and access clearing',
       'Storm damaged tree removal support',
       'Waterfront storm cleanup planning',
     ],
-    image: '/images/Storm-Cleanup-And-Wind-Damage-Removal-Port-Orange-FL.png',
-    imageAlt: 'TREE TEK storm cleanup and wind damage removal in Port Orange Florida',
+    image: '/images/Storm-Cleanup-And-Wind-Damage-Removal-Sanford-FL.png',
+    imageAlt: 'TREE TEK storm cleanup and wind damage removal in Sanford Florida',
     fit: 'contain',
     href: '/storm-cleanup',
   },
@@ -98,15 +98,15 @@ const services = [
       'Minimal surface disturbance methods',
       'Ready-for-replanting finish options',
     ],
-    image: '/images/Stump-Grinding-Port-Orange-Waterfront-TREE-TEK.png',
-    imageAlt: 'TREE TEK stump grinding at a waterfront property in Port Orange Florida',
+    image: '/images/Stump-Grinding-Sanford-Waterfront-TREE-TEK.png',
+    imageAlt: 'TREE TEK stump grinding at a waterfront property in Sanford Florida',
     fit: 'contain',
     href: '/stump-grinding',
   },
 ];
 
 const FALLBACK_SERVICE_IMAGE =
-  '/images/daytona-beach-tree-removal-coastal-home-crane-service-volusia-county-florida.png';
+  '/images/lake-mary-tree-removal-coastal-home-crane-service-seminole-county-florida.png';
 
 export default function Services() {
   const { settings } = usePublicWorkspaceSettings();
@@ -116,8 +116,8 @@ export default function Services() {
     <div>
       <SEO
         title="Tree Services — Removal, Trimming, Crane, Storm & Stump Grinding"
-        description="TREE TEK offers tree removal, trimming & pruning, crane-assisted removal, 24/7 storm cleanup, and stump grinding across Volusia County and Central Florida. Licensed & insured. Request a free quote."
-        keywords="tree services Florida, tree removal, stump grinding, crane tree service, storm cleanup, Volusia County tree company"
+        description="TREE TEK offers tree removal, trimming & pruning, crane-assisted removal, 24/7 storm cleanup, and stump grinding across Seminole County and Central Florida. Licensed & insured. Request a free quote."
+        keywords="tree services Florida, tree removal, stump grinding, crane tree service, storm cleanup, Seminole County tree company"
         path="/services"
       />
       <PageHeader
@@ -173,16 +173,16 @@ export default function Services() {
           </div>
           <p className="text-center mt-6 text-sm text-gray-600">
             Local guides:{' '}
-            <Link to="/tree-removal-daytona-beach" className="text-emerald-700 font-semibold hover:underline">
-              Daytona Beach
+            <Link to="/tree-removal-lake-mary" className="text-emerald-700 font-semibold hover:underline">
+              Lake Mary
             </Link>
             {' · '}
-            <Link to="/stump-grinding-port-orange" className="text-emerald-700 font-semibold hover:underline">
-              Port Orange
+            <Link to="/stump-grinding-sanford" className="text-emerald-700 font-semibold hover:underline">
+              Sanford
             </Link>
             {' · '}
-            <Link to="/emergency-tree-service-volusia-county" className="text-emerald-700 font-semibold hover:underline">
-              Volusia County
+            <Link to="/emergency-tree-service-seminole-county" className="text-emerald-700 font-semibold hover:underline">
+              Seminole County
             </Link>
           </p>
         </div>
@@ -191,7 +191,7 @@ export default function Services() {
       <Section variant="white">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8 md:mb-10 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Professional Tree Services in Port Orange & Volusia County</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Professional Tree Services in Sanford & Seminole County</h2>
             <p className="mt-2 text-gray-600 max-w-3xl mx-auto">
               Explore TREE TEK service pages for local guidance on crane-assisted tree removal, emergency response,
               trimming, storm cleanup, and property-focused care.
@@ -259,16 +259,16 @@ export default function Services() {
       </Section>
 
       <Section variant="white">
-        <div id="daytona-beach" className="max-w-3xl mx-auto text-center scroll-mt-24">
+        <div id="lake-mary" className="max-w-3xl mx-auto text-center scroll-mt-24">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Service areas & deep dives</h2>
           <p className="text-gray-600 leading-relaxed">
             Planning{' '}
-            <Link to="/tree-trimming-south-daytona" className="text-emerald-700 font-semibold hover:underline">
-              tree trimming in South Daytona
+            <Link to="/tree-trimming-longwood" className="text-emerald-700 font-semibold hover:underline">
+              tree trimming in Longwood
             </Link>
             ,{' '}
             <Link to="/crane-tree-work" className="text-emerald-700 font-semibold hover:underline">
-              crane tree work in Volusia County
+              crane tree work in Seminole County
             </Link>
             , or storm recovery? Start here, then see{' '}
             <Link to="/past-work" className="text-emerald-700 font-semibold hover:underline">

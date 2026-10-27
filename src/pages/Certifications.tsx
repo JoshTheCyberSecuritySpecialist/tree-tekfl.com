@@ -14,8 +14,8 @@ export default function Certifications() {
     <div>
       <SEO
         title="Certifications — ISA Arborist & Professional Credentials | TREE TEK"
-        description="TREE TEK certifications including ISA Certified Arborist credentials. Licensed and insured tree services in Volusia County, Florida."
-        keywords="ISA arborist Volusia County, certified tree service Florida, TREE TEK certifications"
+        description="TREE TEK certifications including ISA Certified Arborist credentials. Licensed and insured tree services in Seminole County, Florida."
+        keywords="ISA arborist Seminole County, certified tree service Florida, TREE TEK certifications"
         path="/certifications"
       />
       <PageHeader

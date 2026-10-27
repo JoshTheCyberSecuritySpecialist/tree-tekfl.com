@@ -194,9 +194,9 @@ export default function Quote() {
   return (
     <div>
       <SEO
-        title="Free Tree Service Quote — Volusia County"
-        description="Request a free quote for tree removal, trimming, stump grinding, crane work, or storm cleanup in Volusia County & Central Florida. Fast responses."
-        keywords="tree quote Volusia County, free estimate tree removal, TREE TEK quote"
+        title="Free Tree Service Quote — Seminole County"
+        description="Request a free quote for tree removal, trimming, stump grinding, crane work, or storm cleanup in Seminole County & Central Florida. Fast responses."
+        keywords="tree quote Seminole County, free estimate tree removal, TREE TEK quote"
         path="/quote"
       />
       <PageHeader

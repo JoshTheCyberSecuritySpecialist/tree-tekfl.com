@@ -45,16 +45,16 @@ type RelatedLinkItem = {
 };
 
 const DEFAULT_HERO_IMAGE =
-  '/images/daytona-beach-tree-removal-coastal-home-crane-service-volusia-county-florida.png';
+  '/images/lake-mary-tree-removal-coastal-home-crane-service-seminole-county-florida.png';
 const PERMIT_PAGE_SLUG = 'do-you-need-a-permit-to-remove-a-tree-in-florida';
-const PORT_ORANGE_TREE_REMOVAL_SLUG = 'tree-removal-port-orange';
+const SANFORD_TREE_REMOVAL_SLUG = 'tree-removal-sanford';
 const EMERGENCY_TREE_SERVICE_SLUG = 'emergency-tree-service';
 const WHEN_TO_REMOVE_TREE_SLUG = 'when-to-remove-a-tree';
 const TREE_MAINTENANCE_GUIDE_SLUG = 'tree-maintenance-guide';
 const STORM_CLEANUP_SLUG = 'storm-cleanup';
 const CRANE_TREE_WORK_SLUG = 'crane-tree-work';
-const EMERGENCY_TREE_SERVICE_DAYTONA_SLUG = 'emergency-tree-service-daytona-beach';
-const STUMP_GRINDING_VOLUSIA_SLUG = 'stump-grinding-volusia-county';
+const EMERGENCY_TREE_SERVICE_LAKE_MARY_SLUG = 'emergency-tree-service-lake-mary';
+const STUMP_GRINDING_SEMINOLE_SLUG = 'stump-grinding-seminole-county';
 const TREE_TRIMMING_SLUG = 'tree-trimming';
 const STUMP_GRINDING_SLUG = 'stump-grinding';
 
@@ -70,12 +70,12 @@ function resolvePublicHeroImage(path?: string | null): string | undefined {
  * This avoids legacy location slugs being surfaced in related-link cards.
  */
 const RELATED_ROUTE_OVERRIDES: Record<string, string> = {
-  'tree-removal-port-orange': 'stump-grinding-port-orange',
-  'tree-trimming-port-orange': 'stump-grinding-port-orange',
-  'stump-grinding-daytona-beach': 'tree-removal-daytona-beach',
-  'tree-trimming-daytona-beach': 'tree-removal-daytona-beach',
-  'tree-removal-volusia-county': 'emergency-tree-service-volusia-county',
-  'stump-grinding-volusia-county': 'emergency-tree-service-volusia-county',
+  'tree-removal-sanford': 'stump-grinding-sanford',
+  'tree-trimming-sanford': 'stump-grinding-sanford',
+  'stump-grinding-lake-mary': 'tree-removal-lake-mary',
+  'tree-trimming-lake-mary': 'tree-removal-lake-mary',
+  'tree-removal-seminole-county': 'emergency-tree-service-seminole-county',
+  'stump-grinding-seminole-county': 'emergency-tree-service-seminole-county',
 };
 
 function getDesignatedRelatedLinks(related: SeoPage[]): RelatedLinkItem[] {
@@ -104,19 +104,19 @@ function getHeroImageObjectPositionClasses(page: SeoPage): string {
     return 'object-left';
   }
   // Keep worker/cutting action visible on smaller screens for this specific page.
-  if (page.slug === 'tree-trimming-daytona-beach') {
+  if (page.slug === 'tree-trimming-lake-mary') {
     // Shift focal point down so waterfront remains visible while preserving worker focus.
     return 'object-[center_65%] md:object-[center_58%] lg:object-center';
   }
-  if (page.slug === 'tree-removal-port-orange') {
+  if (page.slug === 'tree-removal-sanford') {
     // Keep crane arm, lifted section, and waterfront context visible on smaller screens.
     return 'object-top lg:object-center';
   }
-  if (page.slug === 'tree-trimming-port-orange') {
+  if (page.slug === 'tree-trimming-sanford') {
     // Keep climber + crane truck + waterfront context visible on smaller screens.
     return 'object-top lg:object-center';
   }
-  if (page.slug === 'stump-grinding-south-daytona') {
+  if (page.slug === 'stump-grinding-longwood') {
     // Slight right shift on mobile keeps grinder/action in frame; centered on larger screens.
     return 'object-[65%_center] md:object-center';
   }
@@ -130,7 +130,7 @@ function getHeroFrameClasses(slug: string): string {
   if (slug === 'tree-removal') {
     return 'w-full rounded-2xl overflow-hidden shadow-2xl border border-emerald-100 bg-white';
   }
-  if (slug === 'stump-grinding-port-orange') {
+  if (slug === 'stump-grinding-sanford') {
     return 'w-full rounded-2xl overflow-hidden shadow-2xl border border-emerald-100 bg-white';
   }
   if (slug === 'crane-tree-work') {
@@ -246,7 +246,7 @@ function CmsSiteArticle({
   const related = getRelatedSeoPages(cmsRowToSeoPageForRelated(row), 8);
   const designatedRelated = getDesignatedRelatedLinks(related).slice(0, 8);
   const webLd = buildWebPageLdFromCms(row, path);
-  const areaServed = row.location != null ? `${row.location}, FL` : 'Volusia County, FL';
+  const areaServed = row.location != null ? `${row.location}, FL` : 'Seminole County, FL';
   const serviceLd = row.service_type
     ? getServicePageSchema({
         name: row.service_type,
@@ -272,7 +272,7 @@ function CmsSiteArticle({
         <header className="bg-gradient-to-br from-emerald-900 to-emerald-800 text-white">
           <div className="max-w-4xl mx-auto px-6 py-12 md:py-14">
             <p className="text-emerald-200 text-sm font-medium uppercase tracking-wide mb-2">
-              {row.location ? `${row.location} • TREE TEK` : 'TREE TEK • Volusia County'}
+              {row.location ? `${row.location} • TREE TEK` : 'TREE TEK • Seminole County'}
             </p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">{h1}</h1>
             {intro ? <p className="text-lg text-emerald-100 max-w-3xl leading-relaxed">{intro}</p> : null}
@@ -361,7 +361,7 @@ function CmsSiteArticle({
                 Ready for safe, professional tree service?
               </h2>
               <p className="mt-3 md:mt-4 text-sm md:text-base text-emerald-50/95 text-center max-w-2xl mx-auto leading-relaxed">
-                Request a free quote or call TREE TEK for fast service across Volusia County.
+                Request a free quote or call TREE TEK for fast service across Seminole County.
               </p>
               <div className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
                 <Link
@@ -399,13 +399,13 @@ function StaticSeoArticle({
 }) {
   const path = `/${page.slug}`;
   const isEmergencyTreeService = page.slug === EMERGENCY_TREE_SERVICE_SLUG;
-  const isPortOrangeTreeRemoval = page.slug === PORT_ORANGE_TREE_REMOVAL_SLUG;
+  const isSanfordTreeRemoval = page.slug === SANFORD_TREE_REMOVAL_SLUG;
   const isWhenToRemoveTree = page.slug === WHEN_TO_REMOVE_TREE_SLUG;
   const isTreeMaintenanceGuide = page.slug === TREE_MAINTENANCE_GUIDE_SLUG;
   const isStormCleanup = page.slug === STORM_CLEANUP_SLUG;
   const isCraneTreeWork = page.slug === CRANE_TREE_WORK_SLUG;
-  const isEmergencyTreeServiceDaytona = page.slug === EMERGENCY_TREE_SERVICE_DAYTONA_SLUG;
-  const isStumpGrindingVolusia = page.slug === STUMP_GRINDING_VOLUSIA_SLUG;
+  const isEmergencyTreeServiceLakeMary = page.slug === EMERGENCY_TREE_SERVICE_LAKE_MARY_SLUG;
+  const isStumpGrindingSeminole = page.slug === STUMP_GRINDING_SEMINOLE_SLUG;
   const isTreeTrimming = page.slug === TREE_TRIMMING_SLUG;
   const isStumpGrinding = page.slug === STUMP_GRINDING_SLUG;
   const keywords = [page.primaryKeyword, ...page.secondaryKeywords].join(', ');
@@ -416,7 +416,7 @@ function StaticSeoArticle({
   const faqLd = page.faqs.length > 0 ? buildFaqLd(page) : null;
 
   const areaServed =
-    page.location != null ? `${page.location}, FL` : 'Volusia County, FL';
+    page.location != null ? `${page.location}, FL` : 'Seminole County, FL';
 
   const serviceLd =
     page.service && page.intent !== 'informational'
@@ -460,7 +460,7 @@ function StaticSeoArticle({
       },
       {
         q: 'Do you provide emergency storm cleanup?',
-        a: 'Yes. We provide emergency tree cleanup and storm damaged tree removal across Port Orange and Volusia County.',
+        a: 'Yes. We provide emergency tree cleanup and storm damaged tree removal across Sanford and Seminole County.',
       },
     ];
     const stormFaqLd = {
@@ -501,7 +501,7 @@ function StaticSeoArticle({
       'Waterfront Property Experience',
       'Professional Equipment',
       'Careful Property Protection',
-      'Local Volusia County Knowledge',
+      'Local Seminole County Knowledge',
       'Clean Worksites',
       'Licensed & Insured',
     ];
@@ -518,13 +518,13 @@ function StaticSeoArticle({
             <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
               <div className="grid gap-8 lg:grid-cols-[1fr_1.05fr] lg:items-center">
                 <div>
-                  <p className="text-emerald-200 text-sm font-semibold uppercase tracking-wide">TREE TEK • PORT ORANGE • VOLUSIA COUNTY</p>
-                  <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Storm Cleanup &amp; Wind Damage Removal in Port Orange, FL</h1>
+                  <p className="text-emerald-200 text-sm font-semibold uppercase tracking-wide">TREE TEK • SANFORD • SEMINOLE COUNTY</p>
+                  <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Storm Cleanup &amp; Wind Damage Removal in Sanford, FL</h1>
                   <p className="mt-4 text-emerald-50/95 leading-relaxed max-w-2xl">
                     Severe weather can leave fallen limbs, broken crowns, uprooted trees, and blocked driveways across
                     coastal Florida properties. TREE TEK provides professional storm cleanup and wind damage removal
                     with controlled cutting, careful debris handling, and property protection for homes throughout Port
-                    Orange and Volusia County.
+                    Orange and Seminole County.
                   </p>
                   <div className="mt-7 flex flex-wrap gap-3">
                     <Link to="/quote" className="inline-flex items-center justify-center bg-white text-emerald-900 font-bold py-3 px-7 rounded-lg hover:bg-emerald-50 transition shadow-md">
@@ -537,8 +537,8 @@ function StaticSeoArticle({
                 </div>
                 <div className="rounded-2xl overflow-hidden border border-emerald-200/30 shadow-2xl bg-emerald-900/20">
                   <img
-                    src="/images/Storm-Cleanup-And-Wind-Damage-Removal-Port-Orange-FL.png"
-                    alt="TREE TEK storm cleanup and wind damage removal in Port Orange Florida"
+                    src="/images/Storm-Cleanup-And-Wind-Damage-Removal-Sanford-FL.png"
+                    alt="TREE TEK storm cleanup and wind damage removal in Sanford Florida"
                     className="w-full h-auto object-contain rounded-2xl shadow-2xl"
                     loading="eager"
                     fetchPriority="high"
@@ -553,7 +553,7 @@ function StaticSeoArticle({
             <div className="max-w-5xl mx-auto rounded-2xl border border-gray-100 bg-white p-6 md:p-8 shadow-sm">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">What Storm Cleanup Includes</h2>
               <p className="text-gray-700 leading-relaxed">
-                Storm cleanup Port Orange FL homeowners request often includes fallen limb removal, broken branch
+                Storm cleanup Sanford FL homeowners request often includes fallen limb removal, broken branch
                 cleanup, hazardous tree evaluation, driveway and access clearing, debris hauling, controlled cutting,
                 roofline protection, and cleanup around seawalls, docks, pools, and surrounding landscaping.
               </p>
@@ -616,7 +616,7 @@ function StaticSeoArticle({
 
           <Section variant="gray">
             <div className="max-w-6xl mx-auto rounded-2xl border border-gray-100 bg-white p-6 md:p-8 shadow-sm">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why Port Orange Homeowners Choose TREE TEK</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why Sanford Homeowners Choose TREE TEK</h2>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {trustCards.map((item) => (
                   <div key={item} className="rounded-xl border border-emerald-100 bg-emerald-50/30 px-4 py-3 text-sm font-semibold text-gray-800">
@@ -711,12 +711,12 @@ function StaticSeoArticle({
         a: 'Crews coordinate pick points, rigging setup, operator communication, and controlled cutting so each section is lifted and staged safely.',
       },
       {
-        q: 'Do you service tight-access properties in Port Orange?',
-        a: 'Yes. We provide tight access tree removal planning for Port Orange properties with limited staging and constrained side-yard access.',
+        q: 'Do you service tight-access properties in Sanford?',
+        a: 'Yes. We provide tight access tree removal planning for Sanford properties with limited staging and constrained side-yard access.',
       },
       {
-        q: 'Do you provide crane tree work in Volusia County?',
-        a: 'Yes. TREE TEK provides crane tree work and related Volusia County tree service support throughout the surrounding area.',
+        q: 'Do you provide crane tree work in Seminole County?',
+        a: 'Yes. TREE TEK provides crane tree work and related Seminole County tree service support throughout the surrounding area.',
       },
     ];
     const craneFaqLd = {
@@ -758,7 +758,7 @@ function StaticSeoArticle({
       'Professional Rigging Methods',
       'Waterfront Property Experience',
       'Careful Property Protection',
-      'Local Volusia County Knowledge',
+      'Local Seminole County Knowledge',
       'Clean Worksites',
       'Responsive Communication',
       'Licensed & Insured',
@@ -776,13 +776,13 @@ function StaticSeoArticle({
             <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
               <div className="grid gap-8 lg:grid-cols-[1fr_1.05fr] lg:items-center">
                 <div>
-                  <p className="text-emerald-200 text-sm font-semibold uppercase tracking-wide">TREE TEK • PORT ORANGE • VOLUSIA COUNTY</p>
-                  <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Crane-Assisted Tree Removal in Port Orange, FL</h1>
+                  <p className="text-emerald-200 text-sm font-semibold uppercase tracking-wide">TREE TEK • SANFORD • SEMINOLE COUNTY</p>
+                  <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Crane-Assisted Tree Removal in Sanford, FL</h1>
                   <p className="mt-4 text-emerald-50/95 leading-relaxed max-w-2xl">
                     When a tree cannot be safely lowered into open space, crane-assisted tree removal allows large
                     sections to be lifted with control and precision. TREE TEK uses crane planning, rigging
                     coordination, and careful property protection for waterfront homes, tight-access lots, pools,
-                    rooflines, and high-value residential properties throughout Port Orange and Volusia County.
+                    rooflines, and high-value residential properties throughout Sanford and Seminole County.
                   </p>
                   <div className="mt-7 flex flex-wrap gap-3">
                     <Link to="/quote" className="inline-flex items-center justify-center bg-white text-emerald-900 font-bold py-3 px-7 rounded-lg hover:bg-emerald-50 transition shadow-md">
@@ -797,7 +797,7 @@ function StaticSeoArticle({
                 <div className="w-full rounded-2xl overflow-hidden shadow-2xl bg-white/5 border border-white/10 p-2">
                   <img
                     src={resolvePublicHeroImage(page.heroImage) || DEFAULT_HERO_IMAGE}
-                    alt={page.heroImageAlt ?? 'TREE TEK crane-assisted tree work in Port Orange Florida'}
+                    alt={page.heroImageAlt ?? 'TREE TEK crane-assisted tree work in Sanford Florida'}
                     className="w-full h-auto object-contain rounded-xl"
                     loading="eager"
                     fetchPriority="high"
@@ -812,7 +812,7 @@ function StaticSeoArticle({
             <div className="max-w-5xl mx-auto rounded-2xl border border-gray-100 bg-white p-6 md:p-8 shadow-sm">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">When Crane Tree Work Is the Safer Option</h2>
               <p className="text-gray-700 leading-relaxed">
-                Crane tree removal Port Orange FL projects are often selected when lay-down space is limited, large
+                Crane tree removal Sanford FL projects are often selected when lay-down space is limited, large
                 limbs hang over structures, or trees are near homes, pools, fences, docks, seawalls, and tight side
                 yards. Crane-assisted tree removal can also support storm damaged tree removal and high-risk picks near
                 commercial rooftops while reducing uncontrolled drops.
@@ -853,7 +853,7 @@ function StaticSeoArticle({
               <p className="text-gray-700 leading-relaxed">
                 Waterfront tree removal planning may involve seawalls, docks, pools, pavers, irrigation systems, luxury
                 landscaping, and limited equipment staging. TREE TEK coordinates tight access tree removal with
-                controlled debris handling to support high-end Port Orange properties.
+                controlled debris handling to support high-end Sanford properties.
               </p>
             </div>
           </Section>
@@ -873,7 +873,7 @@ function StaticSeoArticle({
 
           <Section variant="gray">
             <div className="max-w-6xl mx-auto rounded-2xl border border-gray-100 bg-white p-6 md:p-8 shadow-sm">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why Port Orange Homeowners Choose TREE TEK</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why Sanford Homeowners Choose TREE TEK</h2>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {trustCards.map((item) => (
                   <div key={item} className="rounded-xl border border-emerald-100 bg-emerald-50/30 px-4 py-3 text-sm font-semibold text-gray-800">
@@ -944,7 +944,7 @@ function StaticSeoArticle({
   if (isTreeTrimming) {
     const trimmingFaqs = [
       {
-        q: 'How often should trees be trimmed in Port Orange?',
+        q: 'How often should trees be trimmed in Sanford?',
         a: 'Frequency depends on species, growth rate, storm exposure, and proximity to structures. Many residential properties benefit from periodic professional evaluation.',
       },
       {
@@ -973,7 +973,7 @@ function StaticSeoArticle({
       },
       {
         q: 'Do you service luxury waterfront properties?',
-        a: 'Yes. TREE TEK regularly services high-value waterfront and coastal properties throughout Port Orange and Volusia County.',
+        a: 'Yes. TREE TEK regularly services high-value waterfront and coastal properties throughout Sanford and Seminole County.',
       },
     ];
     const trimmingFaqLd = {
@@ -1003,7 +1003,7 @@ function StaticSeoArticle({
       'Professional Equipment',
       'ISA-Informed Methods',
       'Careful Property Protection',
-      'Local Volusia County Knowledge',
+      'Local Seminole County Knowledge',
       'Clean Worksites',
       'Responsive Communication',
       'Licensed & Insured',
@@ -1021,8 +1021,8 @@ function StaticSeoArticle({
             <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
               <div className="grid gap-8 lg:grid-cols-[1fr_1.05fr] lg:items-center">
                 <div>
-                  <p className="text-emerald-200 text-sm font-semibold uppercase tracking-wide">TREE TEK • PORT ORANGE • VOLUSIA COUNTY</p>
-                  <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Professional Tree Trimming &amp; Pruning in Port Orange, FL</h1>
+                  <p className="text-emerald-200 text-sm font-semibold uppercase tracking-wide">TREE TEK • SANFORD • SEMINOLE COUNTY</p>
+                  <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Professional Tree Trimming &amp; Pruning in Sanford, FL</h1>
                   <p className="mt-4 text-emerald-50/95 leading-relaxed max-w-2xl">
                     Professional tree trimming improves safety, structure, airflow, and long-term tree health. TREE TEK
                     uses targeted pruning methods designed for Florida&apos;s coastal wind exposure, mature neighborhoods,
@@ -1039,14 +1039,14 @@ function StaticSeoArticle({
                 </div>
                 <div className="rounded-2xl overflow-hidden border border-emerald-200/30 shadow-2xl bg-emerald-900/20">
                   <img
-                    src="/images/Tree-Trimming-And-Pruning-Port-Orange-TREE-TEK.png"
-                    alt="TREE TEK professional tree trimming and pruning in Port Orange Florida"
+                    src="/images/Tree-Trimming-And-Pruning-Sanford-FL.png"
+                    alt="TREE TEK professional tree trimming and pruning in Sanford Florida"
                     className="w-full h-auto object-contain rounded-2xl shadow-2xl"
                     loading="eager"
                     fetchPriority="high"
                     decoding="async"
                     onError={(e) => {
-                      e.currentTarget.src = '/images/Tree-Trimming-And-Pruning-Port-Orange-FL.png';
+                      e.currentTarget.src = '/images/Tree-Trimming-And-Pruning-Sanford-FL.png';
                     }}
                   />
                 </div>
@@ -1058,7 +1058,7 @@ function StaticSeoArticle({
             <div className="max-w-5xl mx-auto rounded-2xl border border-gray-100 bg-white p-6 md:p-8 shadow-sm">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Why Professional Tree Pruning Matters</h2>
               <p className="text-gray-700 leading-relaxed">
-                Professional tree trimming Port Orange FL homeowners invest in helps reduce hazardous deadwood, improve
+                Professional tree trimming Sanford FL homeowners invest in helps reduce hazardous deadwood, improve
                 branch structure, clear roofs and walkways, improve canopy airflow, support long-term tree health, and
                 reduce storm-related limb failure risk.
               </p>
@@ -1082,7 +1082,7 @@ function StaticSeoArticle({
               <p className="text-gray-700 leading-relaxed">
                 Topping can weaken trees, create unstable regrowth, increase decay risk, stress the canopy, and shorten
                 lifespan. TREE TEK uses targeted reductions and thinning instead of topping, aligned with professional
-                tree pruning Port Orange best practices.
+                tree pruning Sanford best practices.
               </p>
             </div>
           </Section>
@@ -1093,7 +1093,7 @@ function StaticSeoArticle({
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Coastal Florida Tree Pruning Considerations</h2>
                 <p className="text-gray-700 leading-relaxed">
                   Coastal wind exposure, salt stress, dense canopy loading, and hurricane preparation all influence how
-                  trees should be pruned in Port Orange and Volusia County. Waterfront tree pruning near docks, pools,
+                  trees should be pruned in Sanford and Seminole County. Waterfront tree pruning near docks, pools,
                   rooflines, and high-value landscaping requires careful planning and controlled execution.
                 </p>
               </div>
@@ -1129,7 +1129,7 @@ function StaticSeoArticle({
 
           <Section variant="white">
             <div className="max-w-6xl mx-auto rounded-2xl border border-gray-100 bg-white p-6 md:p-8 shadow-sm">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why Port Orange Homeowners Choose TREE TEK</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why Sanford Homeowners Choose TREE TEK</h2>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {trustCards.map((item) => (
                   <div key={item} className="rounded-xl border border-emerald-100 bg-emerald-50/30 px-4 py-3 text-sm font-semibold text-gray-800">
@@ -1202,8 +1202,8 @@ function StaticSeoArticle({
     );
   }
 
-  if (isStumpGrindingVolusia) {
-    const volusiaStumpFaqs = [
+  if (isStumpGrindingSeminole) {
+    const seminoleStumpFaqs = [
       {
         q: 'Is stump grinding better than stump removal?',
         a: 'For most residential properties, professional stump grinding is preferred because it removes visible stump material below grade with less disruption than full root excavation.',
@@ -1233,14 +1233,14 @@ function StaticSeoArticle({
         a: 'Yes. We provide waterfront stump grinding with planning around seawalls, docks, pavers, and tight access.',
       },
       {
-        q: 'Do you provide stump grinding throughout Volusia County?',
-        a: 'Yes. TREE TEK provides residential stump grinding and property-focused service throughout Volusia County.',
+        q: 'Do you provide stump grinding throughout Seminole County?',
+        a: 'Yes. TREE TEK provides residential stump grinding and property-focused service throughout Seminole County.',
       },
     ];
-    const volusiaStumpFaqLd = {
+    const seminoleStumpFaqLd = {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: volusiaStumpFaqs.map((f) => ({
+      mainEntity: seminoleStumpFaqs.map((f) => ({
         '@type': 'Question',
         name: f.q,
         acceptedAnswer: {
@@ -1263,7 +1263,7 @@ function StaticSeoArticle({
       'Professional Equipment',
       'Waterfront Property Experience',
       'Careful Lawn Protection',
-      'Local Volusia County Knowledge',
+      'Local Seminole County Knowledge',
       'Clean Worksites',
       'Responsive Communication',
       'Licensed & Insured',
@@ -1275,19 +1275,19 @@ function StaticSeoArticle({
         <SEO title={page.metaTitle} description={page.metaDescription} keywords={keywords} path={path} image={resolvePublicHeroImage(page.heroImage)} />
         <JsonLd data={webLd} />
         {serviceLd ? <JsonLd data={serviceLd} /> : null}
-        <JsonLd data={volusiaStumpFaqLd} />
+        <JsonLd data={seminoleStumpFaqLd} />
 
         <article className="bg-emerald-50/40">
           <section className="bg-gradient-to-br from-emerald-950 via-emerald-900 to-emerald-800 text-white">
             <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
               <div className="grid gap-8 lg:grid-cols-[1fr_1.05fr] lg:items-center">
                 <div>
-                  <p className="text-emerald-200 text-sm font-semibold uppercase tracking-wide">TREE TEK • VOLUSIA COUNTY</p>
-                  <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Professional Stump Grinding in Volusia County, FL</h1>
+                  <p className="text-emerald-200 text-sm font-semibold uppercase tracking-wide">TREE TEK • SEMINOLE COUNTY</p>
+                  <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Professional Stump Grinding in Seminole County, FL</h1>
                   <p className="mt-4 text-emerald-50/95 leading-relaxed max-w-2xl">
                     Old stumps can attract pests, create trip hazards, damage mowers, and block new landscaping. TREE
                     TEK provides professional stump grinding for residential, waterfront, and high-value properties
-                    throughout Volusia County with careful equipment placement and clean below-grade results.
+                    throughout Seminole County with careful equipment placement and clean below-grade results.
                   </p>
                   <div className="mt-7 flex flex-wrap gap-3">
                     <Link to="/quote" className="inline-flex items-center justify-center bg-white text-emerald-900 font-bold py-3 px-7 rounded-lg hover:bg-emerald-50 transition shadow-md">
@@ -1300,8 +1300,8 @@ function StaticSeoArticle({
                 </div>
                 <div className="w-full rounded-2xl overflow-hidden shadow-2xl border border-white/15 bg-white/5 p-1">
                   <img
-                    src="/images/south-daytona-stump-grinding-service-tree-tek-florida.png"
-                    alt="TREE TEK professional stump grinding service in Volusia County Florida"
+                    src="/images/longwood-stump-grinding-service-tree-tek-florida.png"
+                    alt="TREE TEK professional stump grinding service in Seminole County Florida"
                     className="w-full h-auto object-contain rounded-2xl shadow-2xl"
                     loading="eager"
                     fetchPriority="high"
@@ -1344,8 +1344,8 @@ function StaticSeoArticle({
               <p className="text-gray-700 leading-relaxed">
                 TREE TEK plans each job with irrigation head awareness, turf protection, controlled machine positioning,
                 bed and hardscape care, debris containment, and final cleanup. This approach supports professional stump
-                grinding and stump removal Volusia County outcomes without unnecessary site disturbance. For homeowners
-                comparing stump grinding Volusia County FL options, this process helps protect long-term property quality.
+                grinding and stump removal Seminole County outcomes without unnecessary site disturbance. For homeowners
+                comparing stump grinding Seminole County FL options, this process helps protect long-term property quality.
               </p>
             </div>
           </Section>
@@ -1379,7 +1379,7 @@ function StaticSeoArticle({
 
           <Section variant="gray">
             <div className="max-w-6xl mx-auto rounded-2xl border border-gray-100 bg-white p-6 md:p-8 shadow-sm">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why Volusia County Homeowners Choose TREE TEK</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why Seminole County Homeowners Choose TREE TEK</h2>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {trustCards.map((item) => (
                   <div key={item} className="rounded-xl border border-emerald-100 bg-emerald-50/30 px-4 py-3 text-sm font-semibold text-gray-800">
@@ -1421,7 +1421,7 @@ function StaticSeoArticle({
             <div className="max-w-5xl mx-auto rounded-2xl border border-gray-100 bg-white p-6 md:p-8 shadow-sm">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Frequently asked questions</h2>
               <div className="space-y-3">
-                {volusiaStumpFaqs.map((f) => (
+                {seminoleStumpFaqs.map((f) => (
                   <details key={f.q} className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
                     <summary className="font-semibold text-gray-900 cursor-pointer">{f.q}</summary>
                     <p className="mt-2 text-gray-700 leading-relaxed">{f.a}</p>
@@ -1466,8 +1466,8 @@ function StaticSeoArticle({
         a: 'Yes. With proper chip management, soil adjustment, and grading, many areas can be prepared for turf recovery or sod installation.',
       },
       {
-        q: 'Do you service waterfront homes in Port Orange?',
-        a: 'Yes. TREE TEK services Port Orange waterfront and canal-side properties with controlled stump grinding and property-protection planning.',
+        q: 'Do you service waterfront homes in Sanford?',
+        a: 'Yes. TREE TEK services Sanford waterfront and canal-side properties with controlled stump grinding and property-protection planning.',
       },
     ];
     const stumpFaqLd = {
@@ -1532,8 +1532,8 @@ function StaticSeoArticle({
             <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
               <div className="grid gap-8 lg:grid-cols-[1fr_1.05fr] lg:items-center">
                 <div>
-                  <p className="text-emerald-200 text-sm font-semibold uppercase tracking-wide">TREE TEK • PORT ORANGE • VOLUSIA COUNTY</p>
-                  <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Professional Stump Grinding in Port Orange &amp; Volusia County</h1>
+                  <p className="text-emerald-200 text-sm font-semibold uppercase tracking-wide">TREE TEK • SANFORD • SEMINOLE COUNTY</p>
+                  <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Professional Stump Grinding in Sanford &amp; Seminole County</h1>
                   <p className="mt-4 text-emerald-50/95 leading-relaxed max-w-2xl">
                     Premium tree stump grinding services for high-value residential and waterfront properties. TREE TEK
                     combines precision equipment, controlled site planning, and science-backed methods to support long-term
@@ -1551,7 +1551,7 @@ function StaticSeoArticle({
                 <div className="rounded-2xl overflow-hidden border border-emerald-200/30 shadow-2xl">
                   <img
                     src={resolvePublicHeroImage(page.heroImage) || DEFAULT_HERO_IMAGE}
-                    alt={page.heroImageAlt ?? 'stump grinding Port Orange FL by TREE TEK'}
+                    alt={page.heroImageAlt ?? 'stump grinding Sanford FL by TREE TEK'}
                     className="w-full h-[260px] md:h-[420px] object-cover"
                     loading="eager"
                     fetchPriority="high"
@@ -1627,7 +1627,7 @@ function StaticSeoArticle({
             <div className="max-w-5xl mx-auto rounded-2xl border border-gray-100 bg-white p-6 md:p-8 shadow-sm">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Stump Grinding for Waterfront Properties</h2>
               <p className="text-gray-700 leading-relaxed">
-                Waterfront stump grinding in Port Orange requires additional planning around seawalls, docks, pavers,
+                Waterfront stump grinding in Sanford requires additional planning around seawalls, docks, pavers,
                 irrigation systems, decorative landscaping, and tight-access lots. TREE TEK uses controlled debris
                 management, access planning, and lawn preservation methods to protect surrounding landscape investments.
               </p>
@@ -1810,7 +1810,7 @@ function StaticSeoArticle({
             name: 'Tree maintenance and risk evaluation',
             description: page.metaDescription,
             path,
-            areaServed: 'Volusia County, FL and Port Orange, FL',
+            areaServed: 'Seminole County, FL and Sanford, FL',
           })}
         />
 
@@ -1819,7 +1819,7 @@ function StaticSeoArticle({
             <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
               <div className="grid gap-8 lg:grid-cols-[1fr_1.05fr] lg:items-center">
                 <div>
-                  <p className="text-emerald-200 text-sm font-semibold uppercase tracking-wide">TREE TEK • VOLUSIA COUNTY</p>
+                  <p className="text-emerald-200 text-sm font-semibold uppercase tracking-wide">TREE TEK • SEMINOLE COUNTY</p>
                   <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Tree Maintenance Guide for Florida Homeowners</h1>
                   <p className="mt-4 text-emerald-50/95 leading-relaxed max-w-2xl">
                     Healthy trees need more than occasional trimming. Florida&apos;s heat, sandy soils, salt exposure,
@@ -1884,7 +1884,7 @@ function StaticSeoArticle({
                 Effective tree care Florida homeowners can rely on starts with routine observation, seasonal pruning,
                 proper watering, mulch placement, soil compaction awareness, root zone protection, storm preparation,
                 and ongoing tree risk monitoring. A structured maintenance cycle supports long-term canopy health and
-                safer properties in Volusia County.
+                safer properties in Seminole County.
               </p>
             </div>
           </Section>
@@ -2088,7 +2088,7 @@ function StaticSeoArticle({
         a: 'Saturated soils, hidden root decay, structural defects, and high wind loads are common contributors to failure during storms.',
       },
       {
-        q: 'Do you service waterfront properties in Port Orange?',
+        q: 'Do you service waterfront properties in Sanford?',
         a: 'Yes. TREE TEK plans removals for seawalls, docks, pools, pavers, fencing, and other high-value waterfront features.',
       },
       {
@@ -2139,7 +2139,7 @@ function StaticSeoArticle({
             name: 'Tree risk evaluation and removal planning',
             description: page.metaDescription,
             path,
-            areaServed: 'Port Orange, FL and Volusia County, FL',
+            areaServed: 'Sanford, FL and Seminole County, FL',
           })}
         />
 
@@ -2148,10 +2148,10 @@ function StaticSeoArticle({
             <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
               <div className="grid gap-8 lg:grid-cols-[1fr_1.05fr] lg:items-center">
                 <div>
-                  <p className="text-emerald-200 text-sm font-semibold uppercase tracking-wide">TREE TEK • VOLUSIA COUNTY</p>
-                  <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">When to Remove a Tree in Port Orange, FL</h1>
+                  <p className="text-emerald-200 text-sm font-semibold uppercase tracking-wide">TREE TEK • SEMINOLE COUNTY</p>
+                  <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">When to Remove a Tree in Sanford, FL</h1>
                   <p className="mt-4 text-emerald-50/95 leading-relaxed max-w-2xl">
-                    Tree removal is not always the first option. TREE TEK helps Port Orange homeowners understand when a
+                    Tree removal is not always the first option. TREE TEK helps Sanford homeowners understand when a
                     tree can be preserved through pruning, cabling, or health care — and when removal is the safest
                     choice for your home, waterfront property, driveway, roofline, or family.
                   </p>
@@ -2166,8 +2166,8 @@ function StaticSeoArticle({
                 </div>
                 <div className="w-full rounded-2xl overflow-hidden border border-emerald-200/30 shadow-2xl bg-white/5 p-1">
                   <img
-                    src="/images/When-To-Remove-A-Tree-In-Port-Orange-FL.png"
-                    alt="TREE TEK assessing when to remove a tree in Port Orange FL"
+                    src="/images/When-To-Remove-A-Tree-In-Sanford-FL.png"
+                    alt="TREE TEK assessing when to remove a tree in Sanford FL"
                     className="w-full h-auto object-contain rounded-2xl shadow-2xl"
                     loading="eager"
                     fetchPriority="high"
@@ -2183,7 +2183,7 @@ function StaticSeoArticle({
               <div className="rounded-2xl border border-gray-100 bg-white p-6 md:p-8 shadow-sm">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Signs a Tree May Need to Be Removed</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  When to remove a tree in Port Orange FL often comes down to structural risk, not appearance alone.
+                  When to remove a tree in Sanford FL often comes down to structural risk, not appearance alone.
                   Advanced decay, hollow trunks, trunk cracking, severe lean, root plate movement, repeated limb
                   failure, fungal growth, storm damage, declining canopy health, and tree-to-structure conflicts can
                   all indicate elevated failure potential.
@@ -2232,7 +2232,7 @@ function StaticSeoArticle({
               <p className="text-gray-700 leading-relaxed">
                 TREE TEK evaluates surrounding structures, target zones, occupancy, equipment access, species-specific
                 failure tendencies, storm exposure, root stability, and waterfront constraints before recommending
-                removal. This is especially important in Port Orange waterfront properties and mature neighborhoods where
+                removal. This is especially important in Sanford waterfront properties and mature neighborhoods where
                 hurricane exposure and saturated soils can increase consequence levels.
               </p>
             </div>
@@ -2276,7 +2276,7 @@ function StaticSeoArticle({
             <div className="max-w-5xl mx-auto rounded-2xl border border-gray-100 bg-white p-6 md:p-8 shadow-sm">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Tree Removal for Waterfront and High-Value Properties</h2>
               <p className="text-gray-700 leading-relaxed">
-                Waterfront tree removal in Port Orange requires precision around seawalls, dock access, irrigation
+                Waterfront tree removal in Sanford requires precision around seawalls, dock access, irrigation
                 systems, pavers, landscaping, pools, fences, and rooflines. TREE TEK uses crane-assisted removals,
                 controlled rigging and lowering techniques, and turf protection mats to reduce collateral impact.
                 Waterfront removals demand planning, precision, and property protection at every stage.
@@ -2313,7 +2313,7 @@ function StaticSeoArticle({
 
           <Section variant="gray">
             <div className="max-w-5xl mx-auto rounded-2xl bg-gradient-to-br from-emerald-950 via-emerald-900 to-emerald-950 p-6 md:p-8 shadow-xl ring-1 ring-emerald-800/60">
-              <h2 className="text-2xl md:text-3xl font-bold text-white text-center">Schedule a Tree Risk Evaluation in Port Orange</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-white text-center">Schedule a Tree Risk Evaluation in Sanford</h2>
               <p className="mt-4 text-emerald-50/95 leading-relaxed text-center">
                 Concerned about a leaning, damaged, or declining tree? TREE TEK can inspect the tree and explain whether
                 removal, pruning, or another solution is the safest option for your property.
@@ -2375,8 +2375,8 @@ function StaticSeoArticle({
     );
   }
 
-  if (isEmergencyTreeServiceDaytona) {
-    const daytonaEmergencyFaqs = [
+  if (isEmergencyTreeServiceLakeMary) {
+    const lakeMaryEmergencyFaqs = [
       {
         q: 'What qualifies as a tree emergency?',
         a: 'Tree emergencies usually include fallen trees, large hanging limbs, split trunks, unstable lean after storms, and blocked access routes creating immediate safety risk.',
@@ -2394,8 +2394,8 @@ function StaticSeoArticle({
         a: 'Yes. We perform controlled emergency tree removal from roof-impact sites using careful cutting and debris handling methods.',
       },
       {
-        q: 'Do you provide emergency cleanup in Daytona Beach?',
-        a: 'Yes. We provide emergency storm cleanup and hazardous tree removal support throughout Daytona Beach and nearby Volusia County areas.',
+        q: 'Do you provide emergency cleanup in Lake Mary?',
+        a: 'Yes. We provide emergency storm cleanup and hazardous tree removal support throughout Lake Mary and nearby Seminole County areas.',
       },
       {
         q: 'Can storm-damaged trees fail later?',
@@ -2410,10 +2410,10 @@ function StaticSeoArticle({
         a: 'Yes. Emergency crane-assisted support is available when high-risk picks or restricted drop zones require lifting control.',
       },
     ];
-    const daytonaEmergencyFaqLd = {
+    const lakeMaryEmergencyFaqLd = {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: daytonaEmergencyFaqs.map((f) => ({
+      mainEntity: lakeMaryEmergencyFaqs.map((f) => ({
         '@type': 'Question',
         name: f.q,
         acceptedAnswer: {
@@ -2448,7 +2448,7 @@ function StaticSeoArticle({
       'Waterfront Property Experience',
       'Controlled Removal Methods',
       'Careful Property Protection',
-      'Local Volusia County Knowledge',
+      'Local Seminole County Knowledge',
       'Clean Worksites',
       'Licensed & Insured',
     ];
@@ -2458,20 +2458,20 @@ function StaticSeoArticle({
         <SEO title={page.metaTitle} description={page.metaDescription} keywords={keywords} path={path} image={resolvePublicHeroImage(page.heroImage)} />
         <JsonLd data={webLd} />
         {serviceLd ? <JsonLd data={serviceLd} /> : null}
-        <JsonLd data={daytonaEmergencyFaqLd} />
+        <JsonLd data={lakeMaryEmergencyFaqLd} />
 
         <article className="bg-emerald-50/40">
           <section className="bg-gradient-to-br from-emerald-950 via-emerald-900 to-emerald-800 text-white">
             <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
               <div className="grid gap-8 lg:grid-cols-[1fr_1.05fr] lg:items-center">
                 <div>
-                  <p className="text-emerald-200 text-sm font-semibold uppercase tracking-wide">DAYTONA BEACH • TREE TEK</p>
-                  <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Emergency Tree Service in Daytona Beach, FL</h1>
+                  <p className="text-emerald-200 text-sm font-semibold uppercase tracking-wide">LAKE MARY • TREE TEK</p>
+                  <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">Emergency Tree Service in Lake Mary, FL</h1>
                   <p className="mt-4 text-emerald-50/95 leading-relaxed max-w-2xl">
-                    Fast-moving squalls, tropical systems, and hurricane-force winds can leave Daytona Beach properties
+                    Fast-moving squalls, tropical systems, and hurricane-force winds can leave Lake Mary properties
                     with split trees, hanging limbs, blocked driveways, and dangerous storm debris. TREE TEK provides
                     emergency tree service with rapid hazard assessment, controlled removals, debris cleanup, and
-                    careful property protection throughout Daytona Beach and Volusia County.
+                    careful property protection throughout Lake Mary and Seminole County.
                   </p>
                   <div className="mt-7 flex flex-wrap gap-3">
                     <Link to="/quote" className="inline-flex items-center justify-center bg-white text-emerald-900 font-bold py-3 px-7 rounded-lg hover:bg-emerald-50 transition shadow-md">
@@ -2485,14 +2485,14 @@ function StaticSeoArticle({
 
                 <div className="w-full rounded-2xl overflow-hidden shadow-2xl border border-white/15 bg-white/5 p-1">
                   <img
-                    src={resolvePublicHeroImage(page.heroImage) || '/images/Emergency-Tree-Service-Daytona-Beach-FL.png'}
-                    alt={page.heroImageAlt ?? 'TREE TEK emergency tree service in Daytona Beach Florida'}
+                    src={resolvePublicHeroImage(page.heroImage) || '/images/Emergency-Tree-Service-Lake-Mary-FL.png'}
+                    alt={page.heroImageAlt ?? 'TREE TEK emergency tree service in Lake Mary Florida'}
                     className="w-full h-auto object-contain rounded-2xl shadow-2xl"
                     loading="eager"
                     fetchPriority="high"
                     decoding="async"
                     onError={(e) => {
-                      e.currentTarget.src = '/images/Emergency-Tree-Service-Daytona-Beach-FL.png';
+                      e.currentTarget.src = '/images/Emergency-Tree-Service-Lake-Mary-FL.png';
                     }}
                   />
                 </div>
@@ -2504,7 +2504,7 @@ function StaticSeoArticle({
             <div className="max-w-5xl mx-auto rounded-2xl border border-gray-100 bg-white p-6 md:p-8 shadow-sm">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">What Emergency Tree Service Includes</h2>
               <p className="text-gray-700 leading-relaxed">
-                Emergency tree service Daytona Beach FL calls often involve fallen tree removal, hanging limb removal,
+                Emergency tree service Lake Mary FL calls often involve fallen tree removal, hanging limb removal,
                 emergency storm cleanup, driveway and roadway clearing, hazard reduction, controlled cutting, roof and
                 structure protection, and emergency crane or grapple truck support.
               </p>
@@ -2567,7 +2567,7 @@ function StaticSeoArticle({
 
           <Section variant="gray">
             <div className="max-w-6xl mx-auto rounded-2xl border border-gray-100 bg-white p-6 md:p-8 shadow-sm">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why Daytona Beach Homeowners Choose TREE TEK</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why Lake Mary Homeowners Choose TREE TEK</h2>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {trustCards.map((item) => (
                   <div key={item} className="rounded-xl border border-emerald-100 bg-emerald-50/30 px-4 py-3 text-sm font-semibold text-gray-800">
@@ -2621,7 +2621,7 @@ function StaticSeoArticle({
             <div className="max-w-5xl mx-auto rounded-2xl border border-gray-100 bg-white p-6 md:p-8 shadow-sm">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Frequently asked questions</h2>
               <div className="space-y-3">
-                {daytonaEmergencyFaqs.map((f) => (
+                {lakeMaryEmergencyFaqs.map((f) => (
                   <details key={f.q} className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
                     <summary className="font-semibold text-gray-900 cursor-pointer">{f.q}</summary>
                     <p className="mt-2 text-gray-700 leading-relaxed">{f.a}</p>
@@ -2643,7 +2643,7 @@ function StaticSeoArticle({
       },
       {
         q: 'Do you offer 24/7 emergency tree service?',
-        a: 'Yes. TREE TEK provides 24/7 emergency tree response across Port Orange and Volusia County.',
+        a: 'Yes. TREE TEK provides 24/7 emergency tree response across Sanford and Seminole County.',
       },
       {
         q: 'Can you remove trees near homes, roofs, or pool enclosures?',
@@ -2651,11 +2651,11 @@ function StaticSeoArticle({
       },
       {
         q: 'Do you handle storm damage cleanup?',
-        a: 'Yes. We handle storm damage cleanup Port Orange homeowners need after high winds, hurricanes, and severe rain events.',
+        a: 'Yes. We handle storm damage cleanup Sanford homeowners need after high winds, hurricanes, and severe rain events.',
       },
       {
         q: 'What areas do you serve?',
-        a: 'We serve Port Orange, Daytona Beach, South Daytona, Ormond Beach, New Smyrna Beach, Edgewater, Ponce Inlet, and nearby Volusia County communities.',
+        a: 'We serve Sanford, Lake Mary, Longwood, and nearby Seminole County communities.',
       },
       {
         q: 'Can you help with insurance documentation?',
@@ -2689,7 +2689,7 @@ function StaticSeoArticle({
     const trustCards = [
       'Licensed & Insured',
       'Fast Emergency Dispatch',
-      'Local Volusia County Crew',
+      'Local Seminole County Crew',
       'Property Protection Focused',
       'Crane-Assisted Removal Available',
       'Insurance Documentation Support',
@@ -2706,7 +2706,7 @@ function StaticSeoArticle({
       ['Licensed & Insured', 'Fully insured for your protection.', ShieldCheck],
       ['Experienced Crew', 'Skilled professionals for dangerous situations.', UserCheck],
       ['Emergency Equipment', 'The right tools for efficient work.', Wrench],
-      ['Local Experts', 'We know Port Orange and Volusia County.', MapPin],
+      ['Local Experts', 'We know Sanford and Seminole County.', MapPin],
       ['Trusted by Neighbors', 'Homeowners rely on TREE TEK.', HeartHandshake],
       ['Compassionate Service', 'We understand stressful situations.', LifeBuoy],
     ] as const;
@@ -2728,11 +2728,11 @@ function StaticSeoArticle({
                     24/7 Emergency Tree Response
                   </p>
                   <h1 className="mt-5 text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
-                    Emergency Tree Service in Port Orange &amp; Volusia County
+                    Emergency Tree Service in Sanford &amp; Seminole County
                   </h1>
                   <p className="mt-5 text-slate-700 leading-relaxed max-w-xl">
                     Fast emergency tree removal, storm cleanup, hazardous limb removal, and hurricane response services
-                    across Port Orange, Daytona Beach, South Daytona, and surrounding Volusia County areas.
+                    across Sanford, Lake Mary, Longwood, and surrounding Seminole County areas.
                   </p>
                   <div className="mt-7 flex flex-wrap gap-3">
                     <Link to="/quote" className="inline-flex items-center justify-center bg-emerald-800 text-white font-bold py-3 px-7 rounded-lg hover:bg-emerald-700 transition shadow-md">
@@ -2755,7 +2755,7 @@ function StaticSeoArticle({
                   </div>
                   <div className="mt-5 rounded-xl border border-emerald-300/25 bg-emerald-900/40 p-4 text-emerald-50">
                     <p className="text-sm leading-relaxed">
-                      TREE TEK emergency crews are dispatched across Port Orange and Volusia County for emergency tree
+                      TREE TEK emergency crews are dispatched across Sanford and Seminole County for emergency tree
                       removal, storm damage cleanup, and dangerous tree stabilization near homes and access routes.
                     </p>
                   </div>
@@ -2787,7 +2787,7 @@ function StaticSeoArticle({
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Emergency Tree Response Capabilities</h2>
                 <p className="mt-2 text-gray-600 leading-relaxed">
                   TREE TEK responds to urgent tree hazards with organized dispatch, trained crews, and emergency-ready
-                  equipment across Port Orange and Volusia County.
+                  equipment across Sanford and Seminole County.
                 </p>
                 <div className="mt-6 grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
                   <div className="grid gap-3 sm:grid-cols-2">
@@ -2848,7 +2848,7 @@ function StaticSeoArticle({
                       {[
                         ['24/7 Emergency Intake', 'Active'],
                         ['Dispatch Priority', 'Hazard First'],
-                        ['Service Area', 'Volusia County'],
+                        ['Service Area', 'Seminole County'],
                         ['Equipment', 'Rigging / Saw / Crane Support'],
                         ['Phone Response', '321-282-9795'],
                       ].map(([k, v]) => (
@@ -2874,7 +2874,7 @@ function StaticSeoArticle({
                       'Licensed & Insured',
                       'Storm Cleanup',
                       'Crane-Assisted Removal',
-                      'Local Volusia Crew',
+                      'Local Seminole Crew',
                     ].map((item, idx) => (
                       <div key={item} className={`px-4 py-3 text-sm font-semibold ${idx > 0 ? 'lg:border-l lg:border-emerald-700' : ''}`}>
                         {item}
@@ -2914,8 +2914,8 @@ function StaticSeoArticle({
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Local Emergency Tree Response</h2>
                 <div className="max-w-4xl space-y-4 text-gray-700 leading-relaxed">
                   <p>
-                    Our emergency crews respond throughout Volusia County, including Port Orange, Daytona Beach, South
-                    Daytona, Ormond Beach, New Smyrna Beach, Edgewater, and Ponce Inlet. We regularly handle coastal
+                    Our emergency crews respond throughout Seminole County, including Sanford, Lake Mary, and
+                    Longwood. We regularly handle coastal
                     lots, waterfront properties, and canal-side homes where storm conditions can escalate quickly.
                   </p>
                   <p>
@@ -3069,7 +3069,7 @@ function StaticSeoArticle({
                 </h2>
                 <p className="mt-3 md:mt-4 text-sm md:text-base text-red-900/90 text-center max-w-3xl mx-auto leading-relaxed">
                   If a tree has fallen, shifted, cracked, or become dangerous after severe weather, TREE TEK is ready
-                  to respond with fast emergency tree removal and storm cleanup throughout Volusia County.
+                  to respond with fast emergency tree removal and storm cleanup throughout Seminole County.
                 </p>
                 <div className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
                   <a href={telHref} className="inline-flex justify-center items-center gap-2 min-h-[48px] rounded-xl border border-red-300 bg-white text-red-900 font-bold text-[15px] md:text-base px-6 py-3 hover:bg-red-50 transition-colors">
@@ -3095,7 +3095,7 @@ function StaticSeoArticle({
     );
   }
 
-  if (isPortOrangeTreeRemoval) {
+  if (isSanfordTreeRemoval) {
     const featureItems = [
       {
         title: 'Safety First',
@@ -3120,7 +3120,7 @@ function StaticSeoArticle({
     ];
 
     const helpCards = [
-      ['Permit Guidance', 'Tree removal permit Port Orange guidance and submission prep.'],
+      ['Permit Guidance', 'Tree removal permit Sanford guidance and submission prep.'],
       ['Crane-Assisted Removals', 'Controlled picks for tight lots and structure clearance.'],
       ['Waterfront Protection', 'Planning for seawalls, drainage, and shoreline stability.'],
       ['HOA & Access Coordination', 'Notes for gate access, notices, and property logistics.'],
@@ -3153,14 +3153,14 @@ function StaticSeoArticle({
                 <div>
                   <p className="inline-flex items-center gap-2 rounded-full border border-emerald-300/40 bg-emerald-900/60 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-100">
                     <MapPin className="h-3.5 w-3.5" aria-hidden />
-                    PORT ORANGE, FL
+                    SANFORD, FL
                   </p>
                   <h1 className="mt-4 text-4xl md:text-5xl font-bold leading-tight">
                     Tree Removal
-                    <span className="block font-serif italic text-emerald-100">in Port Orange</span>
+                    <span className="block font-serif italic text-emerald-100">in Sanford</span>
                   </h1>
                   <p className="mt-4 text-emerald-50/95 leading-relaxed max-w-xl">
-                    Local tree removal planning should balance safety, property protection, and Port Orange tree
+                    Local tree removal planning should balance safety, property protection, and Sanford tree
                     removal regulations before cutting begins. Tree Tek helps homeowners move from permit questions to
                     compliant, well-coordinated removal.
                   </p>
@@ -3198,7 +3198,7 @@ function StaticSeoArticle({
                     <h2 className="text-xl font-bold mb-3">Permit Details</h2>
                     <div className="space-y-2 text-sm">
                       {[
-                        ['Jurisdiction', 'City of Port Orange Growth Management'],
+                        ['Jurisdiction', 'City of Sanford Growth Management'],
                         ['Permit Type', 'Tree Removal Permit'],
                         ['Timeline', '5-10 business days'],
                         ['What We Provide', 'Permit application, site plan, arborist eval'],
@@ -3238,7 +3238,7 @@ function StaticSeoArticle({
               <div className="rounded-2xl border border-gray-100 bg-white shadow-sm p-6 md:p-8 relative overflow-hidden">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Why Removals Vary Street by Street</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Tree removal laws Port Orange FL property owners navigate can vary by waterfront position, access
+                  Tree removal laws Sanford FL property owners navigate can vary by waterfront position, access
                   constraints, and utility exposure. In neighborhoods with canal edges and tighter lots, local review
                   may apply before full removal.
                 </p>
@@ -3258,8 +3258,8 @@ function StaticSeoArticle({
               </div>
               <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-100 bg-emerald-50 min-h-[220px] md:min-h-[280px] lg:min-h-[320px]">
                 <img
-                  src="/images/port-orange-tree-removal-permit-reference.jpeg"
-                  alt="Permit and compliance planning context for Port Orange tree removal"
+                  src="/images/sanford-tree-removal-permit-reference.jpeg"
+                  alt="Permit and compliance planning context for Sanford tree removal"
                   className="w-full h-full object-contain"
                   loading="lazy"
                   decoding="async"
@@ -3272,7 +3272,7 @@ function StaticSeoArticle({
             <div className="max-w-6xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">What Tree Tek Helps With</h2>
               <p className="text-gray-700 mb-6 max-w-3xl">
-                From tree removal permit Port Orange prep to field safety execution, our team supports homeowners with
+                From tree removal permit Sanford prep to field safety execution, our team supports homeowners with
                 practical local guidance and protection-first planning.
               </p>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
@@ -3291,12 +3291,12 @@ function StaticSeoArticle({
             <div className="max-w-6xl mx-auto rounded-2xl border border-emerald-100 bg-white p-6 shadow-sm">
               <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Official resources</h2>
               <a
-                href="https://www.port-orange.org"
+                href="https://www.sanfordfl.gov"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-emerald-800 font-semibold hover:text-emerald-700 underline"
               >
-                City of Port Orange Official Website
+                City of Sanford Official Website
               </a>
             </div>
           </Section>
@@ -3308,14 +3308,14 @@ function StaticSeoArticle({
                   Need Help Navigating Tree Removal Requirements?
                 </h2>
                 <p className="mt-3 md:mt-4 text-sm md:text-base text-emerald-50/95 text-center max-w-3xl mx-auto leading-relaxed">
-                  We understand Port Orange conditions, from waterfront access and utility conflicts to HOA constraints.
+                  We understand Sanford conditions, from waterfront access and utility conflicts to HOA constraints.
                   Tree Tek helps you plan safe removals and clear next steps, including emergency stabilization via{' '}
-                  <Link to="/emergency-tree-service-volusia-county" className="underline hover:text-white">
-                    emergency tree service in Volusia County
+                  <Link to="/emergency-tree-service-seminole-county" className="underline hover:text-white">
+                    emergency tree service in Seminole County
                   </Link>{' '}
                   and post-removal follow-up like{' '}
-                  <Link to="/stump-grinding-daytona-beach" className="underline hover:text-white">
-                    stump grinding in Daytona Beach
+                  <Link to="/stump-grinding-lake-mary" className="underline hover:text-white">
+                    stump grinding in Lake Mary
                   </Link>
                   .
                 </p>
@@ -3360,15 +3360,15 @@ function StaticSeoArticle({
         <header className="bg-gradient-to-br from-emerald-900 to-emerald-800 text-white">
           <div className="max-w-4xl mx-auto px-6 py-12 md:py-14">
             <p className="text-emerald-200 text-sm font-medium uppercase tracking-wide mb-2">
-              {page.location ? `${page.location} • TREE TEK` : 'TREE TEK • Volusia County'}
+              {page.location ? `${page.location} • TREE TEK` : 'TREE TEK • Seminole County'}
             </p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">{page.h1}</h1>
             <p className="text-lg text-emerald-100 max-w-3xl leading-relaxed">{page.intro}</p>
-            {page.slug === 'tree-removal-daytona-beach' ? (
+            {page.slug === 'tree-removal-lake-mary' ? (
               <div className="mt-6 w-full rounded-xl overflow-hidden shadow-lg">
                 <img
-                  src="/images/daytona-beach-tree-removal-coastal-home-crane-service-volusia-county-florida.png"
-                  alt="Crane-assisted tree removal at a coastal home in Daytona Beach Florida with tight yard access and nearby waterfront"
+                  src="/images/lake-mary-tree-removal-coastal-home-crane-service-seminole-county-florida.png"
+                  alt="Crane-assisted tree removal at a coastal home in Lake Mary Florida with tight yard access and nearby waterfront"
                   className="w-full h-[250px] md:h-[400px] object-cover transition-transform duration-500 hover:scale-105"
                   loading="lazy"
                   decoding="async"
@@ -3392,11 +3392,11 @@ function StaticSeoArticle({
           </div>
         </header>
 
-        {page.slug === 'tree-removal-daytona-beach' ? (
+        {page.slug === 'tree-removal-lake-mary' ? (
           <div className="max-w-4xl mx-auto px-6 -mt-6 relative z-10">
             <div className="rounded-2xl bg-white shadow-xl p-6 md:p-8 border border-gray-100">
               <h2 className="text-2xl md:text-3xl font-bold text-slate-950 mb-6">
-                Why Daytona Beach Tree Removal Needs Special Planning
+                Why Lake Mary Tree Removal Needs Special Planning
               </h2>
               <div className="grid gap-4 md:grid-cols-2">
                 {[
@@ -3408,7 +3408,7 @@ function StaticSeoArticle({
                   {
                     icon: '🏡',
                     title: 'Tight Side Yards',
-                    text: 'Many Daytona Beach properties have narrow access points, pavers, pools, fences, and landscaping that need protection.',
+                    text: 'Many Lake Mary properties have narrow access points, pavers, pools, fences, and landscaping that need protection.',
                   },
                   {
                     icon: '🏗️',
@@ -3430,14 +3430,14 @@ function StaticSeoArticle({
               </div>
             </div>
           </div>
-        ) : page.heroImage && !isPortOrangeTreeRemoval ? (
+        ) : page.heroImage && !isSanfordTreeRemoval ? (
           <div className="max-w-4xl mx-auto px-6 -mt-6 relative z-10">
             <div className={getHeroFrameClasses(page.slug)}>
               <img
                 src={resolvePublicHeroImage(page.heroImage) || DEFAULT_HERO_IMAGE}
                 alt={page.heroImageAlt ?? `TREE TEK — ${page.h1}`}
                 className={
-                  page.slug === 'crane-tree-work' || page.slug === 'stump-grinding-port-orange' || page.slug === 'tree-removal'
+                  page.slug === 'crane-tree-work' || page.slug === 'stump-grinding-sanford' || page.slug === 'tree-removal'
                     ? 'w-full h-auto object-contain rounded-xl mx-auto'
                     : `w-full h-full object-cover ${getHeroImageObjectPositionClasses(page)} ${
                         page.slug === PERMIT_PAGE_SLUG ? 'saturate-90' : ''
@@ -3461,16 +3461,16 @@ function StaticSeoArticle({
           </div>
         ) : null}
 
-        {page.slug === PORT_ORANGE_TREE_REMOVAL_SLUG ? (
+        {page.slug === SANFORD_TREE_REMOVAL_SLUG ? (
           <Section variant="white">
             <div className="max-w-4xl mx-auto space-y-8">
               <div className="rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 via-white to-emerald-50 p-6 md:p-8 shadow-sm">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Why Removals Vary Street by Street</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  In Port Orange, tree removal scope can change quickly between interior neighborhoods and canal-side
+                  In Sanford, tree removal scope can change quickly between interior neighborhoods and canal-side
                   parcels. For homeowners planning{' '}
-                  <Link to="/tree-removal-port-orange" className="text-emerald-800 font-semibold hover:text-emerald-700 underline">
-                    tree removal in Port Orange
+                  <Link to="/tree-removal-sanford" className="text-emerald-800 font-semibold hover:text-emerald-700 underline">
+                    tree removal in Sanford
                   </Link>
                   , local access and compliance details often affect both permit timing and removal method.
                 </p>
@@ -3503,7 +3503,7 @@ function StaticSeoArticle({
                     },
                     {
                       title: 'Permit considerations',
-                      text: 'Port Orange tree removal regulations may require local review depending on tree condition and property context.',
+                      text: 'Sanford tree removal regulations may require local review depending on tree condition and property context.',
                       icon: ShieldCheck,
                     },
                   ].map((item) => (
@@ -3529,17 +3529,17 @@ function StaticSeoArticle({
                 <div className="rounded-2xl border border-emerald-200 bg-white p-6 md:p-7 shadow-sm">
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Permit Details</h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    Tree removal permit Port Orange requirements typically depend on site conditions, tree type, and
+                    Tree removal permit Sanford requirements typically depend on site conditions, tree type, and
                     local review. This quick reference is for planning only; official city review controls final
                     approvals.
                   </p>
                   <div className="space-y-3">
                     {[
-                      ['Jurisdiction', 'City of Port Orange review channels may include planning, zoning, and permit intake workflows.'],
+                      ['Jurisdiction', 'City of Sanford review channels may include planning, zoning, and permit intake workflows.'],
                       ['Permit type', 'Applications may vary by property type, tree condition, and whether waterfront or right-of-way constraints apply.'],
                       ['Typical review timeline', 'Timing typically depends on application completeness, inspections, and any supplemental documentation.'],
                       ['What Tree Tek helps provide', 'Scope notes, site-access context, and practical removal planning details for homeowner submissions.'],
-                      ['Compliance note', 'Tree removal laws Port Orange FL and Port Orange tree removal regulations may change; local review may apply before cutting.'],
+                      ['Compliance note', 'Tree removal laws Sanford FL and Sanford tree removal regulations may change; local review may apply before cutting.'],
                     ].map(([label, value]) => (
                       <div key={label} className="rounded-lg border border-emerald-100 bg-emerald-50/50 px-4 py-3">
                         <p className="text-xs font-semibold uppercase tracking-wide text-emerald-800">{label}</p>
@@ -3583,12 +3583,12 @@ function StaticSeoArticle({
                   Verify current city requirements before finalizing removal schedules.
                 </p>
                 <a
-                  href="https://www.port-orange.org"
+                  href="https://www.sanfordfl.gov"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-emerald-800 font-semibold hover:text-emerald-700 underline"
                 >
-                  City of Port Orange Official Website
+                  City of Sanford Official Website
                 </a>
               </div>
 
@@ -3597,15 +3597,15 @@ function StaticSeoArticle({
                   Need Help Navigating Tree Removal Requirements?
                 </h2>
                 <p className="mt-3 text-emerald-50/95 text-center max-w-3xl mx-auto leading-relaxed">
-                  Tree Tek brings local Port Orange experience, from waterfront access challenges to permit workflow
+                  Tree Tek brings local Sanford experience, from waterfront access challenges to permit workflow
                   expectations. We help homeowners understand next steps, protect structures and landscaping, and plan
                   safe removals with clear guidance through the process. For urgent hazards, start with{' '}
-                  <Link to="/emergency-tree-service-volusia-county" className="underline hover:text-white">
-                    emergency tree service in Volusia County
+                  <Link to="/emergency-tree-service-seminole-county" className="underline hover:text-white">
+                    emergency tree service in Seminole County
                   </Link>
                   . After removal, many properties also benefit from follow-up{' '}
-                  <Link to="/stump-grinding-daytona-beach" className="underline hover:text-white">
-                    stump grinding in Daytona Beach
+                  <Link to="/stump-grinding-lake-mary" className="underline hover:text-white">
+                    stump grinding in Lake Mary
                   </Link>
                   .
                 </p>
@@ -3628,7 +3628,7 @@ function StaticSeoArticle({
           </Section>
         ) : null}
 
-        {(isPortOrangeTreeRemoval ? [] : page.sections).map((section) => (
+        {(isSanfordTreeRemoval ? [] : page.sections).map((section) => (
           <Section key={section.heading} variant="white">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{section.heading}</h2>
@@ -3650,12 +3650,12 @@ function StaticSeoArticle({
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Before You Remove a Tree</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Permit questions are local and situational. If you are comparing options for{' '}
-                  <Link to="/tree-removal-port-orange" className="text-emerald-800 font-semibold hover:text-emerald-700 underline">
-                    tree removal in Port Orange
+                  <Link to="/tree-removal-sanford" className="text-emerald-800 font-semibold hover:text-emerald-700 underline">
+                    tree removal in Sanford
                   </Link>{' '}
                   or{' '}
-                  <Link to="/tree-removal-daytona-beach" className="text-emerald-800 font-semibold hover:text-emerald-700 underline">
-                    tree removal in Daytona Beach
+                  <Link to="/tree-removal-lake-mary" className="text-emerald-800 font-semibold hover:text-emerald-700 underline">
+                    tree removal in Lake Mary
                   </Link>
                   , start by confirming what your local office requires before scheduling work.
                 </p>
@@ -3674,22 +3674,22 @@ function StaticSeoArticle({
               <div className="max-w-3xl mx-auto">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why Tree Removal Rules Change by City</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Tree ordinances can differ across Daytona Beach, Port Orange, South Daytona, and broader Volusia County
+                  Tree ordinances can differ across Lake Mary, Sanford, Longwood, and broader Seminole County
                   service areas. The same species or trunk diameter may be handled differently depending on local code
                   updates, protected-zone overlays, and neighborhood requirements.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
                   If the tree is storm-damaged, review{' '}
-                  <Link to="/emergency-tree-service-volusia-county" className="text-emerald-800 font-semibold hover:text-emerald-700 underline">
-                    emergency tree service in Volusia County
+                  <Link to="/emergency-tree-service-seminole-county" className="text-emerald-800 font-semibold hover:text-emerald-700 underline">
+                    emergency tree service in Seminole County
                   </Link>{' '}
                   options first. If your scope includes canopy correction or cleanup after approval, see{' '}
-                  <Link to="/tree-trimming-daytona-beach" className="text-emerald-800 font-semibold hover:text-emerald-700 underline">
-                    tree trimming in Daytona Beach
+                  <Link to="/tree-trimming-lake-mary" className="text-emerald-800 font-semibold hover:text-emerald-700 underline">
+                    tree trimming in Lake Mary
                   </Link>{' '}
                   and{' '}
-                  <Link to="/stump-grinding-daytona-beach" className="text-emerald-800 font-semibold hover:text-emerald-700 underline">
-                    stump grinding in Daytona Beach
+                  <Link to="/stump-grinding-lake-mary" className="text-emerald-800 font-semibold hover:text-emerald-700 underline">
+                    stump grinding in Lake Mary
                   </Link>
                   .
                 </p>
@@ -3715,32 +3715,32 @@ function StaticSeoArticle({
                   </li>
                   <li>
                     <a
-                      href="https://www.volusia.org/services/growth-and-resource-management/environmental-management/permitting/"
+                      href="https://www.seminolecountyfl.gov/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-emerald-800 font-semibold hover:text-emerald-700 underline"
                     >
-                      Volusia County environmental permitting resources
+                      Seminole County environmental permitting resources
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://www.daytonabeach.gov/1140"
+                      href="https://www.lakemaryfl.com/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-emerald-800 font-semibold hover:text-emerald-700 underline"
                     >
-                      City of Daytona Beach permit and licensing portal
+                      City of Lake Mary permit and licensing portal
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://ci-portorange-fl.smartgovcommunity.com/"
+                      href="https://www.sanfordfl.gov/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-emerald-800 font-semibold hover:text-emerald-700 underline"
                     >
-                      City of Port Orange permitting portal
+                      City of Sanford permitting portal
                     </a>
                   </li>
                 </ul>
@@ -3785,31 +3785,31 @@ function StaticSeoArticle({
           </>
         ) : null}
 
-        {page.slug === PORT_ORANGE_TREE_REMOVAL_SLUG ? (
+        {page.slug === SANFORD_TREE_REMOVAL_SLUG ? (
           <>
             <Section variant="white">
               <div className="max-w-3xl mx-auto">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  Tree Removal Permits in Port Orange, FL (Port Orange tree removal permit)
+                  Tree Removal Permits in Sanford, FL (Sanford tree removal permit)
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   If you are planning{' '}
-                  <Link to="/tree-removal-port-orange" className="text-emerald-800 font-semibold hover:text-emerald-700 underline">
-                    tree removal in Port Orange
+                  <Link to="/tree-removal-sanford" className="text-emerald-800 font-semibold hover:text-emerald-700 underline">
+                    tree removal in Sanford
                   </Link>
-                  , tree removal permit Port Orange requirements may depend on the tree&apos;s diameter at breast height
+                  , tree removal permit Sanford requirements may depend on the tree&apos;s diameter at breast height
                   (DBH), protected species status, property location (including front yard placement, waterfront
                   conditions, easements, or right-of-way constraints), and whether the property is residential or
                   commercial.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  In practice, tree removal laws Port Orange FL property owners deal with are typically enforced through
-                  city planning, zoning, and environmental review channels. Port Orange tree removal regulations may
+                  In practice, tree removal laws Sanford FL property owners deal with are typically enforced through
+                  city planning, zoning, and environmental review channels. Sanford tree removal regulations may
                   allow exemptions for dead, hazardous, or storm-damaged trees, but documentation like photos and, in
                   some cases, an arborist assessment may still be requested during review.
                 </p>
                 <p className="text-gray-700 leading-relaxed mt-4">
-                  In Port Orange, waterfront and canal-adjacent properties often require extra consideration due to
+                  In Sanford, waterfront and canal-adjacent properties often require extra consideration due to
                   shoreline stability, drainage, and property boundary constraints.
                 </p>
                 <p className="text-gray-700 leading-relaxed mt-4">
@@ -3822,10 +3822,10 @@ function StaticSeoArticle({
             <Section variant="gray">
               <div className="max-w-3xl mx-auto">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  How to Get a Tree Removal Permit in Port Orange (do you need a permit Port Orange)
+                  How to Get a Tree Removal Permit in Sanford (do you need a permit Sanford)
                 </h2>
                 <ol className="space-y-3 text-gray-700 list-decimal pl-6">
-                  <li>Contact the City of Port Orange to confirm current tree permit expectations for your address.</li>
+                  <li>Contact the City of Sanford to confirm current tree permit expectations for your address.</li>
                   <li>Submit a permit application online or through the city&apos;s available intake process.</li>
                   <li>
                     Provide key tree details: size, species, condition, and exact location on the property.
@@ -3854,17 +3854,17 @@ function StaticSeoArticle({
                 <p className="text-gray-700 leading-relaxed mt-4">
                   For urgent situations, start with{' '}
                   <Link
-                    to="/emergency-tree-service-volusia-county"
+                    to="/emergency-tree-service-seminole-county"
                     className="text-emerald-800 font-semibold hover:text-emerald-700 underline"
                   >
-                    emergency tree service in Volusia County
+                    emergency tree service in Seminole County
                   </Link>{' '}
                   to stabilize hazards, then plan cleanup and follow-up work such as{' '}
                   <Link
-                    to="/stump-grinding-daytona-beach"
+                    to="/stump-grinding-lake-mary"
                     className="text-emerald-800 font-semibold hover:text-emerald-700 underline"
                   >
-                    stump grinding in Daytona Beach
+                    stump grinding in Lake Mary
                   </Link>{' '}
                   when appropriate for your property goals.
                 </p>
@@ -3877,32 +3877,32 @@ function StaticSeoArticle({
                 <ul className="space-y-2 text-gray-700 list-disc pl-6">
                   <li>
                     <a
-                      href="https://www.port-orange.org"
+                      href="https://www.sanfordfl.gov"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-emerald-800 font-semibold hover:text-emerald-700 underline"
                     >
-                      City of Port Orange Official Website
+                      City of Sanford Official Website
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://www.port-orange.org/DocumentCenter"
+                      href="https://www.sanfordfl.gov"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-emerald-800 font-semibold hover:text-emerald-700 underline"
                     >
-                      City of Port Orange Document Center
+                      City of Sanford Document Center
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://ci-portorange-fl.smartgovcommunity.com/"
+                      href="https://www.sanfordfl.gov/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-emerald-800 font-semibold hover:text-emerald-700 underline"
                     >
-                      Port Orange Permitting Portal
+                      Sanford Permitting Portal
                     </a>
                   </li>
                 </ul>
@@ -3917,15 +3917,15 @@ function StaticSeoArticle({
                   </h2>
                   <p className="mt-4 text-base md:text-lg text-emerald-50 leading-relaxed text-center max-w-3xl mx-auto">
                     Tree Tek helps homeowners evaluate whether a permit may be needed, identify hazardous trees, and
-                    plan safe removals that match local requirements and site conditions. Our crew works in Port Orange
+                    plan safe removals that match local requirements and site conditions. Our crew works in Sanford
                     neighborhoods every week, including tighter canal-side and waterfront lots, so we can guide you
                     through practical next steps before cutting begins, whether you are planning{' '}
-                    <Link to="/tree-removal-port-orange" className="underline hover:text-white">
-                      tree removal in Port Orange
+                    <Link to="/tree-removal-sanford" className="underline hover:text-white">
+                      tree removal in Sanford
                     </Link>{' '}
                     or need rapid hazard stabilization with{' '}
-                    <Link to="/emergency-tree-service-volusia-county" className="underline hover:text-white">
-                      emergency tree service in Volusia County
+                    <Link to="/emergency-tree-service-seminole-county" className="underline hover:text-white">
+                      emergency tree service in Seminole County
                     </Link>
                     .
                   </p>
@@ -3989,7 +3989,7 @@ function StaticSeoArticle({
                 Ready for safe, professional tree service?
               </h2>
               <p className="mt-3 md:mt-4 text-sm md:text-base text-emerald-50/95 text-center max-w-2xl mx-auto leading-relaxed">
-                Request a free quote or call TREE TEK for fast service across Volusia County.
+                Request a free quote or call TREE TEK for fast service across Seminole County.
               </p>
               <div className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
                 <Link

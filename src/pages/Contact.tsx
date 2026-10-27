@@ -18,13 +18,13 @@ export default function Contact() {
     <div>
       <SEO
         title="Contact TREE TEK — Phone, Email & Service Area"
-        description="Contact TREE TEK for tree removal and stump grinding in Port Orange, Daytona Beach, South Daytona, and Volusia County. Call (321) 282-9795 or email us."
-        keywords="contact TREE TEK, tree service phone Volusia County, Port Orange tree company"
+        description="Contact TREE TEK for tree removal and stump grinding in Sanford, Lake Mary, Longwood, and Seminole County. Call (321) 282-9795 or email us."
+        keywords="contact TREE TEK, tree service phone Seminole County, Sanford tree company"
         path="/contact"
       />
       <PageHeader
         title="Contact TREE TEK"
-        subtitle="Serving Central Florida • Port Orange • Daytona • Ormond • New Smyrna"
+        subtitle="Serving Central Florida • Sanford • Lake Mary • Longwood"
       />
 
       <Section variant="white">
@@ -120,7 +120,7 @@ export default function Contact() {
                   Serving Central Florida
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  We proudly serve Port Orange, Daytona Beach, Ormond Beach, New Smyrna Beach, and surrounding areas.
+                  We proudly serve Sanford, Lake Mary, Longwood, and surrounding areas.
                 </p>
                 <Link
                   to="/quote"

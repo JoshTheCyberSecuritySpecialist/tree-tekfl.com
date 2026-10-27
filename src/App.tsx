@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { SEO_PAGE_SLUGS } from './data/seoPages';
 import ScrollToTop from './components/ScrollToTop';
 import SeoLandingPage from './pages/SeoLandingPage';
@@ -20,6 +20,24 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 const BlogList = lazy(() => import('./pages/blog/BlogList'));
 const BlogPost = lazy(() => import('./pages/blog/BlogPost'));
 const ProtectedRoute = lazy(() => import('./components/ProtectedRoute'));
+
+const LEGACY_SEO_REDIRECTS: Record<string, string> = {
+  'tree-removal-daytona-beach': 'tree-removal-lake-mary',
+  'tree-trimming-daytona-beach': 'tree-trimming-lake-mary',
+  'stump-grinding-daytona-beach': 'stump-grinding-lake-mary',
+  'emergency-tree-service-daytona-beach': 'emergency-tree-service-lake-mary',
+  'tree-removal-port-orange': 'tree-removal-sanford',
+  'tree-trimming-port-orange': 'tree-trimming-sanford',
+  'stump-grinding-port-orange': 'stump-grinding-sanford',
+  'emergency-tree-service-port-orange': 'emergency-tree-service-sanford',
+  'tree-removal-south-daytona': 'tree-removal-longwood',
+  'tree-trimming-south-daytona': 'tree-trimming-longwood',
+  'stump-grinding-south-daytona': 'stump-grinding-longwood',
+  'tree-service-volusia-county': 'tree-service-seminole-county',
+  'tree-removal-volusia-county': 'tree-removal-seminole-county',
+  'stump-grinding-volusia-county': 'stump-grinding-seminole-county',
+  'emergency-tree-service-volusia-county': 'emergency-tree-service-seminole-county',
+};
 
 function App() {
   const [cmsSlugs, setCmsSlugs] = useState<string[]>([]);
@@ -49,6 +67,9 @@ function App() {
         <Route path="/faq" element={<Layout><Faq /></Layout>} />
         <Route path="/blog" element={<Layout><BlogList /></Layout>} />
         <Route path="/blog/:slug" element={<Layout><BlogPost /></Layout>} />
+        {Object.entries(LEGACY_SEO_REDIRECTS).map(([from, to]) => (
+          <Route key={from} path={`/${from}`} element={<Navigate to={`/${to}`} replace />} />
+        ))}
         {seoSlugs.map((slug) => (
           <Route
             key={slug}

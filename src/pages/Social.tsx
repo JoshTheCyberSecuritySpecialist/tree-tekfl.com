@@ -41,7 +41,7 @@ export default function Social() {
     <div>
       <SEO
         title="Social Media — TREE TEK Instagram & Facebook"
-        description="Follow TREE TEK on Instagram and Facebook for job sites, tree tips, and storm updates across Volusia County."
+        description="Follow TREE TEK on Instagram and Facebook for job sites, tree tips, and storm updates across Seminole County."
         path="/social"
       />
       <PageHeader

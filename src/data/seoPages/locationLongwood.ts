@@ -1,20 +1,20 @@
 import type { SeoPage } from './types';
 
-export const locationSouthDaytonaPages: SeoPage[] = [
+export const locationLongwoodPages: SeoPage[] = [
   {
-    slug: 'tree-removal-south-daytona',
-    title: 'Tree Removal South Daytona',
-    metaTitle: 'Tree Removal in South Daytona, FL | TREE TEK',
+    slug: 'tree-removal-longwood',
+    title: 'Tree Removal Longwood',
+    metaTitle: 'Tree Removal in Longwood, FL | TREE TEK',
     metaDescription:
-      'Tree removal in South Daytona for residential lots, aging hardwoods, and storm-compromised trees. Rigging-first approach, insured crew. (321) 282-9795.',
-    primaryKeyword: 'tree removal South Daytona',
-    secondaryKeywords: ['South Daytona tree service', 'Volusia tree removal', 'TREE TEK'],
+      'Tree removal in Longwood for residential lots, aging hardwoods, and storm-compromised trees. Rigging-first approach, insured crew. (321) 282-9795.',
+    primaryKeyword: 'tree removal Longwood',
+    secondaryKeywords: ['Longwood tree service', 'Seminole tree removal', 'TREE TEK'],
     intent: 'local-service',
     service: 'Tree removal',
-    location: 'South Daytona',
-    h1: 'Tree Removal in South Daytona',
+    location: 'Longwood',
+    h1: 'Tree Removal in Longwood',
     intro:
-      'South Daytona yards often combine compact setbacks with mature canopy cover—great for shade until stems lean toward roofs or roots lift walkways. TREE TEK removes trees with tight-quarters rigging, mindful of neighboring driveways and overhead service drops along Ridgewood-area corridors.',
+      'Longwood yards often combine compact setbacks with mature canopy cover—great for shade until stems lean toward roofs or roots lift walkways. TREE TEK removes trees with tight-quarters rigging, mindful of neighboring driveways and overhead service drops along local corridors.',
     sections: [
       {
         heading: 'Understanding tight lots',
@@ -58,23 +58,23 @@ export const locationSouthDaytonaPages: SeoPage[] = [
           'Quoted separately so grind depth matches future turf or trees.',
       },
     ],
-    ctaText: 'Quote South Daytona removal',
+    ctaText: 'Quote Longwood removal',
     heroImage: '/images/past-work/tree-removal-central-florida-brush-clearing.jpg',
   },
   {
-    slug: 'tree-trimming-south-daytona',
-    title: 'Tree Trimming South Daytona',
-    metaTitle: 'Tree Trimming in South Daytona, FL | TREE TEK',
+    slug: 'tree-trimming-longwood',
+    title: 'Tree Trimming Longwood',
+    metaTitle: 'Tree Trimming in Longwood, FL | TREE TEK',
     metaDescription:
-      'Tree trimming in South Daytona—deadwood removal, clearance pruning, canopy thinning, palm maintenance. Licensed TREE TEK crews. (321) 282-9795.',
-    primaryKeyword: 'tree trimming South Daytona',
-    secondaryKeywords: ['pruning South Daytona', 'Volusia County arbor care', 'TREE TEK'],
+      'Tree trimming in Longwood—deadwood removal, clearance pruning, canopy thinning, palm maintenance. Licensed TREE TEK crews. (321) 282-9795.',
+    primaryKeyword: 'tree trimming Longwood',
+    secondaryKeywords: ['pruning Longwood', 'Seminole County arbor care', 'TREE TEK'],
     intent: 'local-service',
     service: 'Tree trimming',
-    location: 'South Daytona',
-    h1: 'Tree Trimming in South Daytona',
+    location: 'Longwood',
+    h1: 'Tree Trimming in Longwood',
     intro:
-      'South Daytona benefits from proactive pruning—lifting low limbs over sidewalks, thinning crowns before summer squalls, and removing hangers over garages. We tailor cuts to species: live oak structure differs from maple or palm physiology.',
+      'Longwood benefits from proactive pruning—lifting low limbs over sidewalks, thinning crowns before summer squalls, and removing hangers over garages. We tailor cuts to species: live oak structure differs from maple or palm physiology.',
     sections: [
       {
         heading: 'Goals we align on',
@@ -119,20 +119,20 @@ export const locationSouthDaytonaPages: SeoPage[] = [
       },
     ],
     ctaText: 'Schedule trimming',
-    heroImage: '/images/past-work/bucket-truck-tree-service-new-smyrna-central-fl.jpg',
+    heroImage: '/images/past-work/bucket-truck-tree-service-longwood-central-fl.jpg',
   },
   {
-    slug: 'stump-grinding-south-daytona',
-    title: 'Stump Grinding South Daytona',
-    metaTitle: 'Stump Grinding in South Daytona, FL | TREE TEK',
+    slug: 'stump-grinding-longwood',
+    title: 'Stump Grinding Longwood',
+    metaTitle: 'Stump Grinding in Longwood, FL | TREE TEK',
     metaDescription:
-      'Stump grinding in South Daytona—below-grade grinding, debris control, irrigation-aware passes. Call (321) 282-9795 for pricing.',
-    primaryKeyword: 'stump grinding South Daytona',
-    secondaryKeywords: ['stump removal South Daytona', 'grind stump Volusia', 'TREE TEK'],
+      'Stump grinding in Longwood—below-grade grinding, debris control, irrigation-aware passes. Call (321) 282-9795 for pricing.',
+    primaryKeyword: 'stump grinding Longwood',
+    secondaryKeywords: ['stump removal Longwood', 'grind stump Seminole', 'TREE TEK'],
     intent: 'local-service',
     service: 'Stump grinding',
-    location: 'South Daytona',
-    h1: 'Stump Grinding in South Daytona',
+    location: 'Longwood',
+    h1: 'Stump Grinding in Longwood',
     intro:
       'Removing stumps restores mower paths and improves aesthetics along curb-heavy streets. TREE TEK matches grinder size to gate access and maps sprinkler arcs common in older subdivisions before spinning cutters.',
     sections: [
@@ -179,8 +179,8 @@ export const locationSouthDaytonaPages: SeoPage[] = [
       },
     ],
     ctaText: 'Get stump quote',
-    heroImage: '/images/south-daytona-stump-grinding-service-tree-tek-florida.png',
+    heroImage: '/images/longwood-stump-grinding-service-tree-tek-florida.png',
     heroImageAlt:
-      'Tree Tek stump grinding service in South Daytona removing tree stump near waterfront home with professional crew',
+      'Tree Tek stump grinding service in Longwood removing tree stump near waterfront home with professional crew',
   },
 ];

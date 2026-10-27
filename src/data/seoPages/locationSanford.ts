@@ -1,20 +1,20 @@
 import type { SeoPage } from './types';
 
-export const locationPortOrangePages: SeoPage[] = [
+export const locationSanfordPages: SeoPage[] = [
   {
-    slug: 'tree-removal-port-orange',
-    title: 'Tree Removal Port Orange',
-    metaTitle: 'Tree Removal in Port Orange, FL | TREE TEK',
+    slug: 'tree-removal-sanford',
+    title: 'Tree Removal Sanford',
+    metaTitle: 'Tree Removal in Sanford, FL | TREE TEK',
     metaDescription:
-      'Tree removal in Port Orange for hazardous trees, canal-lot access, and storm-damaged canopies. Sectional rigging, crane support when needed. (321) 282-9795.',
-    primaryKeyword: 'tree removal Port Orange',
-    secondaryKeywords: ['Port Orange tree company', 'Volusia County removal', 'TREE TEK'],
+      'Tree removal in Sanford for hazardous trees, canal-lot access, and storm-damaged canopies. Sectional rigging, crane support when needed. (321) 282-9795.',
+    primaryKeyword: 'tree removal Sanford',
+    secondaryKeywords: ['Sanford tree company', 'Seminole County removal', 'TREE TEK'],
     intent: 'local-service',
     service: 'Tree removal',
-    location: 'Port Orange',
-    h1: 'Tree Removal in Port Orange',
+    location: 'Sanford',
+    h1: 'Tree Removal in Sanford',
     intro:
-      'Port Orange mixes waterfront lots, mature subdivisions, and tighter canal parcels—often with fences, docks, and irrigation worth protecting. TREE TEK evaluates lay-down zones and lowering routes before cutting so limbs never scrape seawalls or screened enclosures unexpectedly.',
+      'Sanford mixes waterfront lots, mature subdivisions, and tighter canal parcels—often with fences, docks, and irrigation worth protecting. TREE TEK evaluates lay-down zones and lowering routes before cutting so limbs never scrape seawalls or screened enclosures unexpectedly.',
     sections: [
       {
         heading: 'Why removals vary street by street',
@@ -64,25 +64,25 @@ export const locationPortOrangePages: SeoPage[] = [
           'When limbs cross lines, we encourage neighbor discussion if access crosses boundaries—documentation helps.',
       },
     ],
-    ctaText: 'Request a Port Orange quote',
-    heroImage: '/images/port-orange-tree-removal-service-tree-tek-florida.png',
+    ctaText: 'Request a Sanford quote',
+    heroImage: '/images/sanford-tree-removal-service-tree-tek-florida.png',
     heroImageAlt:
-      'Tree Tek tree removal service in Port Orange using crane to safely remove tree near waterfront home',
+      'Tree Tek tree removal service in Sanford using crane to safely remove tree near waterfront home',
   },
   {
-    slug: 'tree-trimming-port-orange',
-    title: 'Tree Trimming Port Orange',
-    metaTitle: 'Tree Trimming in Port Orange, FL | TREE TEK',
+    slug: 'tree-trimming-sanford',
+    title: 'Tree Trimming Sanford',
+    metaTitle: 'Tree Trimming in Sanford, FL | TREE TEK',
     metaDescription:
-      'Trimming and pruning in Port Orange—canopy thinning, deadwood, roof clearance, palm maintenance. Licensed crew. (321) 282-9795.',
-    primaryKeyword: 'tree trimming Port Orange',
-    secondaryKeywords: ['pruning Port Orange', 'Volusia tree care', 'TREE TEK'],
+      'Trimming and pruning in Sanford—canopy thinning, deadwood, roof clearance, palm maintenance. Licensed crew. (321) 282-9795.',
+    primaryKeyword: 'tree trimming Sanford',
+    secondaryKeywords: ['pruning Sanford', 'Seminole tree care', 'TREE TEK'],
     intent: 'local-service',
     service: 'Tree trimming',
-    location: 'Port Orange',
-    h1: 'Tree Trimming in Port Orange',
+    location: 'Sanford',
+    h1: 'Tree Trimming in Sanford',
     intro:
-      'Scheduled pruning keeps mature neighborhoods safer—lifting skirts over sidewalks, thinning crowns that shade turf too heavily, and removing deadwood before seasonal winds. Port Orange’s tree mix spans live oaks, laurel oaks, palms, and ornamentals; each needs cuts matched to biology, not a one-size template.',
+      'Scheduled pruning keeps mature neighborhoods safer—lifting skirts over sidewalks, thinning crowns that shade turf too heavily, and removing deadwood before seasonal winds. Sanford’s tree mix spans live oaks, laurel oaks, palms, and ornamentals; each needs cuts matched to biology, not a one-size template.',
     sections: [
       {
         heading: 'Structural priorities',
@@ -126,23 +126,23 @@ export const locationPortOrangePages: SeoPage[] = [
           'Once debris clears—ask crews about chip moisture if you plan immediate bed application.',
       },
     ],
-    ctaText: 'Schedule trimming in Port Orange',
-    heroImage: '/images/port-orange-tree-trimming-service-tree-tek-florida.png',
+    ctaText: 'Schedule trimming in Sanford',
+    heroImage: '/images/sanford-tree-trimming-service-tree-tek-florida.png',
     heroImageAlt:
-      'Tree Tek tree trimming service in Port Orange pruning trees near waterfront home with professional crew and crane truck',
+      'Tree Tek tree trimming service in Sanford pruning trees near waterfront home with professional crew and crane truck',
   },
   {
-    slug: 'stump-grinding-port-orange',
-    title: 'Stump Grinding Port Orange',
-    metaTitle: 'Stump Grinding in Port Orange, FL | TREE TEK',
+    slug: 'stump-grinding-sanford',
+    title: 'Stump Grinding Sanford',
+    metaTitle: 'Stump Grinding in Sanford, FL | TREE TEK',
     metaDescription:
-      'Stump grinding in Port Orange with utility locate awareness, gate-friendly equipment, and tidy chip handling. Reclaim your yard—call (321) 282-9795.',
-    primaryKeyword: 'stump grinding Port Orange',
-    secondaryKeywords: ['stump removal Port Orange', 'grind stump FL', 'TREE TEK'],
+      'Stump grinding in Sanford with utility locate awareness, gate-friendly equipment, and tidy chip handling. Reclaim your yard—call (321) 282-9795.',
+    primaryKeyword: 'stump grinding Sanford',
+    secondaryKeywords: ['stump removal Sanford', 'grind stump FL', 'TREE TEK'],
     intent: 'local-service',
     service: 'Stump grinding',
-    location: 'Port Orange',
-    h1: 'Stump Grinding in Port Orange',
+    location: 'Sanford',
+    h1: 'Stump Grinding in Sanford',
     intro:
       'Stumps along canal runs and pool decks are trip hazards and sprouting sources. Grinding clears space for fence resets, irrigation fixes, and fresh sod. We measure gate widths and note sprinkler heads before positioning grinders to avoid unnecessary collateral repair bills.',
     sections: [
@@ -189,21 +189,21 @@ export const locationPortOrangePages: SeoPage[] = [
       },
     ],
     ctaText: 'Get stump grinding pricing',
-    heroImage: '/images/south-daytona-stump-grinding-service-tree-tek-florida.png',
-    heroImageAlt: 'TREE TEK stump grinding service in Port Orange Florida',
+    heroImage: '/images/longwood-stump-grinding-service-tree-tek-florida.png',
+    heroImageAlt: 'TREE TEK stump grinding service in Sanford Florida',
   },
   {
-    slug: 'emergency-tree-service-port-orange',
-    title: 'Emergency Tree Service Port Orange',
-    metaTitle: 'Emergency Tree Service in Port Orange | TREE TEK',
+    slug: 'emergency-tree-service-sanford',
+    title: 'Emergency Tree Service Sanford',
+    metaTitle: 'Emergency Tree Service in Sanford | TREE TEK',
     metaDescription:
-      '24/7 emergency tree response in Port Orange—split trees, fallen limbs, access blocked. Stabilization-first workflow. (321) 282-9795.',
-    primaryKeyword: 'emergency tree service Port Orange',
-    secondaryKeywords: ['storm damage tree Port Orange', 'fallen tree help', 'TREE TEK'],
+      '24/7 emergency tree response in Sanford—split trees, fallen limbs, access blocked. Stabilization-first workflow. (321) 282-9795.',
+    primaryKeyword: 'emergency tree service Sanford',
+    secondaryKeywords: ['storm damage tree Sanford', 'fallen tree help', 'TREE TEK'],
     intent: 'local-service',
     service: 'Emergency tree service',
-    location: 'Port Orange',
-    h1: 'Emergency Tree Service in Port Orange',
+    location: 'Sanford',
+    h1: 'Emergency Tree Service in Sanford',
     intro:
       'When trunks pin fences or split toward pools, minutes matter. TREE TEK routes urgent calls with hazard-first sequencing—secure hangers, clear exits, then schedule full removals when weather allows extended crane or rigging windows.',
     sections: [

@@ -4,17 +4,17 @@ export const corePages: SeoPage[] = [
   {
     slug: 'tree-removal',
     title: 'Tree Removal',
-    metaTitle: 'Tree Removal in Volusia County | TREE TEK',
+    metaTitle: 'Tree Removal in Seminole County | TREE TEK',
     metaDescription:
-      'Professional tree removal for hazardous, dead, and overcrowded trees. Serving Volusia County with controlled dismantling, crane options when needed, and thorough cleanup. Estimates: (321) 282-9795.',
-    primaryKeyword: 'tree removal Volusia County',
+      'Professional tree removal for hazardous, dead, and overcrowded trees. Serving Seminole County with controlled dismantling, crane options when needed, and thorough cleanup. Estimates: (321) 282-9795.',
+    primaryKeyword: 'tree removal Seminole County',
     secondaryKeywords: ['tree company Florida', 'remove tree near house', 'TREE TEK'],
     intent: 'commercial',
     service: 'Tree removal',
     location: null,
     h1: 'Tree Removal Services',
     intro:
-      'Removing a tree is about managing risk: to people, structures, and the rest of your landscape. TREE TEK handles residential and commercial removals across Volusia County—from canal lots with tight drop zones to open yards where chipper access is straightforward. We assess lean, decay, root flare condition, and targets around the work zone before the first cut.',
+      'Removing a tree is about managing risk: to people, structures, and the rest of your landscape. TREE TEK handles residential and commercial removals across Seminole County—from canal lots with tight drop zones to open yards where chipper access is straightforward. We assess lean, decay, root flare condition, and targets around the work zone before the first cut.',
     sections: [
       {
         heading: 'When tree removal is the right call',
@@ -69,20 +69,20 @@ export const corePages: SeoPage[] = [
     ctaText: 'Request a tree removal quote',
     heroImage: '/images/tree-removal-premium-tree-tek.png',
     heroImageAlt:
-      'TREE TEK tree removal service in Volusia County with crane-assisted removal near waterfront home',
+      'TREE TEK tree removal service in Seminole County with crane-assisted removal near waterfront home',
   },
   {
     slug: 'tree-trimming',
     title: 'Tree Trimming & Pruning',
-    metaTitle: 'Tree Trimming & Pruning in Port Orange, FL | TREE TEK',
+    metaTitle: 'Tree Trimming & Pruning in Sanford, FL | TREE TEK',
     metaDescription:
-      'Professional tree trimming and pruning in Port Orange, FL. TREE TEK improves safety, airflow, structure, and tree health for waterfront and residential properties throughout Volusia County.',
-    primaryKeyword: 'tree trimming Volusia County',
+      'Professional tree trimming and pruning in Sanford, FL. TREE TEK improves safety, airflow, structure, and tree health for waterfront and residential properties throughout Seminole County.',
+    primaryKeyword: 'tree trimming Seminole County',
     secondaryKeywords: ['tree pruning Florida', 'canopy thinning', 'TREE TEK'],
     intent: 'commercial',
     service: 'Tree trimming',
     location: null,
-    h1: 'Professional Tree Trimming & Pruning in Port Orange, FL',
+    h1: 'Professional Tree Trimming & Pruning in Sanford, FL',
     intro:
       'Trimming balances structure, safety, and light—especially in coastal wind exposure where weak attachments fail first. TREE TEK prunes for outcomes: fewer hangers over roofs, better airflow through crowns, and removal of deadwood that threatens walkways. We avoid topping; instead we use targeted reductions and thinning where species biology allows.',
     sections: [
@@ -137,17 +137,17 @@ export const corePages: SeoPage[] = [
       },
     ],
     ctaText: 'Request a Free Quote',
-    heroImage: '/images/Tree-Trimming-And-Pruning-Port-Orange-TREE-TEK.png',
+    heroImage: '/images/Tree-Trimming-And-Pruning-Sanford-FL.png',
     heroImageAlt:
-      'TREE TEK professional tree trimming and pruning in Port Orange Florida',
+      'TREE TEK professional tree trimming and pruning in Sanford Florida',
   },
   {
     slug: 'stump-grinding',
     title: 'Stump Grinding',
-    metaTitle: 'Stump Grinding in Port Orange, FL | TREE TEK',
+    metaTitle: 'Stump Grinding in Sanford, FL | TREE TEK',
     metaDescription:
-      'Professional stump grinding in Port Orange, FL for waterfront and high-value residential properties. TREE TEK removes hazardous stumps safely while protecting lawns, irrigation, landscaping, and waterfront access.',
-    primaryKeyword: 'stump grinding Volusia County',
+      'Professional stump grinding in Sanford, FL for waterfront and high-value residential properties. TREE TEK removes hazardous stumps safely while protecting lawns, irrigation, landscaping, and waterfront access.',
+    primaryKeyword: 'stump grinding Seminole County',
     secondaryKeywords: ['grind stump Florida', 'stump removal', 'TREE TEK'],
     intent: 'commercial',
     service: 'Stump grinding',
@@ -200,21 +200,21 @@ export const corePages: SeoPage[] = [
       },
     ],
     ctaText: 'Get a stump grinding quote',
-    heroImage: '/images/Stump-Grinding-Port-Orange-Waterfront-TREE-TEK.png',
-    heroImageAlt: 'Professional stump grinding service in Port Orange waterfront property by TREE TEK',
+    heroImage: '/images/Stump-Grinding-Sanford-Waterfront-TREE-TEK.png',
+    heroImageAlt: 'Professional stump grinding service in Sanford waterfront property by TREE TEK',
   },
   {
     slug: 'emergency-tree-service',
     title: 'Emergency Tree Service',
-    metaTitle: 'Emergency Tree Service Port Orange FL | 24/7 Tree Removal | TREE TEK',
+    metaTitle: 'Emergency Tree Service Sanford FL | 24/7 Tree Removal | TREE TEK',
     metaDescription:
-      'Need emergency tree service in Port Orange or Volusia County? TREE TEK provides 24/7 emergency tree removal, storm cleanup, hazardous limb removal, and hurricane response. Call 321-282-9795.',
-    primaryKeyword: 'emergency tree service Volusia County',
+      'Need emergency tree service in Sanford or Seminole County? TREE TEK provides 24/7 emergency tree removal, storm cleanup, hazardous limb removal, and hurricane response. Call 321-282-9795.',
+    primaryKeyword: 'emergency tree service Seminole County',
     secondaryKeywords: ['24/7 tree removal', 'storm tree damage', 'TREE TEK'],
     intent: 'commercial',
     service: 'Emergency tree service',
     location: null,
-    h1: 'Emergency Tree Service in Port Orange & Volusia County',
+    h1: 'Emergency Tree Service in Sanford & Seminole County',
     intro:
       'Emergencies prioritize life safety and access: trunks across driveways, limbs resting on roof edges, split stems still moving in wind. TREE TEK answers urgent calls with stabilization-first sequencing—then removal or pruning follow-ups once hazards are controlled.',
     sections: [
@@ -266,15 +266,15 @@ export const corePages: SeoPage[] = [
   {
     slug: 'storm-cleanup',
     title: 'Storm Cleanup',
-    metaTitle: 'Storm Cleanup & Wind Damage Removal in Port Orange, FL | TREE TEK',
+    metaTitle: 'Storm Cleanup & Wind Damage Removal in Sanford, FL | TREE TEK',
     metaDescription:
-      'TREE TEK provides storm cleanup and wind damage removal in Port Orange, FL. We clear fallen limbs, hazardous trees, blocked access, and storm debris for waterfront and residential properties throughout Volusia County.',
-    primaryKeyword: 'storm cleanup trees Volusia County',
+      'TREE TEK provides storm cleanup and wind damage removal in Sanford, FL. We clear fallen limbs, hazardous trees, blocked access, and storm debris for waterfront and residential properties throughout Seminole County.',
+    primaryKeyword: 'storm cleanup trees Seminole County',
     secondaryKeywords: ['hurricane tree cleanup', 'wind damage trees', 'TREE TEK'],
     intent: 'commercial',
     service: 'Storm cleanup',
     location: null,
-    h1: 'Storm Cleanup & Wind Damage Removal in Port Orange, FL',
+    h1: 'Storm Cleanup & Wind Damage Removal in Sanford, FL',
     intro:
       'Wind events leave chaos at different scales: scattered limbs, partial crown failures, or entire stems blocking roads. TREE TEK clears hazards methodically—cutting for transport lanes first, then detailed cleanup—while protecting turf from unnecessary equipment passes.',
     sections: [
@@ -321,23 +321,23 @@ export const corePages: SeoPage[] = [
       },
     ],
     ctaText: 'Request a Free Quote',
-    heroImage: '/images/Storm-Cleanup-And-Wind-Damage-Removal-Port-Orange-FL.png',
-    heroImageAlt: 'TREE TEK storm cleanup and wind damage removal in Port Orange Florida',
+    heroImage: '/images/Storm-Cleanup-And-Wind-Damage-Removal-Sanford-FL.png',
+    heroImageAlt: 'TREE TEK storm cleanup and wind damage removal in Sanford Florida',
   },
   {
     slug: 'crane-tree-work',
     title: 'Crane Tree Work',
-    metaTitle: 'Crane-Assisted Tree Removal in Port Orange, FL | TREE TEK',
+    metaTitle: 'Crane-Assisted Tree Removal in Sanford, FL | TREE TEK',
     metaDescription:
-      'TREE TEK provides crane-assisted tree removal in Port Orange, FL for waterfront, tight-access, storm-damaged, and high-risk trees throughout Volusia County.',
-    primaryKeyword: 'crane tree removal Port Orange FL',
-    secondaryKeywords: ['crane-assisted tree removal', 'crane tree work', 'Volusia County tree service'],
+      'TREE TEK provides crane-assisted tree removal in Sanford, FL for waterfront, tight-access, storm-damaged, and high-risk trees throughout Seminole County.',
+    primaryKeyword: 'crane tree removal Sanford FL',
+    secondaryKeywords: ['crane-assisted tree removal', 'crane tree work', 'Seminole County tree service'],
     intent: 'commercial',
     service: 'Crane-assisted tree removal',
-    location: 'Port Orange',
-    h1: 'Crane-Assisted Tree Removal in Port Orange, FL',
+    location: 'Sanford',
+    h1: 'Crane-Assisted Tree Removal in Sanford, FL',
     intro:
-      'When a tree cannot be safely lowered into open space, crane-assisted tree removal allows large sections to be lifted with control and precision. TREE TEK uses crane planning, rigging coordination, and careful property protection for waterfront homes, tight-access lots, pools, rooflines, and high-value residential properties throughout Port Orange and Volusia County.',
+      'When a tree cannot be safely lowered into open space, crane-assisted tree removal allows large sections to be lifted with control and precision. TREE TEK uses crane planning, rigging coordination, and careful property protection for waterfront homes, tight-access lots, pools, rooflines, and high-value residential properties throughout Sanford and Seminole County.',
     sections: [
       {
         heading: 'When cranes pay off',
@@ -382,8 +382,8 @@ export const corePages: SeoPage[] = [
       },
     ],
     ctaText: 'Request a Free Quote',
-    heroImage: '/images/crane-tree-removal-poolside-backyard-tree-tek-volusia-county-florida.png',
+    heroImage: '/images/crane-tree-removal-poolside-backyard-tree-tek-seminole-county-florida.png',
     heroImageAlt:
-      'Crane-assisted tree removal near pool in a tight residential backyard in Volusia County Florida',
+      'Crane-assisted tree removal near pool in a tight residential backyard in Seminole County Florida',
   },
 ];

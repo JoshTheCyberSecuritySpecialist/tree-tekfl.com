@@ -1,20 +1,20 @@
 import type { SeoPage } from './types';
 
-export const locationDaytonaPages: SeoPage[] = [
+export const locationLakeMaryPages: SeoPage[] = [
   {
-    slug: 'tree-removal-daytona-beach',
-    title: 'Tree Removal Daytona Beach',
-    metaTitle: 'Tree Removal in Daytona Beach, FL | TREE TEK',
+    slug: 'tree-removal-lake-mary',
+    title: 'Tree Removal Lake Mary',
+    metaTitle: 'Tree Removal in Lake Mary, FL | TREE TEK',
     metaDescription:
-      'Tree removal in Daytona Beach for hazardous trees, tight beachside lots, and mainland corridors. Controlled dismantling and crane options when needed. Call (321) 282-9795.',
-    primaryKeyword: 'tree removal Daytona Beach',
-    secondaryKeywords: ['Daytona Beach tree service', 'remove tree Volusia County', 'TREE TEK'],
+      'Tree removal in Lake Mary for hazardous trees, tight beachside lots, and mainland corridors. Controlled dismantling and crane options when needed. Call (321) 282-9795.',
+    primaryKeyword: 'tree removal Lake Mary',
+    secondaryKeywords: ['Lake Mary tree service', 'remove tree Seminole County', 'TREE TEK'],
     intent: 'local-service',
     service: 'Tree removal',
-    location: 'Daytona Beach',
-    h1: 'Tree Removal in Daytona Beach',
+    location: 'Lake Mary',
+    h1: 'Tree Removal in Lake Mary',
     intro:
-      'Daytona Beach includes oceanfront exposure, beachside streets with tight side yards, and busier mainland corridors. TREE TEK plans removals around seawalls, pavers, pools, and pedestrian paths—using sectional lowering where cranes are not required and crane picks where vertical lifts beat swinging limbs over roofs.',
+      'Lake Mary includes oceanfront exposure, beachside streets with tight side yards, and busier mainland corridors. TREE TEK plans removals around seawalls, pavers, pools, and pedestrian paths—using sectional lowering where cranes are not required and crane picks where vertical lifts beat swinging limbs over roofs.',
     sections: [
       {
         heading: 'Local risk factors we watch',
@@ -64,23 +64,23 @@ export const locationDaytonaPages: SeoPage[] = [
           'Stump grinding is scoped separately so depth matches sod or replanting plans.',
       },
     ],
-    ctaText: 'Request a Daytona Beach quote',
-    heroImage: '/images/past-work/crane-tree-removal-daytona-beach-central-fl.jpg',
+    ctaText: 'Request a Lake Mary quote',
+    heroImage: '/images/past-work/crane-tree-removal-lake-mary-central-fl.jpg',
   },
   {
-    slug: 'tree-trimming-daytona-beach',
-    title: 'Tree Trimming Daytona Beach',
-    metaTitle: 'Tree Trimming in Daytona Beach, FL | TREE TEK',
+    slug: 'tree-trimming-lake-mary',
+    title: 'Tree Trimming Lake Mary',
+    metaTitle: 'Tree Trimming in Lake Mary, FL | TREE TEK',
     metaDescription:
-      'Professional pruning and canopy management in Daytona Beach—thinning, clearance cuts, palm maintenance, and deadwood removal. Licensed crew. (321) 282-9795.',
-    primaryKeyword: 'tree trimming Daytona Beach',
-    secondaryKeywords: ['pruning Daytona Beach', 'palm trimming', 'TREE TEK'],
+      'Professional pruning and canopy management in Lake Mary—thinning, clearance cuts, palm maintenance, and deadwood removal. Licensed crew. (321) 282-9795.',
+    primaryKeyword: 'tree trimming Lake Mary',
+    secondaryKeywords: ['pruning Lake Mary', 'palm trimming', 'TREE TEK'],
     intent: 'local-service',
     service: 'Tree trimming',
-    location: 'Daytona Beach',
-    h1: 'Tree Trimming in Daytona Beach',
+    location: 'Lake Mary',
+    h1: 'Tree Trimming in Lake Mary',
     intro:
-      'Trimming in Daytona balances ocean exposure with dense inland heat pockets. We prune for structure—thinning crowns that catch steady winds, lifting skirts over sidewalks, and timing palm maintenance so crowns stay resilient without destructive “hurricane cuts.”',
+      'Trimming in Lake Mary balances ocean exposure with dense inland heat pockets. We prune for structure—thinning crowns that catch steady winds, lifting skirts over sidewalks, and timing palm maintenance so crowns stay resilient without destructive “hurricane cuts.”',
     sections: [
       {
         heading: 'Services suited to coastal yards',
@@ -124,25 +124,25 @@ export const locationDaytonaPages: SeoPage[] = [
           'We provide scope summaries you can submit when architectural committees ask.',
       },
     ],
-    ctaText: 'Schedule Daytona trimming',
-    heroImage: '/images/daytona-beach-tree-trimming-service-tree-tek-florida.png',
+    ctaText: 'Schedule Lake Mary trimming',
+    heroImage: '/images/lake-mary-tree-trimming-service-tree-tek-florida.png',
     heroImageAlt:
-      'Tree Tek tree trimming service in Daytona Beach pruning trees near waterfront home with professional crew and bucket truck',
+      'Tree Tek tree trimming service in Lake Mary pruning trees near waterfront home with professional crew and bucket truck',
   },
   {
-    slug: 'stump-grinding-daytona-beach',
-    title: 'Stump Grinding Daytona Beach',
-    metaTitle: 'Stump Grinding in Daytona Beach, FL | TREE TEK',
+    slug: 'stump-grinding-lake-mary',
+    title: 'Stump Grinding Lake Mary',
+    metaTitle: 'Stump Grinding in Lake Mary, FL | TREE TEK',
     metaDescription:
-      'Stump grinding in Daytona Beach—below-grade removal, locate-aware grinding, chip management. Reclaim turf for sod or replanting. (321) 282-9795.',
-    primaryKeyword: 'stump grinding Daytona Beach',
-    secondaryKeywords: ['remove stump Daytona', 'stump grinder Volusia', 'TREE TEK'],
+      'Stump grinding in Lake Mary—below-grade removal, locate-aware grinding, chip management. Reclaim turf for sod or replanting. (321) 282-9795.',
+    primaryKeyword: 'stump grinding Lake Mary',
+    secondaryKeywords: ['remove stump Lake Mary', 'stump grinder Seminole', 'TREE TEK'],
     intent: 'local-service',
     service: 'Stump grinding',
-    location: 'Daytona Beach',
-    h1: 'Stump Grinding in Daytona Beach',
+    location: 'Lake Mary',
+    h1: 'Stump Grinding in Lake Mary',
     intro:
-      'After removals or storm breaks, stumps block mowing, trip guests, and fight new installs. Grinding clears the footprint so irrigation repairs and paver resets make sense. Sandy Daytona soils sometimes hide shallow utilities—locates and visible irrigation heads guide how we swing machines.',
+      'After removals or storm breaks, stumps block mowing, trip guests, and fight new installs. Grinding clears the footprint so irrigation repairs and paver resets make sense. Sandy Lake Mary soils sometimes hide shallow utilities—locates and visible irrigation heads guide how we swing machines.',
     sections: [
       {
         heading: 'Depth matched to your plan',
@@ -187,24 +187,24 @@ export const locationDaytonaPages: SeoPage[] = [
       },
     ],
     ctaText: 'Quote stump grinding',
-    heroImage: '/images/daytona-beach-stump-grinding-service-tree-tek-florida.png',
+    heroImage: '/images/lake-mary-stump-grinding-service-tree-tek-florida.png',
     heroImageAlt:
-      'Tree Tek stump grinding service in Daytona Beach using professional grinder to remove tree stump',
+      'Tree Tek stump grinding service in Lake Mary using professional grinder to remove tree stump',
   },
   {
-    slug: 'emergency-tree-service-daytona-beach',
-    title: 'Emergency Tree Service Daytona Beach',
-    metaTitle: 'Emergency Tree Service in Daytona Beach, FL | TREE TEK',
+    slug: 'emergency-tree-service-lake-mary',
+    title: 'Emergency Tree Service Lake Mary',
+    metaTitle: 'Emergency Tree Service in Lake Mary, FL | TREE TEK',
     metaDescription:
-      'TREE TEK provides emergency tree service in Daytona Beach, FL including storm cleanup, hazardous tree removal, fallen limb cleanup, and emergency response for waterfront and residential properties.',
-    primaryKeyword: 'emergency tree service Daytona Beach',
-    secondaryKeywords: ['storm tree damage Daytona', '24/7 tree service', 'TREE TEK'],
+      'TREE TEK provides emergency tree service in Lake Mary, FL including storm cleanup, hazardous tree removal, fallen limb cleanup, and emergency response for waterfront and residential properties.',
+    primaryKeyword: 'emergency tree service Lake Mary',
+    secondaryKeywords: ['storm tree damage Lake Mary', '24/7 tree service', 'TREE TEK'],
     intent: 'local-service',
     service: 'Emergency tree service',
-    location: 'Daytona Beach',
-    h1: 'Emergency Tree Service in Daytona Beach, FL',
+    location: 'Lake Mary',
+    h1: 'Emergency Tree Service in Lake Mary, FL',
     intro:
-      'Fast-moving squalls, tropical systems, and hurricane-force winds can leave Daytona Beach properties with split trees, hanging limbs, blocked driveways, and dangerous storm debris. TREE TEK provides emergency tree service with rapid hazard assessment, controlled removals, debris cleanup, and careful property protection throughout Daytona Beach and Volusia County.',
+      'Fast-moving squalls, tropical systems, and hurricane-force winds can leave Lake Mary properties with split trees, hanging limbs, blocked driveways, and dangerous storm debris. TREE TEK provides emergency tree service with rapid hazard assessment, controlled removals, debris cleanup, and careful property protection throughout Lake Mary and Seminole County.',
     sections: [
       {
         heading: 'How we prioritize calls',
@@ -249,7 +249,7 @@ export const locationDaytonaPages: SeoPage[] = [
       },
     ],
     ctaText: 'Request a Free Quote',
-    heroImage: '/images/Emergency-Tree-Service-In-Daytona-Beach.png',
-    heroImageAlt: 'TREE TEK emergency tree service in Daytona Beach Florida',
+    heroImage: '/images/Emergency-Tree-Service-Lake-Mary-FL.png',
+    heroImageAlt: 'TREE TEK emergency tree service in Lake Mary Florida',
   },
 ];

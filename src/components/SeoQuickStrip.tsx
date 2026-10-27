@@ -3,9 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 /** Shared shortcuts — used as slim bar on blog routes; full list also in Layout footer. */
 export const POPULAR_LOCAL_LINKS = [
   { to: '/tree-removal', label: 'Tree removal' },
-  { to: '/tree-removal-daytona-beach', label: 'Daytona Beach' },
-  { to: '/stump-grinding-port-orange', label: 'Stump grinding — Port Orange' },
-  { to: '/emergency-tree-service-volusia-county', label: 'Emergency — Volusia' },
+  { to: '/tree-removal-lake-mary', label: 'Lake Mary' },
+  { to: '/stump-grinding-sanford', label: 'Stump grinding — Sanford' },
+  { to: '/emergency-tree-service-seminole-county', label: 'Emergency — Seminole' },
   { to: '/cost-of-tree-removal-florida', label: 'Removal cost (FL)' },
   { to: '/tree-service-faq', label: 'Tree service FAQ' },
 ] as const;

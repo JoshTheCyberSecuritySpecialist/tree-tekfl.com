@@ -1,8 +1,8 @@
 import { corePages } from './corePages';
-import { locationDaytonaPages } from './locationDaytona';
-import { locationPortOrangePages } from './locationPortOrange';
-import { locationSouthDaytonaPages } from './locationSouthDaytona';
-import { locationVolusiaPages } from './locationVolusia';
+import { locationLakeMaryPages } from './locationLakeMary';
+import { locationSanfordPages } from './locationSanford';
+import { locationLongwoodPages } from './locationLongwood';
+import { locationSeminolePages } from './locationSeminole';
 import { supportPages } from './supportPages';
 import type { SeoPage } from './types';
 
@@ -11,10 +11,10 @@ export type { SeoFaq, SeoIntent, SeoPage, SeoSection } from './types';
 /** All programmatic SEO landing pages — single source of truth for routes + sitemap. */
 export const seoPages: SeoPage[] = [
   ...corePages,
-  ...locationDaytonaPages,
-  ...locationPortOrangePages,
-  ...locationSouthDaytonaPages,
-  ...locationVolusiaPages,
+  ...locationLakeMaryPages,
+  ...locationSanfordPages,
+  ...locationLongwoodPages,
+  ...locationSeminolePages,
   ...supportPages,
 ];
 
@@ -34,7 +34,7 @@ const SERVICE_TO_CORE: Partial<Record<string, string>> = {
   'Emergency tree service': 'emergency-tree-service',
   'Storm cleanup': 'storm-cleanup',
   'Crane tree work': 'crane-tree-work',
-  'Tree service': 'tree-service-volusia-county',
+  'Tree service': 'tree-service-seminole-county',
 };
 
 function scoreRelated(current: SeoPage, candidate: SeoPage): number {

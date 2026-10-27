@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS public.settings (
 );
 
 INSERT INTO public.settings (key, value) VALUES
-  ('business_info', '{"phone":"321-282-9795","email":"info@treetekfl.com","city":"Daytona Beach","service_area":"Volusia County, FL"}'::jsonb),
+  ('business_info', '{"phone":"321-282-9795","email":"info@treetekfl.com","city":"Lake Mary","service_area":"Seminole County, FL"}'::jsonb),
   ('notifications', '{"email_enabled": true, "lead_alerts": true}'::jsonb),
   ('site_defaults', '{"cta_text":"Request a Free Quote"}'::jsonb)
 ON CONFLICT (key) DO NOTHING;

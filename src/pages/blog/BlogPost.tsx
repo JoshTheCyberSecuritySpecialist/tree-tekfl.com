@@ -63,7 +63,7 @@ function ArticleCtaCard({ ctaText, phone, telHref }: { ctaText: string; phone: s
   return (
     <aside className="my-14 rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-8 shadow-md">
       <p className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
-        Need safe tree removal in Volusia County?
+        Need safe tree removal in Seminole County?
       </p>
       <p className="text-gray-600 mb-6 text-[17px] leading-relaxed">
         Licensed &amp; insured — free estimates for residential and commercial tree work.

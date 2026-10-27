@@ -27,7 +27,7 @@ type NotificationsState = {
 const DEFAULT_BUSINESS: BusinessInfoState = {
   phone: '321-282-9795',
   email: 'info@treetekfl.com',
-  service_area: 'Volusia County, FL',
+  service_area: 'Seminole County, FL',
 };
 
 const DEFAULT_SITE: SiteDefaultsState = {

@@ -1,20 +1,20 @@
 import type { SeoPage } from './types';
 
-export const locationVolusiaPages: SeoPage[] = [
+export const locationSeminolePages: SeoPage[] = [
   {
-    slug: 'tree-service-volusia-county',
-    title: 'Tree Service Volusia County',
-    metaTitle: 'Tree Service Across Volusia County | TREE TEK',
+    slug: 'tree-service-seminole-county',
+    title: 'Tree Service Seminole County',
+    metaTitle: 'Tree Service Across Seminole County | TREE TEK',
     metaDescription:
-      'Full-service tree care throughout Volusia County—removal, trimming, stump grinding, storm response, and crane-assisted jobs. Licensed & insured. (321) 282-9795.',
-    primaryKeyword: 'tree service Volusia County',
-    secondaryKeywords: ['Volusia County arborists', 'Florida tree company', 'TREE TEK'],
+      'Full-service tree care throughout Seminole County—removal, trimming, stump grinding, storm response, and crane-assisted jobs. Licensed & insured. (321) 282-9795.',
+    primaryKeyword: 'tree service Seminole County',
+    secondaryKeywords: ['Seminole County arborists', 'Florida tree company', 'TREE TEK'],
     intent: 'local-service',
     service: 'Tree service',
-    location: 'Volusia County',
-    h1: 'Tree Service in Volusia County',
+    location: 'Seminole County',
+    h1: 'Tree Service in Seminole County',
     intro:
-      'Volusia County stretches from coastal bridges to inland subdivisions—each job balances traffic access, wind exposure, and soil differences. TREE TEK routes crews countywide for scheduled pruning and large removals while maintaining emergency capacity after widespread storm events.',
+      'Seminole County stretches from coastal bridges to inland subdivisions—each job balances traffic access, wind exposure, and soil differences. TREE TEK routes crews countywide for scheduled pruning and large removals while maintaining emergency capacity after widespread storm events.',
     sections: [
       {
         heading: 'Countywide capabilities',
@@ -37,7 +37,7 @@ export const locationVolusiaPages: SeoPage[] = [
       {
         heading: 'Licensed & insured county contractor',
         paragraphs: [
-          'TREE TEK operates as a licensed and insured tree contractor serving Volusia County.',
+          'TREE TEK operates as a licensed and insured tree contractor serving Seminole County.',
         ],
       },
     ],
@@ -59,20 +59,20 @@ export const locationVolusiaPages: SeoPage[] = [
       },
     ],
     ctaText: 'Schedule countywide service',
-    heroImage: '/images/past-work/large-tree-removal-crane-service-port-orange-central-fl.jpg',
+    heroImage: '/images/past-work/large-tree-removal-crane-service-sanford-central-fl.jpg',
   },
   {
-    slug: 'tree-removal-volusia-county',
-    title: 'Tree Removal Volusia County',
-    metaTitle: 'Tree Removal in Volusia County | TREE TEK',
+    slug: 'tree-removal-seminole-county',
+    title: 'Tree Removal Seminole County',
+    metaTitle: 'Tree Removal in Seminole County | TREE TEK',
     metaDescription:
-      'Professional tree removal anywhere in Volusia County—hazard trees, building clearance, storm damage. Crane and rigging options. (321) 282-9795.',
-    primaryKeyword: 'tree removal Volusia County',
-    secondaryKeywords: ['remove tree Volusia FL', 'countywide tree company', 'TREE TEK'],
+      'Professional tree removal anywhere in Seminole County—hazard trees, building clearance, storm damage. Crane and rigging options. (321) 282-9795.',
+    primaryKeyword: 'tree removal Seminole County',
+    secondaryKeywords: ['remove tree Seminole FL', 'countywide tree company', 'TREE TEK'],
     intent: 'local-service',
     service: 'Tree removal',
-    location: 'Volusia County',
-    h1: 'Tree Removal in Volusia County',
+    location: 'Seminole County',
+    h1: 'Tree Removal in Seminole County',
     intro:
       'Countywide removals mean adapting to rural acreage, urban curb strips, and waterfront parcels in the same week. TREE TEK scales crew size and hauling to job volume—never treating a rural oak like a tight urban cherry laurel without reassessing rigging.',
     sections: [
@@ -122,19 +122,19 @@ export const locationVolusiaPages: SeoPage[] = [
     heroImage: '/images/past-work/tree-removal-central-florida-brush-clearing.jpg',
   },
   {
-    slug: 'stump-grinding-volusia-county',
-    title: 'Stump Grinding Volusia County',
-    metaTitle: 'Stump Grinding in Volusia County, FL | TREE TEK',
+    slug: 'stump-grinding-seminole-county',
+    title: 'Stump Grinding Seminole County',
+    metaTitle: 'Stump Grinding in Seminole County, FL | TREE TEK',
     metaDescription:
-      'Professional stump grinding in Volusia County, FL for residential, waterfront, and high-value properties. TREE TEK removes stumps below grade while protecting lawns, irrigation, landscaping, and property features.',
-    primaryKeyword: 'stump grinding Volusia County FL',
-    secondaryKeywords: ['professional stump grinding', 'stump removal Volusia County', 'Volusia County tree service'],
+      'Professional stump grinding in Seminole County, FL for residential, waterfront, and high-value properties. TREE TEK removes stumps below grade while protecting lawns, irrigation, landscaping, and property features.',
+    primaryKeyword: 'stump grinding Seminole County FL',
+    secondaryKeywords: ['professional stump grinding', 'stump removal Seminole County', 'Seminole County tree service'],
     intent: 'local-service',
     service: 'Stump grinding',
-    location: 'Volusia County',
-    h1: 'Professional Stump Grinding in Volusia County, FL',
+    location: 'Seminole County',
+    h1: 'Professional Stump Grinding in Seminole County, FL',
     intro:
-      'Old stumps can attract pests, create trip hazards, damage mowers, and block new landscaping. TREE TEK provides professional stump grinding for residential, waterfront, and high-value properties throughout Volusia County with careful equipment placement and clean below-grade results.',
+      'Old stumps can attract pests, create trip hazards, damage mowers, and block new landscaping. TREE TEK provides professional stump grinding for residential, waterfront, and high-value properties throughout Seminole County with careful equipment placement and clean below-grade results.',
     sections: [
       {
         heading: 'Commercial pacing',
@@ -179,21 +179,21 @@ export const locationVolusiaPages: SeoPage[] = [
       },
     ],
     ctaText: 'Request a Free Quote',
-    heroImage: '/images/south-daytona-stump-grinding-service-tree-tek-florida.png',
-    heroImageAlt: 'TREE TEK professional stump grinding service in Volusia County Florida',
+    heroImage: '/images/longwood-stump-grinding-service-tree-tek-florida.png',
+    heroImageAlt: 'TREE TEK professional stump grinding service in Seminole County Florida',
   },
   {
-    slug: 'emergency-tree-service-volusia-county',
-    title: 'Emergency Tree Service Volusia County',
-    metaTitle: 'Emergency Tree Service in Volusia County | TREE TEK',
+    slug: 'emergency-tree-service-seminole-county',
+    title: 'Emergency Tree Service Seminole County',
+    metaTitle: 'Emergency Tree Service in Seminole County | TREE TEK',
     metaDescription:
       'Countywide emergency tree response—fallen trees, split trunks, roadway hazards. Prioritized dispatch. Call (321) 282-9795.',
-    primaryKeyword: 'emergency tree service Volusia County',
-    secondaryKeywords: ['storm tree help Volusia', '24/7 tree removal', 'TREE TEK'],
+    primaryKeyword: 'emergency tree service Seminole County',
+    secondaryKeywords: ['storm tree help Seminole', '24/7 tree removal', 'TREE TEK'],
     intent: 'local-service',
     service: 'Emergency tree service',
-    location: 'Volusia County',
-    h1: 'Emergency Tree Service in Volusia County',
+    location: 'Seminole County',
+    h1: 'Emergency Tree Service in Seminole County',
     intro:
       'Emergencies ignore city limits—bridges, nursing routes, and grid restoration all matter. TREE TEK triages countywide during severe weather, pairing nearby crews with high-risk situations while communicating honest wait times to lower-priority requests.',
     sections: [
@@ -240,9 +240,9 @@ export const locationVolusiaPages: SeoPage[] = [
       },
     ],
     ctaText: 'Call emergency dispatch',
-    heroImage: '/images/volusia-county-emergency-tree-service-tree-tek-florida.png',
+    heroImage: '/images/seminole-county-emergency-tree-service-tree-tek-florida.png',
     heroImageAlt:
-      'Tree Tek emergency tree service in Volusia County removing storm damaged tree near home with crane and crew',
+      'Tree Tek emergency tree service in Seminole County removing storm damaged tree near home with crane and crew',
     heroImagePosition: 'center top',
   },
 ];
