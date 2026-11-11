@@ -63,7 +63,7 @@ export default function BlogList() {
   if (loading) {
     return (
       <>
-        <SEO title="Blog — TREE TEK Tree Care Tips & News" description="Articles and updates from TREE TEK on tree care, safety, and Volusia County projects." path="/blog" />
+        <SEO title="Blog — TREE TEK Tree Care Tips & News" description="Articles and updates from TREE TEK on tree care, safety, and Seminole County projects." path="/blog" />
         <div className="max-w-6xl mx-auto px-5 sm:px-6 pt-28 md:pt-32 pb-16 text-gray-500">Loading posts…</div>
       </>
     );
@@ -82,7 +82,7 @@ export default function BlogList() {
     <div className="max-w-6xl mx-auto px-5 sm:px-6 pt-28 md:pt-32 pb-16 md:pb-14 bg-[#f7f8f7] min-h-[50vh]">
       <SEO
         title="Blog — TREE TEK Tree Care Tips & News"
-        description="Tips on tree removal, pruning, storm prep, and local tree care from TREE TEK in Volusia County, Florida."
+        description="Tips on tree removal, pruning, storm prep, and local tree care from TREE TEK in Seminole County, Florida."
         path="/blog"
       />
 
@@ -90,7 +90,7 @@ export default function BlogList() {
         <p className="text-xs font-bold uppercase tracking-widest text-emerald-800 mb-3">Tree care knowledge</p>
         <h1 className="text-3xl sm:text-4xl font-bold text-gray-950 tracking-tight">Blog</h1>
         <p className="mt-3 text-gray-600 text-lg leading-relaxed">
-          Practical guides for homeowners in Volusia County and surrounding areas.
+          Practical guides for homeowners in Seminole County and surrounding areas.
         </p>
       </header>
 

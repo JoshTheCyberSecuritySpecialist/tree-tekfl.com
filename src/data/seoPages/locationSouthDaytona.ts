@@ -8,7 +8,7 @@ export const locationSouthDaytonaPages: SeoPage[] = [
     metaDescription:
       'Tree removal in South Daytona for residential lots, aging hardwoods, and storm-compromised trees. Rigging-first approach, insured crew. (321) 282-9795.',
     primaryKeyword: 'tree removal South Daytona',
-    secondaryKeywords: ['South Daytona tree service', 'Volusia tree removal', 'TREE TEK'],
+    secondaryKeywords: ['South Daytona tree service', 'Seminole tree removal', 'TREE TEK'],
     intent: 'local-service',
     service: 'Tree removal',
     location: 'South Daytona',
@@ -68,7 +68,7 @@ export const locationSouthDaytonaPages: SeoPage[] = [
     metaDescription:
       'Tree trimming in South Daytona—deadwood removal, clearance pruning, canopy thinning, palm maintenance. Licensed TREE TEK crews. (321) 282-9795.',
     primaryKeyword: 'tree trimming South Daytona',
-    secondaryKeywords: ['pruning South Daytona', 'Volusia County arbor care', 'TREE TEK'],
+    secondaryKeywords: ['pruning South Daytona', 'Seminole County arbor care', 'TREE TEK'],
     intent: 'local-service',
     service: 'Tree trimming',
     location: 'South Daytona',
@@ -128,7 +128,7 @@ export const locationSouthDaytonaPages: SeoPage[] = [
     metaDescription:
       'Stump grinding in South Daytona—below-grade grinding, debris control, irrigation-aware passes. Call (321) 282-9795 for pricing.',
     primaryKeyword: 'stump grinding South Daytona',
-    secondaryKeywords: ['stump removal South Daytona', 'grind stump Volusia', 'TREE TEK'],
+    secondaryKeywords: ['stump removal South Daytona', 'grind stump Seminole', 'TREE TEK'],
     intent: 'local-service',
     service: 'Stump grinding',
     location: 'South Daytona',

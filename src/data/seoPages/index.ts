@@ -34,7 +34,7 @@ const SERVICE_TO_CORE: Partial<Record<string, string>> = {
   'Emergency tree service': 'emergency-tree-service',
   'Storm cleanup': 'storm-cleanup',
   'Crane tree work': 'crane-tree-work',
-  'Tree service': 'tree-service-volusia-county',
+  'Tree service': 'tree-service-seminole-county',
 };
 
 function scoreRelated(current: SeoPage, candidate: SeoPage): number {

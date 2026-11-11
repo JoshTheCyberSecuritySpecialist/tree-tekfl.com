@@ -21,8 +21,8 @@ const FALLBACK_SETTINGS: PublicWorkspaceSettings = {
   business: {
     phone: '321-282-9795',
     email: 'info@treetekfl.com',
-    city: 'Daytona Beach',
-    service_area: 'Volusia County, FL',
+    city: 'Lake Mary',
+    service_area: 'Seminole County, FL',
   },
   site: {
     cta_text: 'Request a Free Quote',
