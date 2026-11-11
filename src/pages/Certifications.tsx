@@ -1,11 +1,16 @@
 import { Award, ExternalLink, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
 import Card from '../components/Card';
+import { publicPageLabel, useExtraPublishedPages } from '../lib/publishedPages';
 import { phoneToTel, usePublicWorkspaceSettings } from '../lib/workspaceSettings';
 
 export default function Certifications() {
+  const extraPages = useExtraPublishedPages().filter((page) =>
+    /arbor|isa|certif/i.test(`${page.title} ${page.h1 ?? ''} ${page.slug}`),
+  );
   const { settings } = usePublicWorkspaceSettings();
   const phone = settings.business.phone;
   const telHref = `tel:${phoneToTel(phone)}`;
@@ -54,6 +59,19 @@ export default function Certifications() {
                 commitment to professional tree care and ongoing education in arboriculture.
               </p>
             </div>
+            {extraPages.length > 0 ? (
+              <div className="mt-8 flex flex-col gap-3">
+                {extraPages.map((page) => (
+                  <Link
+                    key={page.slug}
+                    to={`/${page.slug}`}
+                    className="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-md shadow-lg transition-all"
+                  >
+                    {publicPageLabel(page)}
+                  </Link>
+                ))}
+              </div>
+            ) : null}
           </Card>
 
           <div className="bg-white rounded-lg shadow-lg p-8">

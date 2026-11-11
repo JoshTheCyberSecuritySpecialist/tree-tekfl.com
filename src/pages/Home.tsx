@@ -5,6 +5,7 @@ import Card from '../components/Card';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
 import TestimonialsSection from '../components/TestimonialsSection';
+import { publicPageLabel, useExtraPublishedPages } from '../lib/publishedPages';
 import { phoneToTel, usePublicWorkspaceSettings } from '../lib/workspaceSettings';
 
 const HOME_SERVICE_PAGES: Record<string, string> = {
@@ -17,6 +18,7 @@ const HOME_SERVICE_PAGES: Record<string, string> = {
 
 export default function Home() {
   const serviceArea = import.meta.env.VITE_SERVICE_AREA;
+  const extraPages = useExtraPublishedPages();
   const { settings } = usePublicWorkspaceSettings();
   const phone = settings.business.phone;
   const ctaText = settings.site.cta_text || 'Request a Free Quote';
@@ -153,6 +155,17 @@ export default function Home() {
             </Link>
             .
           </p>
+          {extraPages.length > 0 ? (
+            <ul className="mt-6 flex flex-col items-center gap-2">
+              {extraPages.map((page) => (
+                <li key={page.slug}>
+                  <Link to={`/${page.slug}`} className="text-emerald-700 font-semibold hover:underline">
+                    {publicPageLabel(page)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
       </Section>
 

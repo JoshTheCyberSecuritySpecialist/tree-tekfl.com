@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import { getLocalBusinessSchema } from '../schema/localBusiness';
 import { seoPages } from '../data/seoPages';
 import SeoQuickStrip, { POPULAR_LOCAL_LINKS } from './SeoQuickStrip';
+import { publicPageLabel, useExtraPublishedPages } from '../lib/publishedPages';
 import { phoneToTel, usePublicWorkspaceSettings } from '../lib/workspaceSettings';
 
 const CORE_SERVICE_SLUGS = new Set([
@@ -32,6 +33,7 @@ export default function Layout({ children }: LayoutProps) {
   const ctaText = settings.site.cta_text || 'Request a Free Quote';
   const telHref = `tel:${phoneToTel(phone)}`;
 
+  const extraPages = useExtraPublishedPages();
   const location = useLocation();
   const isHomeRoute = location.pathname === '/';
   const isBlogRoute =
@@ -111,6 +113,13 @@ export default function Layout({ children }: LayoutProps) {
                 <li><Link to="/quote" className="hover:text-emerald-300 transition-colors">Get a Quote</Link></li>
                 <li><Link to="/contact" className="hover:text-emerald-300 transition-colors">Contact</Link></li>
                 <li><Link to="/faq" className="hover:text-emerald-300 transition-colors">FAQ</Link></li>
+                {extraPages.map((page) => (
+                  <li key={page.slug}>
+                    <Link to={`/${page.slug}`} className="hover:text-emerald-300 transition-colors">
+                      {publicPageLabel(page)}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 

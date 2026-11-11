@@ -615,12 +615,22 @@ export const sitePagesApi = {
 
   /** Slugs for published CMS pages (for client-side route registration). */
   async getPublishedSlugs() {
-    const { data, error } = await supabase.from('site_pages').select('slug').eq('status', 'published');
+    const rows = await this.getPublishedSummaries();
+    return rows.map((r) => r.slug).filter(Boolean);
+  },
+
+  /** Published pages visitors can open. Drafts are excluded. */
+  async getPublishedSummaries() {
+    const { data, error } = await supabase
+      .from('site_pages')
+      .select('slug, title, h1')
+      .eq('status', 'published')
+      .order('title', { ascending: true });
     if (error) {
-      if (import.meta.env.DEV) console.warn('[sitePagesApi.getPublishedSlugs]', error.message);
+      if (import.meta.env.DEV) console.warn('[sitePagesApi.getPublishedSummaries]', error.message);
       return [];
     }
-    return (data || []).map((r) => r.slug).filter(Boolean);
+    return data || [];
   },
 
   async getAllForAdmin() {

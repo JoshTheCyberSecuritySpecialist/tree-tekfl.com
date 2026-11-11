@@ -32,7 +32,7 @@ const emptyForm = {
   location: '',
   service_type: '',
   featured_image_url: '',
-  status: 'draft' as 'published' | 'draft',
+  status: 'published' as 'published' | 'draft',
 };
 
 function formatWhen(iso: string) {
@@ -115,13 +115,17 @@ export default function PagesTab() {
         service_type: form.service_type || null,
         featured_image_url: form.featured_image_url || null,
       };
-      if (editingId) {
-        await sitePagesApi.updatePage(editingId, payload);
-        setBanner({ type: 'ok', text: 'Page updated.' });
-      } else {
-        await sitePagesApi.createPage(payload);
-        setBanner({ type: 'ok', text: 'Page created.' });
-      }
+      const saved = editingId
+        ? await sitePagesApi.updatePage(editingId, payload)
+        : await sitePagesApi.createPage(payload);
+      const publicPath = `/${saved?.slug || payload.slug}`;
+      setBanner({
+        type: 'ok',
+        text:
+          payload.status === 'published'
+            ? `Published. Visitors can open ${publicPath}.`
+            : 'Saved as a draft. Visitors cannot see it until you set the status to Published.',
+      });
       clearForm();
       await load();
     } catch (err) {
@@ -137,7 +141,13 @@ export default function PagesTab() {
     setRows((list) => list.map((x) => (x.id === r.id ? { ...x, status: next } : x)));
     try {
       await sitePagesApi.setPageStatus(r.id, next);
-      setBanner({ type: 'ok', text: next === 'published' ? 'Published.' : 'Unpublished (draft).' });
+      setBanner({
+        type: 'ok',
+        text:
+          next === 'published'
+            ? `Published. Visitors can open /${r.slug}.`
+            : 'Unpublished. Visitors can no longer see this page.',
+      });
     } catch (err) {
       setRows(prev);
       setBanner({ type: 'err', text: err instanceof Error ? err.message : 'Update failed' });
@@ -195,7 +205,7 @@ export default function PagesTab() {
           ) : null}
         </div>
         <p className="text-sm text-gray-600 mb-4">
-          Published pages override the hardcoded SEO page for the same URL when present. New slugs appear on the site once published (routes refresh on load).
+          Only pages set to Published show up for visitors, in the Pages menu, and in the footer. Drafts stay in admin.
         </p>
         <form onSubmit={onSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
@@ -215,8 +225,8 @@ export default function PagesTab() {
               onChange={(e) => setForm((f) => ({ ...f, status: e.target.value as 'published' | 'draft' }))}
               className="w-full rounded-xl border border-gray-200 px-3 py-2 text-sm"
             >
-              <option value="draft">Draft</option>
-              <option value="published">Published</option>
+              <option value="published">Published — visible to visitors</option>
+              <option value="draft">Draft — hidden from visitors</option>
             </select>
           </div>
           <div className="md:col-span-2">
@@ -360,7 +370,16 @@ export default function PagesTab() {
                         <div className="flex flex-wrap justify-end gap-2">
                           <button
                             type="button"
-                            onClick={() => window.open(`/${r.slug}`, '_blank', 'noopener,noreferrer')}
+                            onClick={() => {
+                              if (r.status !== 'published') {
+                                setBanner({
+                                  type: 'err',
+                                  text: 'This page is a draft. Set it to Published before visitors can open it.',
+                                });
+                                return;
+                              }
+                              window.open(`/${r.slug}`, '_blank', 'noopener,noreferrer');
+                            }}
                             className="inline-flex items-center gap-1 rounded-lg border border-gray-200 px-2.5 py-1.5 text-xs font-semibold text-gray-800 hover:bg-gray-50"
                           >
                             <ExternalLink className="h-3.5 w-3.5" aria-hidden />

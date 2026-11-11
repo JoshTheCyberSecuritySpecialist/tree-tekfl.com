@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ChevronDown, Phone, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { seoPages } from '../data/seoPages';
+import { publicPageLabel, useExtraPublishedPages } from '../lib/publishedPages';
 import { phoneToTel, usePublicWorkspaceSettings } from '../lib/workspaceSettings';
 
 /** Core service landings for dropdown — matches Layout footer “Services”. */
@@ -59,9 +60,13 @@ export default function Navbar() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobilePagesOpen, setMobilePagesOpen] = useState(false);
   const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
+  const [desktopPagesOpen, setDesktopPagesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
+  const pagesRef = useRef<HTMLDivElement>(null);
+  const extraPages = useExtraPublishedPages();
   const location = useLocation();
   const isHomeRoute = location.pathname === '/';
   const useGlassTop = isHomeRoute && !scrolled && !mobileMenuOpen;
@@ -97,7 +102,9 @@ export default function Navbar() {
   useEffect(() => {
     setMobileMenuOpen(false);
     setMobileServicesOpen(false);
+    setMobilePagesOpen(false);
     setDesktopServicesOpen(false);
+    setDesktopPagesOpen(false);
   }, [location.pathname, location.search, location.hash]);
 
   useEffect(() => {
@@ -116,6 +123,9 @@ export default function Navbar() {
     function handleClickOutside(e: MouseEvent) {
       if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
         setDesktopServicesOpen(false);
+      }
+      if (pagesRef.current && !pagesRef.current.contains(e.target as Node)) {
+        setDesktopPagesOpen(false);
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
@@ -184,6 +194,40 @@ export default function Navbar() {
                   </div>
                 ) : null}
               </div>
+              {extraPages.length > 0 ? (
+                <div className="relative" ref={pagesRef}>
+                  <button
+                    type="button"
+                    aria-expanded={desktopPagesOpen}
+                    aria-haspopup="true"
+                    className={desktopServicesButtonClass}
+                    onClick={() => setDesktopPagesOpen((o) => !o)}
+                    onMouseEnter={() => setDesktopPagesOpen(true)}
+                  >
+                    Pages
+                    <ChevronDown className={`w-4 h-4 transition-transform ${desktopPagesOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  {desktopPagesOpen ? (
+                    <div
+                      className="absolute left-1/2 -translate-x-1/2 top-full pt-2 min-w-[260px] z-50"
+                      onMouseLeave={() => setDesktopPagesOpen(false)}
+                    >
+                      <div className="bg-white rounded-xl shadow-lg border border-gray-100 py-2 overflow-hidden">
+                        {extraPages.map((page) => (
+                          <Link
+                            key={page.slug}
+                            to={`/${page.slug}`}
+                            className="block px-4 py-2.5 text-sm text-gray-800 hover:bg-emerald-50 hover:text-emerald-800 transition-colors"
+                            onClick={() => setDesktopPagesOpen(false)}
+                          >
+                            {publicPageLabel(page)}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ) : null}
+                </div>
+              ) : null}
               {mainNavLinks.slice(1).map((link) => (
                 <NavLink key={link.to} to={link.to} label={link.label} className={desktopNavLinkClass} />
               ))}
@@ -292,6 +336,32 @@ export default function Navbar() {
               </div>
             ) : null}
           </div>
+          {extraPages.length > 0 ? (
+            <div className="border-b border-gray-100 py-1">
+              <button
+                type="button"
+                className="flex w-full items-center justify-between py-3 text-lg font-medium text-gray-900"
+                onClick={() => setMobilePagesOpen((o) => !o)}
+              >
+                Pages
+                <ChevronDown className={`w-5 h-5 transition-transform ${mobilePagesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {mobilePagesOpen ? (
+                <div className="pb-3 pl-2 space-y-1 border-l-2 border-emerald-100 ml-1">
+                  {extraPages.map((page) => (
+                    <Link
+                      key={page.slug}
+                      to={`/${page.slug}`}
+                      className="block py-2.5 text-base text-gray-700 hover:text-emerald-700"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {publicPageLabel(page)}
+                    </Link>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+          ) : null}
           {mainNavLinks.slice(1).map((link) => (
             <Link
               key={link.to}

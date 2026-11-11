@@ -1,9 +1,7 @@
-import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { SEO_PAGE_SLUGS } from './data/seoPages';
+import { lazy, Suspense } from 'react';
+import { Route, Routes, useParams } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import SeoLandingPage from './pages/SeoLandingPage';
-import { sitePagesApi } from './services/api';
 
 const Layout = lazy(() => import('./components/Layout'));
 const Home = lazy(() => import('./pages/Home'));
@@ -21,18 +19,16 @@ const BlogList = lazy(() => import('./pages/blog/BlogList'));
 const BlogPost = lazy(() => import('./pages/blog/BlogPost'));
 const ProtectedRoute = lazy(() => import('./components/ProtectedRoute'));
 
-function App() {
-  const [cmsSlugs, setCmsSlugs] = useState<string[]>([]);
-
-  useEffect(() => {
-    sitePagesApi.getPublishedSlugs().then(setCmsSlugs).catch(() => setCmsSlugs([]));
-  }, []);
-
-  const seoSlugs = useMemo(
-    () => Array.from(new Set([...SEO_PAGE_SLUGS, ...cmsSlugs])),
-    [cmsSlugs],
+function PublicSeoPage() {
+  const { slug = '' } = useParams();
+  return (
+    <Layout>
+      <SeoLandingPage slug={slug} />
+    </Layout>
   );
+}
 
+function App() {
   return (
     <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-gray-700">Loading...</div>}>
       <ScrollToTop />
@@ -49,17 +45,7 @@ function App() {
         <Route path="/faq" element={<Layout><Faq /></Layout>} />
         <Route path="/blog" element={<Layout><BlogList /></Layout>} />
         <Route path="/blog/:slug" element={<Layout><BlogPost /></Layout>} />
-        {seoSlugs.map((slug) => (
-          <Route
-            key={slug}
-            path={`/${slug}`}
-            element={
-              <Layout>
-                <SeoLandingPage slug={slug} />
-              </Layout>
-            }
-          />
-        ))}
+        <Route path="/:slug" element={<PublicSeoPage />} />
         <Route path="*" element={<Layout><NotFound /></Layout>} />
       </Routes>
     </Suspense>
